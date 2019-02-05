@@ -1,15 +1,19 @@
-DROP DATABASE IF EXISTS rpgsp;
-CREATE DATABASE rpgsp;
+DROP DATABASE IF EXISTS lele;
+CREATE DATABASE lele;
 
-USE rpgsp;
+USE lele;
 
 CREATE TABLE `utenti` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
+  `email` varchar(20),
+  `password` varchar(30),
   `nome` varchar(20),
   `cognome` varchar(20),
-  `email` varchar(20),
-  `password` varchar(20),
-  `immagine` varchar(100),
+  `domandaSicurezza` varchar(100),
+  `rispostaSicurezza` varchar(20),
+  `anno` int(1),
+  `tipo` ENUM('studente', 'professore', 'admin'),
+  `avatar` varchar(100),
   PRIMARY KEY (`id`),
   UNIQUE KEY (`email`)
 ) ENGINE=InnoDB;
@@ -18,16 +22,24 @@ CREATE TABLE `utenti` (
 CREATE TABLE `lezioni` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `idUtente` int(15),
+  `titolo` varchar(20),
+  `contenuto` varchar(1000),
+  `data` datetime,
   `materia` varchar(25),
   `anno` int(1),
-  `contenuto` varchar(10),
   PRIMARY KEY (`id`),
   FOREIGN KEY (`idUtente`)
     REFERENCES `utenti` (`id`)
 ) ENGINE=InnoDB;
 
-INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `immagine`)
-  VALUES ('Luca', 'Rippa', 'lucadmaxzz@gmail.com', 'Bella321', 'avatar2');
 
-INSERT INTO `lezioni` (`idUtente`, `materia`, `anno`)
-  VALUES (1, 'Italiano', 1);
+INSERT INTO `utenti` (`email`,`password`,`nome`,`cognome`,`domandaSicurezza`,`rispostaSicurezza`,`anno`,`tipo`,`avatar`)
+  VALUES ('nickpfla@gmail.com', 'asdqwerty', 'Nicolò', 'Pflanzer', 'asfgwergwergfsd','adfsafegfea', NULL, 'admin', NULL);
+INSERT INTO `utenti` (`email`,`password`,`nome`,`cognome`,`domandaSicurezza`,`rispostaSicurezza`,`anno`,`tipo`,`avatar`)
+  VALUES ('lucadmaxzz@gmail.com', 'bella321', 'Luca', 'Rippa', 'asfgwergwergfsd','adfsafegfea', 3, 'studente', 'avatar2');
+
+
+
+
+INSERT INTO `lezioni` (`idUtente`, `titolo`, `contenuto`, `data`, `materia`, `anno`)
+  VALUES (1, 'Romanticismo', 'In questa lezione vediamo come...', CURRENT_TIMESTAMP, 'Italiano', 1);
