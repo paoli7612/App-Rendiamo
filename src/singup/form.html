@@ -1,0 +1,18 @@
+<form method="post">
+  <input type="text" name="nome" placeholder="nome" required="required">
+  <input type="text" name="cognome" placeholder="cognome" required="required">
+  <input type="text" name="email" placeholder="email" required="required">
+  <input type="text" name="password" placeholder="password" required="required">
+  <input type="text" name="domandaSicurezza" placeholder="domandaSicurezza" required="required">
+  <input type="text" name="rispostaSicurezza" placeholder="rispostaSicurezza" required="required">
+  <select name="tipo">
+    <option value="studente">Studente</option>
+    <option value="professore">Professore</option>
+    <option value="admin">Amministratore</option>
+  </select>
+  <!-- Se non viene selezionato studente la classe viene tolta -->
+  <input type="number" name="anno" min="1" max="5" value="1">
+
+  <input type="submit" name="" value="Registrati">
+
+</form>

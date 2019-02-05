@@ -8,8 +8,8 @@
     <?php
       session_start();
       session_destroy();
-      include 'form.html';
-      include 'form.php';
+      include "form.html";
+      include "form.php";
     ?>
   </body>
 </html>

@@ -12,6 +12,8 @@
     public $tipo;
     public $avatar;
 
+    public $row;
+
     public function __construct($row){
       $this->id = $row['id'];
       $this->email = $row['email'];
@@ -23,6 +25,8 @@
       $this->anno = $row['anno'];
       $this->tipo = $row['tipo'];
       $this->avatar = $row['avatar'];
+
+      $this->row = $row;
     }
 
   }

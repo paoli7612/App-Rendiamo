@@ -7,7 +7,7 @@
     $tabella = array();
     $result = $conn->query($sql);
     //print_r($sql);
-    if ($classe=="vuoto"){return;}
+    if ($classe=="vuoto"){return $conn->error;}
     if ($result->num_rows == 0) {
       return $tabella;
     } else while($row = $result->fetch_assoc()){
@@ -25,5 +25,16 @@
 
   function getLezioni(){
     return query("SELECT * FROM lezioni;", "lezione");
+  }
+
+  function getUtenteEmail($email){
+    return query("SELECT * FROM utenti WHERE email='$email';", "utente");
+  }
+
+  function newUtente($nome, $cognome, $email, $password, $domandaSicurezza, $rispostaSicurezza, $tipo, $anno){
+    return query("INSERT INTO `utenti`
+      (`email`,`password`,`nome`,`cognome`,`domandaSicurezza`,`rispostaSicurezza`,`anno`,`tipo`)
+      VALUES ('$email', '$password', '$nome', '$cognome', '$domandaSicurezza','$rispostaSicurezza', $anno, '$tipo');
+      ", "vuoto");
   }
 ?>
