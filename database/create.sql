@@ -83,8 +83,23 @@ CREATE TABLE `contengono` (
 INSERT INTO `istituti` (`nome`)
   VALUES ('Marie Curie Pergine Valsugana');
 
-INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`)
- VALUES ('Tommaso', 'Paoli', 'paoli7612@gmail.com', 'qwerty');
+INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
+ VALUES ('Tommaso', 'Paoli', 'prof@gmail.com', 'qwerty', 'professore');
+ INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
+  VALUES ('asd', 'asd', 'studente@gmail.com', 'qwerty', 'studente');
 
 INSERT INTO `frequentano` (`idUtente`, `idIstituto`)
   VALUES (1, 1);
+
+INSERT INTO `lezioni` (`idUtente`,`titolo`,`data`)
+  VALUES (1, 'romanticismo', CURRENT_TIMESTAMP);
+
+INSERT INTO `materie` (`titolo`) VALUES ('Italiano');
+INSERT INTO `materie` (`titolo`) VALUES ('Storia');
+INSERT INTO `materie` (`titolo`) VALUES ('Matematica');
+INSERT INTO `materie` (`titolo`) VALUES ('Informatica');
+
+INSERT INTO `riguardano` (`idLezione`, `idMateria`)
+  VALUES (1, 1);
+INSERT INTO `riguardano` (`idLezione`, `idMateria`)
+  VALUES (1, 2);

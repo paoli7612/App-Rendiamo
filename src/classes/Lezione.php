@@ -14,7 +14,7 @@
       $this->titolo = $row['titolo'];
       $this->data = $row['data'];
 
-      //$this->materie = getMaterieIdLezione($this->id);
+      $this->materie = getMaterieIdLezione($this->id);
     }
 
   }

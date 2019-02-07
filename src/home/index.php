@@ -6,9 +6,8 @@
   </head>
   <body>
     <?php include "../header.php"; ?>
-
-    <?php echo "Ciao ". $utente->nome . " " . $utente->cognome; ?>
-
+    
+    <?php include "lezioni.php"; ?>
 
   </body>
 </html>
