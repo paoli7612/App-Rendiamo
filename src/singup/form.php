@@ -17,7 +17,7 @@
     if ($error){
       print_r($error);
     } else {
-      header('Location: /');
+      header('Location: /App-Rendiamo/src/');
     }
 
 

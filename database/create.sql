@@ -9,7 +9,6 @@ CREATE TABLE `istituti` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
-
 CREATE TABLE `utenti` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `email` varchar(20),
@@ -18,22 +17,31 @@ CREATE TABLE `utenti` (
   `cognome` varchar(20),
   `domandaSicurezza` varchar(100),
   `rispostaSicurezza` varchar(20),
-  `anno` int(1),
-  `tipo` ENUM('studente', 'professore', 'admin'),
+  `tipo` ENUM('studente', 'professore', 'admin') DEFAULT 'studente',
   `avatar` varchar(100),
   PRIMARY KEY (`id`),
   UNIQUE KEY (`email`)
 ) ENGINE=InnoDB;
 
-CREATE TABLE `appartengono` (
+CREATE TABLE `frequentano` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
-  `idUtente`  int(15),
-  `idIstituto`  int(15),
+  `idIstituto` int(15),
+  `idUtente` int(15),
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`idIstituto`)
+    REFERENCES `istituti` (`id`),
+  FOREIGN KEY (`idUtente`)
+    REFERENCES `utenti` (`id`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `lezioni` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `idUtente` int(15),
+  `titolo` varchar(20),
+  `data` datetime,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`idUtente`)
-    REFERENCES `utenti` (`id`),
-  FOREIGN KEY (`idIstituto`)
-    REFERENCES `istituti` (`id`)
+    REFERENCES `utenti` (`id`)
 ) ENGINE=InnoDB;
 
 CREATE TABLE `materie` (
@@ -42,11 +50,15 @@ CREATE TABLE `materie` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
-CREATE TABLE `test` (
+CREATE TABLE `riguardano` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(30),
-  `data` datetime,
-  PRIMARY KEY (`id`)
+  `idLezione` int(15),
+  `idMateria` int(15),
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`idLezione`)
+    REFERENCES `lezioni` (`id`),
+  FOREIGN KEY (`idMateria`)
+    REFERENCES `materie` (`id`)
 ) ENGINE=InnoDB;
 
 CREATE TABLE `materiali` (
@@ -57,35 +69,22 @@ CREATE TABLE `materiali` (
   UNIQUE KEY (`nome`)
 ) ENGINE=InnoDB;
 
-CREATE TABLE `lezioni` (
+CREATE TABLE `contengono` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
-  `idUtente` int(15),
-  `titolo` varchar(20),
-  `contenuto` varchar(1000),
-  `data` datetime,
-  `idMateria` int(15),
-  `idTest` int(15),
-  `idMateriale` int(15),
-  `anno` int(1),
+  `idLezione`  int(15),
+  `idMateriale`  int(15),
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`idUtente`)
-    REFERENCES `utenti` (`id`),
-  FOREIGN KEY (`idMateria`)
-    REFERENCES `materie` (`id`),
-  FOREIGN KEY (`idTest`)
-    REFERENCES `test` (`id`),
+  FOREIGN KEY (`idLezione`)
+    REFERENCES `lezioni` (`id`),
   FOREIGN KEY (`idMateriale`)
     REFERENCES `materiali` (`id`)
 ) ENGINE=InnoDB;
 
+INSERT INTO `istituti` (`nome`)
+  VALUES ('Marie Curie Pergine Valsugana');
 
-INSERT INTO `utenti` (`email`,`password`,`nome`,`cognome`,`domandaSicurezza`,`rispostaSicurezza`,`anno`,`tipo`,`avatar`)
-  VALUES ('nickpfla@gmail.com', 'asdqwerty', 'Nicolò', 'Pflanzer', 'asfgwergwergfsd','adfsafegfea', NULL, 'admin', NULL);
-INSERT INTO `utenti` (`email`,`password`,`nome`,`cognome`,`domandaSicurezza`,`rispostaSicurezza`,`anno`,`tipo`,`avatar`)
-  VALUES ('lucadmaxzz@gmail.com', 'bella321', 'Luca', 'Rippa', 'asfgwergwergfsd','adfsafegfea', 3, 'studente', 'avatar2');
+INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`)
+ VALUES ('Tommaso', 'Paoli', 'paoli7612@gmail.com', 'qwerty');
 
-INSERT INTO `materie` (`titolo`)
-  VALUES ('Storia');
-
-INSERT INTO `lezioni` (`idUtente`, `titolo`, `contenuto`, `data`, `idMateria`, `anno`)
-  VALUES (1, 'Romanticismo', 'In questa lezione vediamo come...', CURRENT_TIMESTAMP, 1, 1);
+INSERT INTO `frequentano` (`idUtente`, `idIstituto`)
+  VALUES (1, 1);

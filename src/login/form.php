@@ -14,7 +14,7 @@
         session_start();
         $_SESSION['login'] = true;
         $_SESSION['utente'] = $utente->row;
-        header('Location: /');
+        header('Location: /App-Rendiamo/src/');
       } else {
         echo 'password errata';
       }

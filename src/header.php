@@ -4,18 +4,18 @@
   if ($_SESSION['utente']){
     $utente = new Utente($_SESSION['utente']);
   } else {
-    header('Location: /');
+    header('Location: /App-Rendiamo/src/');
   }
 ?>
 
 <div class="w3-bar">
-  <a href="/home/">
+  <a href="/App-Rendiamo/src//home/">
     <button class="w3-button w3-bar-item">Home</button>
   </a>
-  <a href="/account/">
+  <a href="/App-Rendiamo/src//account/">
     <button class="w3-button w3-bar-item">Account</button>
   </a>
-  <a href="/logout.php">
+  <a href="/App-Rendiamo/src//logout.php">
     <button class="w3-button w3-bar-item">Logout</button>
   </a>
 </div>

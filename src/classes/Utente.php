@@ -8,7 +8,6 @@
     public $cognome;
     public $domandaSicurezza;
     public $rispostaSicurezza;
-    public $anno;
     public $tipo;
     public $avatar;
 
@@ -22,7 +21,6 @@
       $this->cognome = $row['cognome'];
       $this->domandaSicurezza = $row['domandaSicurezza'];
       $this->rispostaSicurezza = $row['rispostaSicurezza'];
-      $this->anno = $row['anno'];
       $this->tipo = $row['tipo'];
       $this->avatar = $row['avatar'];
 
