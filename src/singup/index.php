@@ -10,6 +10,8 @@
       session_destroy();
       include "form.html";
       include "form.php";
+      include '../intro.html';
+      
     ?>
   </body>
 </html>
