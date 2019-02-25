@@ -1,8 +1,8 @@
 <?php
-  function newUtente($nome, $cognome, $email, $password, $domandaSicurezza, $rispostaSicurezza, $tipo, $anno){
+  function newUtente($nome, $cognome, $email, $password, $domandaSicurezza, $rispostaSicurezza){
     return query("INSERT INTO `utenti`
-      (`email`,`password`,`nome`,`cognome`,`domandaSicurezza`,`rispostaSicurezza`,`anno`,`tipo`)
-      VALUES ('$email', '$password', '$nome', '$cognome', '$domandaSicurezza','$rispostaSicurezza', $anno, '$tipo');
+      (`email`,`password`,`nome`,`cognome`,`domandaSicurezza`,`rispostaSicurezza`)
+      VALUES ('$email', '$password', '$nome', '$cognome', '$domandaSicurezza','$rispostaSicurezza');
       ", "vuoto");
   }
 
