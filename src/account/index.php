@@ -5,9 +5,9 @@
     <title> Home </title>
   </head>
   <body>
-    <h1></h1>
-    <?php include "form.html"; ?>
-    <?php include "script.php"; ?>
+    <?php include "../header.php"; ?>
+    <h1>Account</h1>
+    <?php include "utente.php"; ?>
 
   </body>
 </html>

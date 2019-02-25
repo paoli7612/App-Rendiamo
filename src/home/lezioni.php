@@ -1,9 +1,8 @@
 <?php $lezioni = getLezioni();
   $materie = getMaterie();?>
-<div class="w3-panel">
-
+<div>
   <h1>Lezioni</h1>
-  <table class="w3-table w3-table-all">
+  <table border="2">
     <tr>
       <th>idUtente</th>
       <th>titolo</th>
