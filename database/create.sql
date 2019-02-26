@@ -23,7 +23,7 @@ CREATE TABLE `utenti` (
   UNIQUE KEY (`email`)
 ) ENGINE=InnoDB;
 
-CREATE TABLE `frequentano` (
+CREATE TABLE `istitutiDiUtenti` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `idIstituto` int(15),
   `idUtente` int(15),
@@ -50,7 +50,7 @@ CREATE TABLE `materie` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
-CREATE TABLE `riguardano` (
+CREATE TABLE `materieDiLezioni` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `idLezione` int(15),
   `idMateria` int(15),
@@ -69,7 +69,7 @@ CREATE TABLE `materiali` (
   UNIQUE KEY (`nome`)
 ) ENGINE=InnoDB;
 
-CREATE TABLE `contengono` (
+CREATE TABLE `materialiDiLezioni` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `idLezione`  int(15),
   `idMateriale`  int(15),
@@ -88,7 +88,7 @@ INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
  INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
   VALUES ('asd', 'asd', 'studente@gmail.com', 'qwerty', 'studente');
 
-INSERT INTO `frequentano` (`idUtente`, `idIstituto`)
+INSERT INTO `istitutidiutenti` (`idUtente`, `idIstituto`)
   VALUES (1, 1);
 
 INSERT INTO `lezioni` (`idUtente`,`titolo`,`data`)
@@ -99,7 +99,7 @@ INSERT INTO `materie` (`titolo`) VALUES ('Storia');
 INSERT INTO `materie` (`titolo`) VALUES ('Matematica');
 INSERT INTO `materie` (`titolo`) VALUES ('Informatica');
 
-INSERT INTO `riguardano` (`idLezione`, `idMateria`)
+INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`)
   VALUES (1, 1);
-INSERT INTO `riguardano` (`idLezione`, `idMateria`)
+INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`)
   VALUES (1, 2);
