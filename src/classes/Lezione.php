@@ -6,6 +6,7 @@
     public $titolo;
     public $data;
 
+    public $row;
     public $materie;
 
     public function __construct($row){
@@ -14,6 +15,9 @@
       $this->titolo = $row['titolo'];
       $this->data = $row['data'];
 
+      $this->row = $row;
+
+      $this->utente = getUtenteId($this->id);
       $this->materie = getMaterieIdLezione($this->id);
     }
 

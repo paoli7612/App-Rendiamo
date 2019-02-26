@@ -22,6 +22,11 @@
     <button>Nuova Lezione</button>
   </a>
 <?php endif; ?>
+<?php if ($utente->tipo == 'admin'): ?>
+  <a href="/App-Rendiamo/src/utenti/">
+    <button>Utenti</button>
+  </a>
+<?php endif; ?>
 <a class="w3-right" href="/App-Rendiamo/src/logout.php">
   <button>Logout</button>
 </a>

@@ -3,14 +3,15 @@
 ?>
 <table border="2">
   <tr>
-    <th>idUtente</th>
+    <th colspan="2">Creata da</th>
     <th>titolo</th>
     <th>materie</th>
   </tr>
 <?php foreach ($lezioni as $lezione): ?>
   <tr>
     <?php
-      echo '<td>'.$lezione->idUtente.'</td>';
+      echo '<td>'.$lezione->utente->nome.'</td>';
+      echo '<td>'.$lezione->utente->cognome.'</td>';
       echo '<td>'.$lezione->titolo.'</td>';
     ?>
     <td>

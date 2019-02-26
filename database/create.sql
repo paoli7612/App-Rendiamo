@@ -86,7 +86,9 @@ INSERT INTO `istituti` (`nome`)
 INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
  VALUES ('Tommaso', 'Paoli', 'prof@gmail.com', 'qwerty', 'professore');
  INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
-  VALUES ('asd', 'asd', 'studente@gmail.com', 'qwerty', 'studente');
+  VALUES ('Luca', 'Rippa', 'studente@gmail.com', 'qwerty', 'studente');
+INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
+ VALUES ('Christian', 'Gabban', 'admin@gmail.com', 'qwerty', 'admin');
 
 INSERT INTO `istitutidiutenti` (`idUtente`, `idIstituto`)
   VALUES (1, 1);
