@@ -7,7 +7,9 @@
   <body>
     <?php include "../header.php"; ?>
 
-    <h1>Home</h1>
+    <h1>Lezioni</h1>
+
+    <?php include 'tabella.php'; ?>
 
   </body>
 </html>

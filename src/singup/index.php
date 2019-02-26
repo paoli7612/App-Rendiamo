@@ -5,9 +5,12 @@
     <title> Home </title>
   </head>
   <body>
-    <h1></h1>
-    <?php include "form.html"; ?>
-    <?php include "script.php"; ?>
-
+    <div class="w3-panel w3-half ">
+      <?php include "form.html"; ?>
+      <?php include "script.php"; ?>
+    </div>
+    <div class="w3-panel w3-half">
+      <?php include '../intro.html'; ?>
+    </div>
   </body>
 </html>

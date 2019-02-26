@@ -8,18 +8,20 @@
   }
 ?>
 
-
 <a href="/App-Rendiamo/src/home/">
   <button>Home</button>
 </a>
 <a href="/App-Rendiamo/src/account/">
   <button>Account</button>
 </a>
-<a href="/App-Rendiamo/src/logout.php">
-  <button>Logout</button>
+<a href="/App-Rendiamo/src/lezioni/">
+  <button>Lezioni</button>
 </a>
 <?php if ($utente->tipo!='studente'): ?>
   <a href="/App-Rendiamo/src/nuovaLezione/">
     <button>Nuova Lezione</button>
   </a>
 <?php endif; ?>
+<a class="w3-right" href="/App-Rendiamo/src/logout.php">
+  <button>Logout</button>
+</a>
