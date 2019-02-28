@@ -7,7 +7,7 @@
     $conn = new mysqli("localhost", "root", "", "lele");
     $tabella = array();
     $result = $conn->query($sql);
-    print_r($sql);
+    //print_r($sql);
     if ($classe=="vuoto"){return $conn->error;}
     if ($result->num_rows == 0) {
       return $tabella;

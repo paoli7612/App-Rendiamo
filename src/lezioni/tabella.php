@@ -1,17 +1,14 @@
 <?php
   $lezioni = getLezioni();
 ?>
-<table border="2">
-  <tr>
-    <th colspan="2">Creata da</th>
-    <th>titolo</th>
-    <th>materie</th>
+<table class="w3-white w3-table w3-table-all w3-card-4 w3-hoverable">
+  <tr class="w3-theme-l3">
+    <th>Titolo</th>
+    <th>Materia</th>
   </tr>
 <?php foreach ($lezioni as $lezione): ?>
-  <tr>
+  <tr onclick="window.location='../lezioni/?id=<?php echo $lezione->id ?>'">
     <?php
-      echo '<td>'.$lezione->utente->nome.'</td>';
-      echo '<td>'.$lezione->utente->cognome.'</td>';
       echo '<td>'.$lezione->titolo.'</td>';
     ?>
     <td>

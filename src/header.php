@@ -9,12 +9,10 @@
   }
   include 'permit.php';
 ?>
-
-<head>
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-<?php echo $utente->tema ?>.css">
-</head>
-<div class="w3-large w3-theme-l5">
-  <div class="w3-bar w3-card-4">
+
+<div class="w3-large">
+  <div class="w3-bar w3-card-4 w3-theme-l6">
   	<a href="/App-Rendiamo/src/home/">
   		<button class="w3-bar-item w3-button w3-theme-l2">
   			Home
@@ -32,9 +30,9 @@
   	</a>
   	<?php if ($utente->tipo == 'admin'): ?>
   	  <a href="/App-Rendiamo/src/utenti/">
-  		<button class="w3-bar-item w3-button w3-theme-l6">
-  		Utenti
-  		</button>
+    		<button class="w3-bar-item w3-button w3-theme-l5">
+    		Utenti
+    		</button>
   	  </a>
   	<?php endif; ?>
   </div>

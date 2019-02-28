@@ -7,9 +7,19 @@
   <body>
     <?php include "../header.php"; ?>
 
-    <h1>Lezioni</h1>
-
-    <?php include 'tabella.php'; ?>
+    <div class="w3-panel">
+      <h1 class="w3-left">Lezioni</h1>
+      <?php
+        if (isset($_GET['id'])){
+          include 'dettagli.php';
+        } else {
+          if ($utente->tipo != 'studente'){
+            include 'nuova.php';
+          }
+          include 'tabella.php';
+        }
+      ?>
+    </div>
 
   </body>
 </html>

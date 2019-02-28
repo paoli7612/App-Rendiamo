@@ -19,7 +19,7 @@ CREATE TABLE `utenti` (
   `rispostaSicurezza` varchar(20),
   `tipo` ENUM('studente', 'professore', 'admin') DEFAULT 'studente',
   `avatar` varchar(100),
-  `tema` ENUM('red', 'blue', 'green'),
+  `tema` ENUM('red', 'blue', 'green', 'black') DEFAULT 'black',
   PRIMARY KEY (`id`),
   UNIQUE KEY (`email`)
 ) ENGINE=InnoDB;
