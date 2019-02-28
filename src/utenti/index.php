@@ -7,6 +7,7 @@
   <body>
     <?php include "../header.php"; ?>
     <h1>Utenti</h1>
+    <?php permitAdmin($utente); ?>
     <?php include 'tabella.php' ?>
   </body>
 </html>
