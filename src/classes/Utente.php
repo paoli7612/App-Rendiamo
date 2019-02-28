@@ -10,6 +10,7 @@
     public $rispostaSicurezza;
     public $tipo;
     public $avatar;
+	public $tema;
 
     public $row;
 
@@ -23,6 +24,7 @@
       $this->rispostaSicurezza = $row['rispostaSicurezza'];
       $this->tipo = $row['tipo'];
       $this->avatar = $row['avatar'];
+	  $this->tema = $row['tema'];
 
       $this->row = $row;
     }
