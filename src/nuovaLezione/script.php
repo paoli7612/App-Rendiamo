@@ -1,5 +1,6 @@
 <?php
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    print_r($_POST);
     $titolo = $_POST['titolo'];
     $data = $_POST['data'];
     $idUtente = $utente->id;
@@ -9,7 +10,7 @@
     if ($errors){
       echo 'esiste gia una lezione con questo titolo da te creata';
     } else {
-      header('Location: ..');
+      header('Location: ../lezioni/');
     }
   }
 

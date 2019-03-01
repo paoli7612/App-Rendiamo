@@ -41,6 +41,7 @@ CREATE TABLE `lezioni` (
   `titolo` varchar(20),
   `data` datetime,
   PRIMARY KEY (`id`),
+  UNIQUE (`idUtente`, `titolo`),
   FOREIGN KEY (`idUtente`)
     REFERENCES `utenti` (`id`)
 ) ENGINE=InnoDB;
@@ -101,6 +102,11 @@ INSERT INTO `materie` (`titolo`) VALUES ('Italiano');
 INSERT INTO `materie` (`titolo`) VALUES ('Storia');
 INSERT INTO `materie` (`titolo`) VALUES ('Matematica');
 INSERT INTO `materie` (`titolo`) VALUES ('Informatica');
+INSERT INTO `materie` (`titolo`) VALUES ('Inglese');
+INSERT INTO `materie` (`titolo`) VALUES ('Tedesco');
+INSERT INTO `materie` (`titolo`) VALUES ('Francese');
+INSERT INTO `materie` (`titolo`) VALUES ('Fisica');
+INSERT INTO `materie` (`titolo`) VALUES ('Chimica');
 
 INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`)
   VALUES (1, 1);
