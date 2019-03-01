@@ -15,17 +15,32 @@
   <div class="w3-bar w3-card-4 w3-theme-l5">
   	<a href="/App-Rendiamo/src/home/" on>
   		<button class="w3-bar-item w3-button w3-theme-l2">
-        <i class="fas fa-home"></i>
+        <div class="w3-left w3-animate-zoom">
+          <i class="fas fa-home"></i>
+        </div>
+        <div class="w3-right w3-hide-medium w3-animate-left">
+          &nbsp;Home
+        </div>
   		</button>
   	</a>
   	<a href="/App-Rendiamo/src/account/" on>
   		<button class="w3-bar-item w3-button w3-theme-l3">
-        <i class="fas fa-user"></i>
+        <div class="w3-left w3-animate-zoom">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="w3-right w3-hide-medium w3-animate-left">
+          &nbsp;Utenti
+        </div>
   		</button>
   	</a>
   	<a href="/App-Rendiamo/src/lezioni/" on>
   		<button class="w3-bar-item w3-button w3-theme-l4">
-        <i class="fas fa-book"></i>
+        <div class="w3-left w3-animate-zoom">
+          <i class="fas fa-book"></i>
+        </div>
+        <div class="w3-right w3-hide-medium w3-animate-left">
+          &nbsp;Lezioni
+        </div>
   		</button>
   	</a>
   </div>

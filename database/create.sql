@@ -67,6 +67,7 @@ CREATE TABLE `materiali` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `nome` varchar(30),
   `tipo` enum('testo', 'video', 'mappa', 'audio'),
+  `path` varchar(100),
   PRIMARY KEY (`id`),
   UNIQUE KEY (`nome`)
 ) ENGINE=InnoDB;
@@ -96,7 +97,9 @@ INSERT INTO `istitutidiutenti` (`idUtente`, `idIstituto`)
   VALUES (1, 1);
 
 INSERT INTO `lezioni` (`idUtente`,`titolo`,`data`)
-  VALUES (1, 'romanticismo', CURRENT_TIMESTAMP);
+  VALUES (1, 'Romanticismo', CURRENT_TIMESTAMP);
+INSERT INTO `lezioni` (`idUtente`,`titolo`,`data`)
+  VALUES (1, 'Newton', CURRENT_TIMESTAMP);
 
 INSERT INTO `materie` (`titolo`) VALUES ('Italiano');
 INSERT INTO `materie` (`titolo`) VALUES ('Storia');
@@ -112,3 +115,5 @@ INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`)
   VALUES (1, 1);
 INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`)
   VALUES (1, 2);
+INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`)
+  VALUES (2, 8);

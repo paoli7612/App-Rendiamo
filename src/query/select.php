@@ -18,8 +18,9 @@ function getUtenteEmail($email){
 function getMaterieIdLezione($idLezione){
   return query("SELECT m.*
     FROM lezioni as l, materieDiLezioni as d, materie as m
-    WHERE l.id=d.idLezione
-      AND m.id=d.idMateria;
+    WHERE l.id=$idLezione
+      AND d.idLezione=l.id
+      AND d.idMateria=m.id
     ", "materia");
 }
 
