@@ -2,6 +2,7 @@
   include "../classes/Utente.php";
   include "../classes/Lezione.php";
   include "../classes/Materia.php";
+  include "../classes/Materiale.php";
 
   function query($sql, $classe){
     $conn = new mysqli("localhost", "root", "", "lele");
@@ -15,6 +16,7 @@
       if ($classe == "utente") $oggetto = new Utente($row);
       elseif ($classe == "lezione") $oggetto = new Lezione($row);
       elseif ($classe == "materia") $oggetto = new Materia($row);
+      elseif ($classe == "materiale") $oggetto = new Materiale($row);
       array_push($tabella, $oggetto);
     }
     $conn->close();

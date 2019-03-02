@@ -1,0 +1,9 @@
+<dipendenti>
+  <nome></nome>
+  <cognome></cognome>
+  <dataDiNascita></dataDiNascita>
+  <sesso></sesso>
+  <grado></grado>
+  <email></email>
+  <telefono></telefono>
+</dipendenti>

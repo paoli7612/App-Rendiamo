@@ -12,4 +12,18 @@
       VALUES ('$idUtente', '$titolo', '$data');
       ", "vuoto");
   }
+
+  function newMateriale($indirizzo){
+    return query("INSERT INTO `materiali`
+      (`indirizzo`)
+      VALUES ('$indirizzo');
+      ", "vuoto");
+  }
+
+  function newMaterialeDiLezione($idMateriale, $idLezione){
+    return query("INSERT INTO `materialidilezioni`
+      (`idMateriale`, `idLezione`)
+      VALUES ('$idMateriale', '$idLezione');
+      ", "vuoto");
+  }
 ?>

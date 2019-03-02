@@ -24,6 +24,21 @@ function getMaterieIdLezione($idLezione){
     ", "materia");
 }
 
+function getMaterialeIndirizzo($indirizzo){
+  return query("SELECT *
+    FROM materiali
+    WHERE `indirizzo`='$indirizzo';
+    ", "materiale");
+}
+
+function getMaterialiIdLezione($idLezione){
+  return query("SELECT m.*
+    FROM materiali as m, materialidilezioni as d
+    WHERE d.idLezione=$idLezione
+      AND d.idMateriale=m.id;
+    ", "materiale");
+}
+
 function getLezioneId($id){
     return query("SELECT * FROM lezioni WHERE id=$id;", "lezione")[0];
 }

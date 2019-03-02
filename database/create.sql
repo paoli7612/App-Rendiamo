@@ -65,11 +65,9 @@ CREATE TABLE `materieDiLezioni` (
 
 CREATE TABLE `materiali` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(30),
-  `tipo` enum('testo', 'video', 'mappa', 'audio'),
-  `path` varchar(100),
+  `indirizzo` varchar(300),
   PRIMARY KEY (`id`),
-  UNIQUE KEY (`nome`)
+  UNIQUE KEY (`indirizzo`)
 ) ENGINE=InnoDB;
 
 CREATE TABLE `materialiDiLezioni` (

@@ -8,4 +8,13 @@
   </a>
 <?php endif; ?>
 
+<?php $materiali = getMaterialiIdLezione($lezione->id); ?>
+<?php foreach ($materiali as $materiale): ?>
+  <div class="w3-panel w3-theme-l2">
+    <a href="/App-Rendiamo/files/<?php echo $materiale->indirizzo ?>">
+      <?php echo $materiale->indirizzo ?>
+    </a>
+  </div>
+<?php endforeach; ?>
+
 <?php print_r($lezione); ?>

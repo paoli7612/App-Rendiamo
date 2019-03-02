@@ -8,12 +8,20 @@
       if ($_FILES[$file]["size"] > 500000) {
         echo $_FILES[$file]["name"]." Dimensione eccessiva";
       } else {
-        $target_file = "../../files/".$_FILES[$file]["name"];
+        $path = "../../files/".$utente->email;
+        if (!file_exists($path)) {
+            mkdir($path);
+        }
+        $target_file = $path."/".$_FILES[$file]["name"];
         move_uploaded_file($_FILES[$file]["tmp_name"], $target_file);
-        header("Location: ../lezioni/?id=".$_GET['id']);
+        $indirizzo = $utente->email."/".$_FILES[$file]["name"];
+        newMateriale($indirizzo);
+        $materiale = getMaterialeIndirizzo($indirizzo)[0];
+        newMaterialeDiLezione($materiale->id, $idLezione);
       }
     }
 
+    //header("Location: ../lezioni/?id=".$_GET['id']);
   }
 
 ?>
