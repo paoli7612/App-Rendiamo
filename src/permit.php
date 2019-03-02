@@ -5,6 +5,10 @@
     }
   }
 
+  function permitLezione($utente, $lezione){
+
+  }
+
   function permitProfessore($utente){
     if ($utente->tipo == 'studente'){
       header('Location: ..');
