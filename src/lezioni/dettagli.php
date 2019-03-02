@@ -16,5 +16,3 @@
     </a>
   </div>
 <?php endforeach; ?>
-
-<?php print_r($lezione); ?>

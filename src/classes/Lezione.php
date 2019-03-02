@@ -17,7 +17,7 @@
 
       $this->row = $row;
 
-      $this->utente = getUtenteId($this->id);
+      $this->utente = getUtenteId($this->idUtente);
       $this->materie = getMaterieIdLezione($this->id);
     }
 
