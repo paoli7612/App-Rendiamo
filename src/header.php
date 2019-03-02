@@ -29,7 +29,7 @@
           <i class="fas fa-user"></i>
         </div>
         <div class="w3-right w3-hide-medium w3-animate-left">
-          &nbsp;Utenti
+          &nbsp;Account
         </div>
   		</button>
   	</a>
