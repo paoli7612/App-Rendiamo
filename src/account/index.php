@@ -6,10 +6,7 @@
   </head>
   <body>
     <?php include "../header.php"; ?>
-
     <?php include "utente.php"; ?>
-
-    <?php include "cambiaTema.php"; ?>
 
   </body>
 </html>

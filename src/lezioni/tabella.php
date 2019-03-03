@@ -5,6 +5,7 @@
   <tr class="w3-theme-l3">
     <th>Titolo</th>
     <th>Materia</th>
+    <th>Utente</th>
   </tr>
 <?php foreach ($lezioni as $lezione): ?>
   <tr onclick="window.location='../lezioni/?id=<?php echo $lezione->id ?>'">
@@ -15,6 +16,9 @@
       <?php foreach ($lezione->materie as $materia) {
         echo $materia->titolo. ", ";
       } ?>
+    </td>
+    <td>
+      <?php echo $lezione->utente->nome. " " . $lezione->utente->cognome; ?>
     </td>
   </tr>
 <?php endforeach; ?>
