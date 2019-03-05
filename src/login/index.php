@@ -12,6 +12,5 @@
     <div class="w3-panel w3-half">
       <?php include '../intro.html'; ?>
     </div>
-
   </body>
 </html>

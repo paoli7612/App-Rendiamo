@@ -1,37 +1,33 @@
-<h1>Singup</h1>
+<h1>Registrati</h1>
 <form method="post">
-  <table border="2">
-    <tr>
-      <th>Nome</th>
-      <td><input type="text" name="nome"></td>
-    </tr>
-    <tr>
-      <th>Cognome</th>
-      <td><input type="text" name="cognome"></td>
-    </tr>
-    <tr>
-      <th>Email</th>
-      <td><input type="email" name="email"></td>
-    </tr>
-    <tr>
-      <th>Password</th>
-      <td><input type="password" name="password"></td>
-    </tr>
-    <tr>
-      <th>Domanda di sicurezza</th>
-      <td>
-        <select class="w3-input" name="domandaSicurezza">
-          <option value="asd">Bla bla bla bla bla</option>
-          <option value="fsdf">Bla bla bla bla bla</option>
-          <option value="a3dfgdf">Bla bla bla bla bla</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <th>Risposta di sicurezza</th>
-      <td><input type="text" name="rispostaSicurezza"></td>
-    </tr>
-  </table>
-  <input type="submit" name="" value="Registrati">
+  <div class="w3-card-4 w3-panel w3-light-grey w3-round-large">
+    <div class="w3-panel w3-margin">
+      <label for="email"> Email </label>
+      <input id="email" class="w3-input w3-round-large" type="email" name="email">
+    </div>
+    <div class="w3-panel w3-margin">
+      <label for="passwd"> Password </label>
+      <input id="passwd" class="w3-input w3-round-large" type="password" name="password">
+    </div>
+    <div class="w3-panel w3-margin">
+      <label for="passwd"> Nome </label>
+      <input id="passwd" class="w3-input w3-round-large" type="text" name="nome">
+    </div>
+    <div class="w3-panel w3-margin">
+      <label for="passwd"> Cognome </label>
+      <input id="passwd" class="w3-input w3-round-large" type="text" name="cognome">
+    </div>
+    <div class="w3-panel w3-margin">
+      <label for="passwd"> Domanda di sicurezza </label>
+      <input id="passwd" class="w3-input w3-round-large" type="text" name="domandaSicurezza">
+    </div>
+    <div class="w3-panel w3-margin">
+      <label for="passwd"> Risposta di ricurezza </label>
+      <input id="passwd" class="w3-input w3-round-large" type="text" name="rispostaSicurezza">
+    </div>
+    <div class="w3-container w3-margin w3-center">
+      <button type="submit" class="w3-button w3-card-4 w3-light-grey w3-round-large"> Registrati</button>
+      <button type="button" class="w3-button w3-round-large w3-card-4" onclick="window.location='../login/'"> Accedi </button>
+    </div>
+  </div>
 </form>
-<a href="../login">Accedi</a>

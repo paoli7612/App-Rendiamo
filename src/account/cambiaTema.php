@@ -22,6 +22,7 @@ var confirm = function(){
       <option value="pink">pink</option>
       <option value="purple">purple</option>
       <option value="w3schools">w3schools</option>
+      <option value="black">black</option>
     </select>
   </div>
   <input type="submit" id="submit" style="display: none">

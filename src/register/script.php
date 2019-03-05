@@ -13,6 +13,8 @@
     $errors = newUtente($nome, $cognome, $email, $password, $domandaSicurezza, $rispostaSicurezza);
     if ($errors){
       print_r($errors);
+    } else {
+      header('Location: ../');
     }
   }
 

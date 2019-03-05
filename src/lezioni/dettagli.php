@@ -2,7 +2,7 @@
 
 <div class="w3-panel">
   <h1 class="w3-left"><?php echo $lezione->titolo; ?> -
-    <?php echo "Prof " . $utente->cognome ?>
+    <?php echo "Prof " . $lezione->utente->cognome ?>
   </h1>
 </div>
 
@@ -34,15 +34,24 @@
       </div>
     <?php endforeach; ?>
     <?php else: ?>
-      Nessun materiale attualmente caricato per questa lezione
+      <div class="w3-panel">
+        Nessun materiale attualmente caricato per questa lezione
+      </div>
     <?php endif; ?>
   </div>
 </div>
 <?php if ($lezione->note): ?>
   <div class="w3-panel w3-half">
     <div class="w3-theme-l2 w3-panel w3-card-4">
+      <a href="../aggiungiMateriali/?id=<?php echo $_GET['id'] ?>" class="w3-right w3-margin-right">
+        <button class="w3-button w3-white w3-card-4" disabled="disabled">
+          <i class="fas fa-edit"></i>
+        </button>
+      </a>
       <h3>Note</h3>
-      <?php echo $lezione->note ?>
+      <div class="w3-panel">
+        <?php echo $lezione->note ?>
+      </div>
     </div>
   </div>
 <?php endif; ?>

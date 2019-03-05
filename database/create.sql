@@ -19,7 +19,7 @@ CREATE TABLE `utenti` (
   `rispostaSicurezza` varchar(20),
   `tipo` ENUM('studente', 'professore', 'admin') DEFAULT 'studente',
   `avatar` varchar(100),
-  `tema` ENUM('red', 'blue', 'green', 'black') DEFAULT 'black',
+  `tema` varchar(100) DEFAULT 'light-blue',
   PRIMARY KEY (`id`),
   UNIQUE KEY (`email`)
 ) ENGINE=InnoDB;
@@ -87,12 +87,15 @@ CREATE TABLE `materialiDiLezioni` (
 INSERT INTO `istituti` (`nome`)
   VALUES ('Marie Curie Pergine Valsugana');
 
-INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`, `tema`)
- VALUES ('Tommaso', 'Paoli', 'prof@gmail.com', 'qwerty', 'professore', 'red');
- INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`, `tema`)
-  VALUES ('Luca', 'Rippa', 'studente@gmail.com', 'qwerty', 'studente', 'blue');
-INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`, `tema`)
- VALUES ('Christian', 'Gabban', 'admin@gmail.com', 'qwerty', 'admin', 'green');
+INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
+ VALUES ('Alex', 'Sordo', 'prof@gmail.com', 'qwerty', 'professore');
+INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
+  VALUES ('Luca', 'Rippa', 'studente@gmail.com', 'qwerty', 'studente');
+INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
+ VALUES ('Christian', 'Gabban', 'admin@gmail.com', 'qwerty', 'admin');
+INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
+  VALUES ('Nicolò', 'Pflanzer', 'test@gmail.com', 'qwerty', 'admin');
+
 
 INSERT INTO `istitutidiutenti` (`idUtente`, `idIstituto`)
   VALUES (1, 1);
