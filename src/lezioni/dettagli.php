@@ -40,14 +40,18 @@
     <?php endif; ?>
   </div>
 </div>
+
+
 <?php if ($lezione->note): ?>
   <div class="w3-panel w3-half">
     <div class="w3-theme-l2 w3-panel w3-card-4">
-      <a href="../aggiungiMateriali/?id=<?php echo $_GET['id'] ?>" class="w3-right w3-margin-right">
-        <button class="w3-button w3-white w3-card-4" disabled="disabled">
-          <i class="fas fa-edit"></i>
-        </button>
-      </a>
+      <?php if ($utente->id == $lezione->idUtente): ?>
+        <a href="../aggiungiMateriali/?id=<?php echo $_GET['id'] ?>" class="w3-right w3-margin-right">
+          <button class="w3-button w3-white w3-card-4" disabled="disabled">
+            <i class="fas fa-edit"></i>
+          </button>
+        </a>
+      <?php endif; ?>
       <h3>Note</h3>
       <div class="w3-panel">
         <?php echo $lezione->note ?>
@@ -55,3 +59,27 @@
     </div>
   </div>
 <?php endif; ?>
+
+<div class="w3-panel w3-half">
+  <div class="w3-panel w3-theme-l2 w3-card-4">
+    <?php if ($utente->id == $lezione->idUtente): ?>
+      <a href="../aggiungiMateriali/?id=<?php echo $_GET['id'] ?>" class="w3-right">
+        <button class="w3-button w3-white w3-card-4" disabled="disabled">
+          <i class="fas fa-plus"></i>
+        </button>
+      </a>
+      <a href="../aggiungiMateriali/?id=<?php echo $_GET['id'] ?>" class="w3-right w3-margin-right">
+        <button class="w3-button w3-white w3-card-4" disabled="disabled">
+          <i class="fas fa-trash"></i>
+        </button>
+      </a>
+    <?php endif; ?>
+    <h3>Materie</h3>
+    <div class="w3-panel">
+        <?php foreach ($lezione->materie as $materia): ?>
+            <?php echo $materia->titolo ?>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+  </div>
+</div>

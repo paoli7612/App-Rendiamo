@@ -7,8 +7,8 @@
     unset($_POST['titolo']);
     unset($_POST['data']);
     unset($_POST['note']);
-    $errors = newLezione($idUtente, $titolo, $data, $note);
-    $lezione = getLezioneTitolo($titolo);
+    $errors = newLezione($idUtente, addslashes($titolo), $data, addslashes($note));
+    $lezione = getLezioneTitolo(addslashes($titolo));
     foreach ($_POST as $idMateria => $value) {
       newMateriaDiLezione($idMateria, $lezione->id);
     }

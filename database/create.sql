@@ -38,7 +38,7 @@ CREATE TABLE `istitutiDiUtenti` (
 CREATE TABLE `lezioni` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `idUtente` int(15),
-  `titolo` varchar(20) NOT NULL,
+  `titolo` varchar(40) NOT NULL,
   `data` datetime NOT NULL,
   `note` varchar(200),
   PRIMARY KEY (`id`),

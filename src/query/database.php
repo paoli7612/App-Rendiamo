@@ -9,7 +9,9 @@
     $tabella = array();
     $result = $conn->query($sql);
     //print_r($sql);
-    if ($classe=="vuoto"){return $conn->error;}
+    if ($classe=="vuoto"){
+      //print_r($conn->error);
+      return $conn->error;}
     if ($result->num_rows == 0) {
       return $tabella;
     } else while($row = $result->fetch_assoc()){

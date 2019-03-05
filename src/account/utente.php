@@ -17,13 +17,28 @@
       </div>
     </div>
 		<div class="w3-panel w3-theme-l2 w3-card-4">
-			<h3 class="w3-left">Disconnetti</h3>
+			<h3 class="w3-left">Visualizza le mie lezioni</h3>
       <div class="w3-panel w3-right">
 				<a href="../logout.php">
-					<button class="w3-button w3-white">Disconnetti</button>
+					<button class="w3-button w3-white">Visualizza</button>
 				</a>
       </div>
     </div>
-
+		<div class="w3-panel w3-theme-l2 w3-card-4">
+			<h3 class="w3-left">Disconnetti</h3>
+			<div class="w3-panel w3-right">
+				<a href="../logout.php">
+					<button class="w3-button w3-white">Disconnetti</button>
+				</a>
+			</div>
+		</div>
+		<div class="w3-panel w3-theme-l2 w3-card-4">
+			<h3 class="w3-left">Cambia Password</h3>
+			<div class="w3-panel w3-right">
+				<a href="../logout.php">
+					<button class="w3-button w3-white" disabled="disabled">Cambia Password</button>
+				</a>
+			</div>
+		</div>
 	</div>
 </div>

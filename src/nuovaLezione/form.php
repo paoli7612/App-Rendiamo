@@ -4,7 +4,7 @@
     <div class="w3-animate-top w3-container w3-theme-l2 w3-card-4">
       <div class="w3-half">
         <div class="w3-panel">
-          <input class="w3-input" type="text" name="titolo" placeholder="Titolo" required="required">
+          <input class="w3-input" type="text" name="titolo" placeholder="Titolo" required="required" maxlength="40">
         </div>
         <div class="w3-panel">
           <input class="w3-input" type="date" name="data" id="date">
