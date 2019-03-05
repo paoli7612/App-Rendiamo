@@ -11,10 +11,10 @@ CREATE TABLE `istituti` (
 
 CREATE TABLE `utenti` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
-  `email` varchar(20),
-  `password` varchar(30),
-  `nome` varchar(20),
-  `cognome` varchar(20),
+  `email` varchar(20) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `nome` varchar(20) NOT NULL,
+  `cognome` varchar(20) NOT NULL,
   `domandaSicurezza` varchar(100),
   `rispostaSicurezza` varchar(20),
   `tipo` ENUM('studente', 'professore', 'admin') DEFAULT 'studente',
@@ -38,8 +38,9 @@ CREATE TABLE `istitutiDiUtenti` (
 CREATE TABLE `lezioni` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `idUtente` int(15),
-  `titolo` varchar(20),
-  `data` datetime,
+  `titolo` varchar(20) NOT NULL,
+  `data` datetime NOT NULL,
+  `note` varchar(200),
   PRIMARY KEY (`id`),
   UNIQUE (`idUtente`, `titolo`),
   FOREIGN KEY (`idUtente`)
@@ -65,8 +66,10 @@ CREATE TABLE `materieDiLezioni` (
 
 CREATE TABLE `materiali` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
-  `indirizzo` varchar(300),
+  `indirizzo` varchar(300) NOT NULL,
+  `titolo` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE (`titolo`),
   UNIQUE KEY (`indirizzo`)
 ) ENGINE=InnoDB;
 

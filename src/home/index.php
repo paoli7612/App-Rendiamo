@@ -6,8 +6,7 @@
   </head>
   <body>
     <?php include "../header.php"; ?>
-
-    <h1>Home</h1>
-
+    <?php include "intro.html" ?>
+    <?php //include "ultimeLezioni.php" ?>
   </body>
 </html>

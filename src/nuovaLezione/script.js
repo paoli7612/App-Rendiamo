@@ -13,7 +13,7 @@ var select = function(id){
   var tr = document.getElementById("tr_"+id)
   input.checked = !input.checked;
   if (input.checked)
-    tr.className = "w3-theme";
+    tr.className = "w3-theme-d2";
   else{
     tr.className = "";
   }

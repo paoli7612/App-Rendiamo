@@ -6,17 +6,17 @@
       ", "vuoto");
   }
 
-  function newLezione($idUtente, $titolo, $data){
+  function newLezione($idUtente, $titolo, $data, $note){
     return query("INSERT INTO `lezioni`
-      (`idUtente`,`titolo`,`data`)
-      VALUES ('$idUtente', '$titolo', '$data');
+      (`idUtente`,`titolo`,`data`, `note`)
+      VALUES ('$idUtente', '$titolo', '$data', '$note');
       ", "vuoto");
   }
 
-  function newMateriale($indirizzo){
+  function newMateriale($indirizzo, $titolo){
     return query("INSERT INTO `materiali`
-      (`indirizzo`)
-      VALUES ('$indirizzo');
+      (`indirizzo`, `titolo`)
+      VALUES ('$indirizzo', '$titolo');
       ", "vuoto");
   }
 
@@ -24,6 +24,13 @@
     return query("INSERT INTO `materialidilezioni`
       (`idMateriale`, `idLezione`)
       VALUES ('$idMateriale', '$idLezione');
+      ", "vuoto");
+  }
+
+  function newMateriaDiLezione($idMateria, $idLezione){
+    return query("INSERT INTO `materiedilezioni`
+      (`idMateria`, `idLezione`)
+      VALUES ('$idMateria', '$idLezione');
       ", "vuoto");
   }
 ?>

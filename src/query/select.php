@@ -15,6 +15,10 @@ function getUtenteEmail($email){
   return query("SELECT * FROM utenti WHERE email='$email';", "utente");
 }
 
+function getLezioniUltime($n){
+  return query("SELECT * FROM lezioni ORDER BY data DESC LIMIT $n;", "lezione");
+}
+
 function getMaterieIdLezione($idLezione){
   return query("SELECT m.*
     FROM lezioni as l, materieDiLezioni as d, materie as m
@@ -45,5 +49,9 @@ function getLezioneId($id){
 
 function getUtenteId($id){
     return query("SELECT * FROM utenti WHERE id=$id;", "utente")[0];
+}
+
+function getLezioneTitolo($titolo){
+  return query("SELECT * FROM lezioni WHERE titolo='$titolo';", "lezione")[0];
 }
 ?>

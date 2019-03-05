@@ -1,18 +1,48 @@
 <?php $lezione = getLezioneId($_GET['id']) ?>
 
-<h1><?php echo $lezione->titolo; ?></h1>
+<div class="w3-panel">
+  <h1 class="w3-left"><?php echo $lezione->titolo; ?> -
+    <?php echo "Prof " . $utente->cognome ?>
+  </h1>
+</div>
 
-<?php if ($utente->id == $lezione->idUtente): ?>
-  <a href="../aggiungiMateriali/?id=<?php echo $_GET['id'] ?>">
-    <button class="w3-button w3-theme-l2">Aggiungi Materiale</button>
-  </a>
-<?php endif; ?>
-
-<?php $materiali = getMaterialiIdLezione($lezione->id); ?>
-<?php foreach ($materiali as $materiale): ?>
-  <div class="w3-panel w3-theme-l2">
-    <a href="/App-Rendiamo/files/<?php echo $materiale->indirizzo ?>">
-      <?php echo $materiale->indirizzo ?>
-    </a>
+<div class="w3-panel w3-half">
+  <div class="w3-panel w3-theme-l2 w3-card-4">
+    <?php $materiali = getMaterialiIdLezione($lezione->id); ?>
+    <?php if ($utente->id == $lezione->idUtente): ?>
+      <a href="../aggiungiMateriali/?id=<?php echo $_GET['id'] ?>" class="w3-right">
+        <button class="w3-button w3-white w3-card-4">
+          <i class="fas fa-plus"></i>
+        </button>
+      </a>
+      <a href="../aggiungiMateriali/?id=<?php echo $_GET['id'] ?>" class="w3-right w3-margin-right">
+        <button class="w3-button w3-white w3-card-4" disabled="disabled">
+          <i class="fas fa-trash"></i>
+        </button>
+      </a>
+    <?php endif; ?>
+    <h3>Materiali</h3>
+    <?php if ($materiali): ?>
+      <?php foreach ($materiali as $materiale): ?>
+      <div class="w3-panel">
+        <a href="/App-Rendiamo/files/<?php echo $materiale->indirizzo ?>" download="download">
+          <button class="w3-button w3-white w3-card-4">
+            <i class="fas fa-file"></i>
+            <?php echo $materiale->titolo ?>
+          </button>
+        </a>
+      </div>
+    <?php endforeach; ?>
+    <?php else: ?>
+      Nessun materiale attualmente caricato per questa lezione
+    <?php endif; ?>
   </div>
-<?php endforeach; ?>
+</div>
+<?php if ($lezione->note): ?>
+  <div class="w3-panel w3-half">
+    <div class="w3-theme-l2 w3-panel w3-card-4">
+      <h3>Note</h3>
+      <?php echo $lezione->note ?>
+    </div>
+  </div>
+<?php endif; ?>

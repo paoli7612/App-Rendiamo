@@ -14,14 +14,15 @@
         }
         $target_file = $path."/".$_FILES[$file]["name"];
         move_uploaded_file($_FILES[$file]["tmp_name"], $target_file);
-        $indirizzo = $utente->email."/".$_FILES[$file]["name"];
-        newMateriale($indirizzo);
+        $titolo = $_FILES[$file]["name"];
+        $indirizzo = $utente->email."/".$titolo;
+        newMateriale($indirizzo, $titolo);
         $materiale = getMaterialeIndirizzo($indirizzo)[0];
         newMaterialeDiLezione($materiale->id, $idLezione);
       }
     }
 
-    //header("Location: ../lezioni/?id=".$_GET['id']);
+    header("Location: ../lezioni/?id=".$_GET['id']);
   }
 
 ?>

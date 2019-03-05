@@ -13,6 +13,7 @@ var confirm = function(){
 <form method="post">
   <div class="w3-left">
     <select class="w3-input" name="tema" onchange="confirm()">
+      <option value=""><?php echo $_SESSION['utente']['tema'] ?></option>
       <option value="green">green</option>
       <option value="light-green">light-green</option>
       <option value="blue">blue</option>
