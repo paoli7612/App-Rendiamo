@@ -1,33 +1,44 @@
 <h1>Registrati</h1>
 <form method="post">
-  <div class="w3-card-4 w3-panel w3-light-grey w3-round-large">
-    <div class="w3-panel w3-margin">
-      <label for="email"> Email </label>
-      <input id="email" class="w3-input w3-round-large" type="email" name="email">
-    </div>
-    <div class="w3-panel w3-margin">
-      <label for="passwd"> Password </label>
-      <input id="passwd" class="w3-input w3-round-large" type="password" name="password">
-    </div>
-    <div class="w3-panel w3-margin">
-      <label for="passwd"> Nome </label>
-      <input id="passwd" class="w3-input w3-round-large" type="text" name="nome">
-    </div>
-    <div class="w3-panel w3-margin">
-      <label for="passwd"> Cognome </label>
-      <input id="passwd" class="w3-input w3-round-large" type="text" name="cognome">
-    </div>
-    <div class="w3-panel w3-margin">
-      <label for="passwd"> Domanda di sicurezza </label>
-      <input id="passwd" class="w3-input w3-round-large" type="text" name="domandaSicurezza">
-    </div>
-    <div class="w3-panel w3-margin">
-      <label for="passwd"> Risposta di ricurezza </label>
-      <input id="passwd" class="w3-input w3-round-large" type="text" name="rispostaSicurezza">
-    </div>
-    <div class="w3-container w3-margin w3-center">
-      <button type="submit" class="w3-button w3-card-4 w3-light-grey w3-round-large"> Registrati</button>
-      <button type="button" class="w3-button w3-round-large w3-card-4" onclick="window.location='../login/'"> Accedi </button>
+  <div class="w3-card-4 w3-panel w3-green">
+    <div class="w3-panel">
+
+      <div class="w3-panel">
+        <label for="email"> Email </label>
+        <input id="email" class="w3-input w3-card-4" type="email" name="email" placeholder="Email" required="required">
+      </div>
+      <div class="w3-panel">
+        <label for="passwd"> Password </label>
+        <input id="passwd" class="w3-input w3-card-4" type="password" name="password" placeholder="Password" required="required">
+      </div>
+      <div class="w3-panel w3-half">
+        <label for="passwd"> Nome </label>
+        <input id="passwd" class="w3-input w3-card-4" type="text" name="nome" placeholder="Nome" required="required">
+      </div>
+      <div class="w3-panel w3-half">
+        <label for="passwd"> Cognome </label>
+        <input id="passwd" class="w3-input w3-card-4" type="text" name="cognome" placeholder="Cognome" required="required">
+      </div>
+      <div class="w3-panel">
+        <label for="passwd"> Domanda di sicurezza </label>
+        <select class="w3-input w3-card-4" name="domandaSicurezza">
+          <option value="Qual è il tuo gioco preferito?">Qual è il tuo gioco preferito?</option>
+          <option value="Dove andresti in vacanza?">Dove andresti in vacanza?</option>
+          <option value="Qual è il tuo numero fortunato?">Qual è il tuo numero fortunato?</option>
+          <option value="Qual è il tuo colore preferito?">Qual è il tuo colore preferito?</option>
+          <option value="Come si chiama il tuo cane o il tuo gatto?">Come si chiama il tuo cane o il tuo gatto?</option>
+        </select>
+      </div>
+      <div class="w3-panel">
+        <label for="passwd"> Risposta di ricurezza </label>
+        <input id="passwd" class="w3-input w3-card-4" type="text" name="rispostaSicurezza" placeholder="niente">
+      </div>
+      <div class="w3-panel w3-right">
+        <button type="submit" class="w3-button w3-card-4 w3-light-grey"> Registrati</button>
+      </div>
+      <div class="w3-panel w3-right">
+        <a href="../login/"> Accedi </a>
+      </div>
     </div>
   </div>
 </form>

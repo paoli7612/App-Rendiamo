@@ -1,19 +1,26 @@
 
 <h1>Accedi</h1>
 <form method="post">
-  <div class="w3-card-4 w3-panel w3-light-grey w3-round-large">
-    <div class="w3-panel w3-margin">
-      <label for="email"> Inserisci la tua E-MAIL </label>
-      <input id="email" class="w3-input w3-round-large" type="email" name="email">
-    </div>
-    <div class="w3-panel w3-margin">
-      <label for="passwd"> Inserisco la tua PASSWORD </label>
-      <input id="passwd" class="w3-input w3-round-large" type="password" name="password">
-    </div>
-    <div class="w3-container w3-margin w3-center">
-      <button type="submit" class="w3-button w3-round-large w3-card-4"> Accedi </button>
-      <a href="../register/">
-        <button type="button" class="w3-button w3-card-4 w3-light-grey w3-round-large"> Registrati</button>
+  <div class="w3-card-4 w3-panel w3-theme">
+    <div class="w3-panel">
+      <div class="w3-panel">
+        <label for="email"> Email </label>
+        <input id="email" class="w3-input w3-card-4" type="email" name="email" placeholder="Email" required="required">
+      </div>
+      <div class="w3-panel">
+        <label for="passwd"> Password </label>
+        <input id="passwd" class="w3-input w3-card-4" type="password" name="password" placeholder="Password" required="required">
+      </div>
+      <div class="w3-container w3-left">
+        <a href="../passwordDimenticata/" class="w3-right">
+          Password dimenticata
+        </a>
+      </div>
+      <div class="w3-container w3-right">
+        <button type="submit" class="w3-button w3-card-4 w3-white"> Accedi </button>
+      </div>
+      <a href="../register/" class="w3-right">
+        Registrati
       </a>
     </div>
   </div>
