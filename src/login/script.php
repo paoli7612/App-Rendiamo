@@ -20,10 +20,24 @@
       if ($utente->password == $password){
         login($utente);
       } else {
-        echo 'email errata';
+        ?>
+        <div class="w3-panel w3-red w3-display-container w3-card-4">
+          <span onclick="this.parentElement.style.display='none'"
+          class="w3-button w3-large w3-display-topright">&times;</span>
+          <h2>Attenzione!</h2>
+          <p>La password inserita non corrisponde al indirizzo email.</p>
+        </div>
+        <?php
       }
     } else {
-      echo 'email errata';
+      ?>
+      <div class="w3-panel w3-red w3-display-container w3-card-4">
+        <span onclick="this.parentElement.style.display='none'"
+        class="w3-button w3-large w3-display-topright">&times;</span>
+        <h2>Attenzione!</h2>
+        <p>L'indirizzo email inserito non corrisponde a nessun account.</p>
+      </div>
+      <?php
     }
 
   }
