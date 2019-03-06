@@ -92,7 +92,7 @@ INSERT INTO `istituti` (`nome`)
 INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
 ('Alex', 'Sordo', 'prof@gmail.com', 'qwerty', 'professore'),
 ('Luca', 'Rippa', 'studente@gmail.com', 'qwerty', 'studente'),
-('Christian', 'Gabban', 'admin@gmail.com', 'qwerty', 'admin'),
+('Christian', 'Gabban', 'admin@gmail.com', 'qwertyu', 'admin'),
 ('Nicolo\'', 'Pflanzer', 'test@gmail.com', 'qwerty', 'studente'),
 ('Mario', 'Rossi', 'mario@gmail.com', 'qwerty', 'professore'),
 ('Giovanni', 'Storti', 'giovanni@gmail.com', 'qwerty', 'studente'),
