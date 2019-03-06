@@ -1,7 +1,7 @@
 <?php
-  $lezioni = getLezioniUltime(3);
+  $lezioni = getLezioniUltime(5);
 ?>
-<div class="w3-panel">
+<div class="w3-panel w3-half">
   <table class="w3-white w3-table w3-table-all w3-card-4 w3-hoverable" id="t1">
     <tr class="w3-theme-l3">
       <th onclick="sortTable('t1', 0)">Titolo</th>
