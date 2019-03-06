@@ -4,18 +4,18 @@
     <div class="w3-animate-top w3-container w3-theme-l2 w3-card-4">
       <div class="w3-half">
         <div class="w3-panel">
-          <input class="w3-input" type="text" name="titolo" placeholder="Titolo" required="required" maxlength="40">
+          <input class="w3-input w3-card-4" type="text" name="titolo" placeholder="Titolo" required="required" maxlength="40">
         </div>
         <div class="w3-panel">
-          <input class="w3-input" type="date" name="data" id="date">
+          <input class="w3-input w3-card-4" type="date" name="data" id="date">
         </div>
         <div class="w3-panel">
-          <textarea class="w3-input" name="note" rows="3" placeholder="Note"></textarea>
+          <textarea class="w3-input w3-card-4" name="note" rows="3" placeholder="Note" maxlength="200"></textarea>
         </div>
       </div>
       <div class="w3-half">
         <div class="w3-panel">
-          <table class="w3-table w3-table-all w3-white">
+          <table class="w3-table w3-table-all w3-white w3-card-4">
             <?php foreach ($materie as $materia): ?>
               <tr onclick="select(<?php echo $materia->id ?>)" id="tr_<?php echo $materia->id ?>">
                 <td><?php echo $materia->titolo ?></td>
@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="w3-panel">
-      <input class="w3-button w3-right w3-theme-l2" type="submit" value="Conferma">
+      <input class="w3-button w3-right w3-theme-l2 w3-card-4" type="submit" value="Conferma">
     </div>
   </form>
 </div>
