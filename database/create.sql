@@ -59,7 +59,8 @@ CREATE TABLE `materieDiLezioni` (
   `idMateria` int(15),
   PRIMARY KEY (`id`),
   FOREIGN KEY (`idLezione`)
-    REFERENCES `lezioni` (`id`),
+    REFERENCES `lezioni` (`id`)
+    ON DELETE CASCADE,
   FOREIGN KEY (`idMateria`)
     REFERENCES `materie` (`id`)
 ) ENGINE=InnoDB;
@@ -79,7 +80,8 @@ CREATE TABLE `materialiDiLezioni` (
   `idMateriale`  int(15),
   PRIMARY KEY (`id`),
   FOREIGN KEY (`idLezione`)
-    REFERENCES `lezioni` (`id`),
+    REFERENCES `lezioni` (`id`)
+    ON DELETE CASCADE,
   FOREIGN KEY (`idMateriale`)
     REFERENCES `materiali` (`id`)
 ) ENGINE=InnoDB;
@@ -103,26 +105,27 @@ INSERT INTO `istitutidiutenti` (`idUtente`, `idIstituto`)
 
 INSERT INTO `lezioni` (`idUtente`,`titolo`,`data`,`note`) VALUES
 (1, 'Romanticismo', CURRENT_TIMESTAMP, NULL),
-(1, 'Prima Guerra Mondiale', CURRENT_TIMESTAMP, NULL),
-(1, 'Trigonometria', CURRENT_TIMESTAMP, 'seno coseno tangente...'),
-(1, 'Cisco Packet Tracer', CURRENT_TIMESTAMP, NULL),
+(2, 'Prima Guerra Mondiale', CURRENT_TIMESTAMP, NULL),
+(4, 'Trigonometria', CURRENT_TIMESTAMP, 'seno coseno tangente...'),
 (2, 'Cisco Packet Tracer', CURRENT_TIMESTAMP, NULL),
+(3, 'Cisco Packet Tracer', CURRENT_TIMESTAMP, NULL),
 (1, 'Newton', CURRENT_TIMESTAMP, 'In questa lezione parliamo di Newton e le sue scoperte nel ambito della fisica');
 
-INSERT INTO `materie` (`titolo`) VALUES
-('Italiano'),
-('Storia'),
-('Matematica'),
-('Informatica'),
-('Inglese'),
-('Tedesco'),
-('Francese'),
-('Fisica'),
-('Chimica');
+INSERT INTO `materie` (`id`,`titolo`) VALUES
+(1,'Italiano'),
+(2,'Storia'),
+(3,'Matematica'),
+(4,'Informatica'),
+(5,'Inglese'),
+(6,'Tedesco'),
+(7,'Francese'),
+(8,'Fisica'),
+(9,'Chimica');
 
-INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`)
-  VALUES (1, 1);
-INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`)
-  VALUES (1, 2);
-INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`)
-  VALUES (2, 8);
+INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`) VALUES
+(1,1),(1,2),
+(2,2),
+(3,8),(3,3),
+(4,4),
+(5,4),
+(6,8);

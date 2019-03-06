@@ -11,6 +11,10 @@ function getLezioni(){
   return query("SELECT * FROM lezioni;", "lezione");
 }
 
+function getLezioniIdUtente($idUtente){
+  return query("SELECT * FROM lezioni WHERE idUtente=$idUtente;", "lezione");
+}
+
 function getUtenteEmail($email){
   return query("SELECT * FROM utenti WHERE email='$email';", "utente");
 }

@@ -1,6 +1,6 @@
 <?php $materie = getMaterie(); ?>
 
-<div class="w3-panel w3-right">
+<div class="w3-panel w3-right w3-animate-right">
   <select class="w3-input w3-card-4 w3-light-grey" name="materia" onchange="filter()" id="filter">
     <option>...</option>
     <?php foreach ($materie as $materia): ?>
@@ -23,7 +23,7 @@
     }
     for (var i=1; i<(rows.length); i++) {
       var tr = rows[i]
-      var td = tr.cells[1];
+      var td = tr.cells[2];
       tr.hidden = !(td.innerHTML.indexOf(s) != -1);
     }
   }

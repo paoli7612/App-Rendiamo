@@ -6,6 +6,8 @@
   </head>
   <body>
     <?php include "../header.php"; ?>
+    <?php permitAdmin($utente); ?>
     <?php include "tools.php" ?>
+
   </body>
 </html>

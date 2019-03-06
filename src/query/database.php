@@ -27,6 +27,7 @@
 
   include 'select.php';
   include 'insert.php';
+  include 'delete.php';
 
 
 

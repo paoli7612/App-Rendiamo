@@ -2,11 +2,10 @@
 <html>
   <head>
     <?php include "../head.html"; ?>
-    <title> Home </title>
+    <title> Lezioni </title>
   </head>
   <body>
     <?php include "../header.php"; ?>
-
     <div class="w3-panel">
       <?php
         if (isset($_GET['id'])){
