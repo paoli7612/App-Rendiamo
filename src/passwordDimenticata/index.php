@@ -15,12 +15,12 @@
               <input type="text" name="email" class="w3-input w3-card-4">
             </div>
             <div class="w3-panel w3-right">
-              <input type="button" name="email" class="w3-button w3-white w3-card-4" value="Conferma">
+              <input type="button" class="w3-button w3-white w3-card-4" value="Annulla" onclick="window.location='../login'">
+              <input type="button"  class="w3-button w3-white w3-card-4" value="Conferma" disabled="disabled">
             </div>
           </form>
         </div>
       </div>
-      </form>
     <?php endif; ?>
   </body>
 </html>
