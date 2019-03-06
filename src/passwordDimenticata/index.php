@@ -7,7 +7,7 @@
   <body>
     <?php if (isset($_GET['email'])): ?>
     <?php else: ?>
-      <div class="w3-panel w3-theme w3-half w3-display-topmiddle w3-card-4">
+      <div class="w3-panel w3-blue w3-half w3-display-topmiddle w3-card-4">
         <div class="w3-panel">
           <h1>Recupera Password</h1>
           <form method="get">
