@@ -15,7 +15,7 @@ A partire dal 5/02/2019 il sito verrà hostato al indirizzo 93.49.97.47
 
 ## Interfacca
 
-#### Temi
+### Temi
 
   Ogni utente può personalizzare a piacimento l'interfaccia che il sito assumerà nei suoi confronti.
   Sono disponibili 12 colorazioni diverse.
