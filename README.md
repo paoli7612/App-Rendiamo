@@ -33,5 +33,5 @@ A partire dal 5/02/2019 il sito verrà hostato al indirizzo 93.49.97.47
 
 ### Lezioni
 
-  Ogni lezione una volta creata può essere visualizzata da qualunque utente tramite il menu **lezioni**.
+  Ogni lezione una volta creata può essere visualizzata da qualunque utente tramite il menù **lezioni**.
   <img src="https://github.com/paoli7612/App-Rendiamo/blob/master/doc/img/006.png?raw=true" width="100%px">
