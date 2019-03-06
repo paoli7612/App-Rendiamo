@@ -4,14 +4,18 @@
 <table id="t1" class="w3-white w3-table w3-table-all w3-card-4 w3-hoverable">
   <tr class="w3-theme-l3">
     <th onclick="sortTable('t1', 0)">Titolo</th>
-    <th onclick="sortTable('t1', 1)">Materia</th>
-    <th onclick="sortTable('t1', 2)">Utente</th>
+    <th onclick="sortTable('t1', 1)">Professore</th>
+    <th onclick="sortTable('t1', 2)">Materia</th>
+    <th onclick="sortTable('t1, 3')">Data</th>
   </tr>
 <?php foreach ($lezioni as $lezione): ?>
   <tr onclick="window.location='../lezioni/?id=<?php echo $lezione->id ?>'">
     <?php
       echo '<td>'.$lezione->titolo.'</td>';
     ?>
+    <td>
+      <?php echo $lezione->utente->nome. " " . $lezione->utente->cognome; ?>
+    </td>
     <td>
       <?php
         $string = "";
@@ -22,7 +26,7 @@
       ?>
     </td>
     <td>
-      <?php echo $lezione->utente->nome. " " . $lezione->utente->cognome; ?>
+      <?php echo $lezione->getData('l j F'); ?>
     </td>
   </tr>
 <?php endforeach; ?>

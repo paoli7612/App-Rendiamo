@@ -19,8 +19,6 @@ var confirm = function(){
       <option value="blue">blue</option>
       <option value="light-blue">light-blue</option>
       <option value="red">red</option>
-      <option value="pink">pink</option>
-      <option value="purple">purple</option>
       <option value="w3schools">w3schools</option>
       <option value="black">black</option>
     </select>

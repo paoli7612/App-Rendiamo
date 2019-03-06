@@ -87,33 +87,38 @@ CREATE TABLE `materialiDiLezioni` (
 INSERT INTO `istituti` (`nome`)
   VALUES ('Marie Curie Pergine Valsugana');
 
-INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
- VALUES ('Alex', 'Sordo', 'prof@gmail.com', 'qwerty', 'professore');
-INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
-  VALUES ('Luca', 'Rippa', 'studente@gmail.com', 'qwerty', 'studente');
-INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
- VALUES ('Christian', 'Gabban', 'admin@gmail.com', 'qwerty', 'admin');
-INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`)
-  VALUES ('Nicolò', 'Pflanzer', 'test@gmail.com', 'qwerty', 'admin');
+INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
+('Alex', 'Sordo', 'prof@gmail.com', 'qwerty', 'professore'),
+('Luca', 'Rippa', 'studente@gmail.com', 'qwerty', 'studente'),
+('Christian', 'Gabban', 'admin@gmail.com', 'qwerty', 'admin'),
+('Nicolo\'', 'Pflanzer', 'test@gmail.com', 'qwerty', 'studente'),
+('Mario', 'Rossi', 'mario@gmail.com', 'qwerty', 'professore'),
+('Giovanni', 'Storti', 'giovanni@gmail.com', 'qwerty', 'studente'),
+('Giocamo', 'Poretti', 'giacomo@gmail.com', 'qwerty', 'professore'),
+('Aldo', 'Baglio', 'aldo@gmail.com', 'qwerty', 'studente');
 
 
 INSERT INTO `istitutidiutenti` (`idUtente`, `idIstituto`)
   VALUES (1, 1);
 
-INSERT INTO `lezioni` (`idUtente`,`titolo`,`data`)
-  VALUES (1, 'Romanticismo', CURRENT_TIMESTAMP);
-INSERT INTO `lezioni` (`idUtente`,`titolo`,`data`)
-  VALUES (1, 'Newton', CURRENT_TIMESTAMP);
+INSERT INTO `lezioni` (`idUtente`,`titolo`,`data`,`note`) VALUES
+(1, 'Romanticismo', CURRENT_TIMESTAMP, NULL),
+(1, 'Prima Guerra Mondiale', CURRENT_TIMESTAMP, NULL),
+(1, 'Trigonometria', CURRENT_TIMESTAMP, 'seno coseno tangente...'),
+(1, 'Cisco Packet Tracer', CURRENT_TIMESTAMP, NULL),
+(2, 'Cisco Packet Tracer', CURRENT_TIMESTAMP, NULL),
+(1, 'Newton', CURRENT_TIMESTAMP, 'In questa lezione parliamo di Newton e le sue scoperte nel ambito della fisica');
 
-INSERT INTO `materie` (`titolo`) VALUES ('Italiano');
-INSERT INTO `materie` (`titolo`) VALUES ('Storia');
-INSERT INTO `materie` (`titolo`) VALUES ('Matematica');
-INSERT INTO `materie` (`titolo`) VALUES ('Informatica');
-INSERT INTO `materie` (`titolo`) VALUES ('Inglese');
-INSERT INTO `materie` (`titolo`) VALUES ('Tedesco');
-INSERT INTO `materie` (`titolo`) VALUES ('Francese');
-INSERT INTO `materie` (`titolo`) VALUES ('Fisica');
-INSERT INTO `materie` (`titolo`) VALUES ('Chimica');
+INSERT INTO `materie` (`titolo`) VALUES
+('Italiano'),
+('Storia'),
+('Matematica'),
+('Informatica'),
+('Inglese'),
+('Tedesco'),
+('Francese'),
+('Fisica'),
+('Chimica');
 
 INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`)
   VALUES (1, 1);

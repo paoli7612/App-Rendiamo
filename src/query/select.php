@@ -51,7 +51,7 @@ function getUtenteId($id){
     return query("SELECT * FROM utenti WHERE id=$id;", "utente")[0];
 }
 
-function getLezioneTitolo($titolo){
-  return query("SELECT * FROM lezioni WHERE titolo='$titolo';", "lezione")[0];
+function getLezioneTitoloUtente($titolo, $idUtente){
+  return query("SELECT * FROM lezioni WHERE titolo='$titolo' AND idUtente='$idUtente';", "lezione")[0];
 }
 ?>

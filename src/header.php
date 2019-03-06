@@ -11,21 +11,21 @@
   include 'permit.php';
 ?>
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-<?php echo $utente->tema ?>.css">
-
+<?php $n=0 ?>
 <div class="w3-xlarge" id="header">
-  <div class="w3-bar w3-card-4 w3-theme-l5">
+  <div class="w3-bar w3-card-4 w3-theme-l4">
   	<a href="/App-Rendiamo/src/home/">
-  		<button class="w3-bar-item w3-button w3-theme-l2">
-        <div class="w3-left w3-animate-zoom">
+  		<button class="w3-bar-item w3-button w3-theme-l<?php echo ++$n?>">
+        <div class="w3-left w3-animate-zoom <?php if($utente->tema!='black') echo 'w3-text-black'?>">
           <i class="fas fa-home"></i>
         </div>
-        <div class="w3-right w3-hide-small w3-animate-left">
+        <div class="w3-right w3-hide-small w3-animate-left <?php if($utente->tema!='black') echo 'w3-text-black'?>">
           &nbsp;Home
         </div>
   		</button>
   	</a>
   	<a href="/App-Rendiamo/src/account/">
-  		<button class="w3-bar-item w3-button w3-theme-l3">
+  		<button class="w3-bar-item w3-button w3-theme-l<?php echo ++$n?>">
         <div class="w3-left w3-animate-zoom">
           <i class="fas fa-user"></i>
         </div>
@@ -35,7 +35,7 @@
   		</button>
   	</a>
   	<a href="/App-Rendiamo/src/lezioni/">
-  		<button class="w3-bar-item w3-button w3-theme-l4">
+  		<button class="w3-bar-item w3-button w3-theme-l<?php echo ++$n?>">
         <div class="w3-left w3-animate-zoom">
           <i class="fas fa-book"></i>
         </div>
@@ -46,7 +46,7 @@
   	</a>
     <?php if ($utente->tipo == 'admin'): ?>
       <a href="/App-Rendiamo/src/pannelloDiControllo/">
-    		<button class="w3-bar-item w3-right w3-button w3-theme-l4">
+    		<button class="w3-bar-item w3-right w3-button w3-theme-l<?php echo ++$n?>">
           <div class="w3-left w3-animate-zoom">
             <i class="fas fa-circle-notch"></i>
           </div>
