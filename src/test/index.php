@@ -2,7 +2,7 @@
 <html>
   <head>
     <?php include "../head.html"; ?>
-    <title> Home </title>
+    <title> Test </title>
   </head>
   <body>
     <?php include "../header.php"; ?>

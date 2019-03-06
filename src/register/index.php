@@ -2,7 +2,7 @@
 <html>
   <head>
     <?php include "../head.html"; ?>
-    <title> Home </title>
+    <title> Registrati </title>
   </head>
   <body>
     <div class="w3-panel w3-half ">
