@@ -13,6 +13,7 @@ var confirm = function(){
 <form method="post">
   <div class="w3-left">
     <select class="w3-input" name="tema" onchange="confirm()">
+      <option value="">Seleziona Tema</option>
       <option value="green">Verde</option>
       <option value="light-green">Verde chiaro</option>
       <option value="blue">Blu</option>
