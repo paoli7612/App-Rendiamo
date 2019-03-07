@@ -28,12 +28,12 @@
 
 <table id="t1" class="w3-animate-left w3-white w3-table w3-table-all w3-card-4 w3-hoverable">
   <tr class="w3-theme-l3">
-    <th onclick="sortTable('t1', 0)">Titolo</th>
+    <th class="w3-hover-theme" onclick="sortTable('t1', 0)">Titolo <i class="fas fa-chevron-down"></i></th>
     <?php if (!$isUtente): ?>
-      <th onclick="sortTable('t1', 1)">Professore</th>
+      <th class="w3-hover-theme" onclick="sortTable('t1', 1)">Professore</th>
     <?php endif; ?>
-    <th onclick="sortTable('t1', 2)">Materia</th>
-    <th onclick="sortTable('t1, 3')" class="w3-hide-small">Data</th>
+    <th class="w3-hover-theme" onclick="sortTable('t1', 2)">Materia</th>
+    <th class="w3-hover-theme" onclick="sortTable('t1', 3)" class="w3-hide-small">Data</th>
   </tr>
 <?php foreach ($lezioni as $lezione): ?>
   <tr onclick="window.location='../lezioni/?id=<?php echo $lezione->id ?>'">
