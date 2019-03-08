@@ -2,10 +2,13 @@
 <html>
   <head>
     <?php include '../_head/link.php'; ?>
-    <title></title>
+    <title>Account</title>
   </head>
   <body>
+    <?php include '../_database/connection.php' ?>
+    <?php include '../_session/start.php' ?>
     <?php include '../_head/bar.php' ?>
 
+    <?php include 'utente.php' ?>
   </body>
 </html>
