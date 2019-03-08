@@ -2,7 +2,9 @@
 
 <?php
   include "../query/database.php";
+
   session_start();
+
   if ($_SESSION['login']){
     $utente = new Utente($_SESSION['utente']);
   } else {

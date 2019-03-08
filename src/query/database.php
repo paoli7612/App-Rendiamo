@@ -6,9 +6,10 @@
 
   function query($sql, $classe){
     $conn = new mysqli("localhost", "root", "", "lele");
+    print_r($conn);
     $tabella = array();
     $result = $conn->query($sql);
-    //print_r($sql);
+    print_r($sql);
     if ($classe=="vuoto"){
       //print_r($conn->error);
       return $conn->error;}

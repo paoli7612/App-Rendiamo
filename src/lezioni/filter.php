@@ -36,22 +36,25 @@
 	}
 </style>
 
-<div class="w3-margin-top w3-right w3-animate-right">
-    <button onclick="myFunction('Demo1')" class="w3-button w3-circle w3-theme-l2" style="border-radius: 0px 20px 20px 0px;">
+<div class="w3-margin-top w3-right w3-animate-right " >
+    <button onmouseover="myFunction('Demo1')" class="w3-btn w3-circle w3-theme-l2" style="border-radius: 0px 20px 20px 0px;">
 		<i class="fas fa-search w3-small"></i>
 	</button>
-	<div id="Demo1" class="w3-hide w3-animate-right w3-half " id="input">
-	  <input class="w3-input w3-card4" type="text">
+	<div id="Demo1" class="w3-hide w3-left ">
+	  <input class="w3-input w3-card4 w3-margin-left" type="text" style="border-radius: 20px 0px 0px 20px;">
 	 </div>	
 </div>
 
 <script>
+var b = "20px 0px 0px 20px";
 function myFunction(id) {
   var x = document.getElementById(id);
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
+	document.getElementById('input').style["border-radius"]=null;
   } else { 
     x.className = x.className.replace(" w3-show", "");
+	document.getElementById('input').style["border-radius"]=b;
   }
 }
 </script>
