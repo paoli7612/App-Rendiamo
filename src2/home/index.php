@@ -2,10 +2,12 @@
 <html>
   <head>
     <?php include '../_head/link.php'; ?>
-    <title></title>
+    <title>Home</title>
   </head>
   <body>
     <?php include '../_head/bar.php' ?>
+
+    <?php include '../_database/connection.php' ?>
 
   </body>
 </html>

@@ -9,6 +9,14 @@ CREATE TABLE `istituti` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
+CREATE TABLE `temi` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `a` varchar(10) NOT NULL,
+  `b` varchar(10) NOT NULL,
+  `c` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
 CREATE TABLE `utenti` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `email` varchar(20) NOT NULL,
@@ -19,9 +27,11 @@ CREATE TABLE `utenti` (
   `rispostaSicurezza` varchar(20),
   `tipo` ENUM('studente', 'professore', 'admin') DEFAULT 'studente',
   `avatar` varchar(100),
-  `tema` varchar(100) DEFAULT 'green',
+  `idTema` int(15) DEFAULT '1',
   PRIMARY KEY (`id`),
-  UNIQUE KEY (`email`)
+  UNIQUE KEY (`email`),
+  FOREIGN KEY (`idTema`)
+    REFERENCES `temi` (`id`)
 ) ENGINE=InnoDB;
 
 CREATE TABLE `istitutiDiUtenti` (
@@ -88,6 +98,9 @@ CREATE TABLE `materialiDiLezioni` (
 
 INSERT INTO `istituti` (`nome`)
   VALUES ('Marie Curie Pergine Valsugana');
+
+INSERT INTO `temi` (`a`,`b`,`c`)
+  VALUES ('green', 'amber', 'purple');
 
 INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
 ('Alex', 'Sordo', 'prof@gmail.com', 'qwerty', 'professore'),
