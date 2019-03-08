@@ -5,9 +5,9 @@
     <title>Home</title>
   </head>
   <body>
-    <?php include '../_head/bar.php' ?>
-
     <?php include '../_database/connection.php' ?>
-
+    <?php include '../_session/start.php' ?>
+    <?php include '../_head/bar.php' ?>
+    <?php print_r($_UTENTE) ?>
   </body>
 </html>

@@ -11,23 +11,28 @@
     $tabella = array();
     $result = $conn->query($sql);
     //print_r($sql);
-    if ($classe == "vuoto" || $conn->error){
+    if ($conn->error){
+      print_r($conn->error);
+    }
+    if ($className == "vuoto"){
       //print_r($conn->error);
       return $conn->error;
     }
     if ($result->num_rows == 0) {
       return $tabella;
     } else while($row = $result->fetch_assoc()){
-      if ($classe == "utente") $oggetto = new Utente($row);
-      elseif ($classe == "lezione") $oggetto = new Lezione($row);
-      elseif ($classe == "tema") $oggetto = new Tema($row);
-      elseif ($classe == "materiale") $oggetto = new Materiale($row);
-      elseif ($classe == "materia") $oggetto = new Materia($row);
+      if ($className == "utente") $oggetto = new Utente($row);
+      elseif ($className == "lezione") $oggetto = new Lezione($row);
+      elseif ($className == "tema") $oggetto = new Tema($row);
+      elseif ($className == "materiale") $oggetto = new Materiale($row);
+      elseif ($className == "materia") $oggetto = new Materia($row);
       array_push($tabella, $oggetto);
     }
     $conn->close();
     return $tabella;
   }
+
+  include 'select.php';
 
 
 ?>

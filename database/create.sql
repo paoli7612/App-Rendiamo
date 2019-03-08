@@ -20,7 +20,7 @@ CREATE TABLE `temi` (
 CREATE TABLE `utenti` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `email` varchar(20) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(40) NOT NULL,
   `nome` varchar(20) NOT NULL,
   `cognome` varchar(20) NOT NULL,
   `domandaSicurezza` varchar(100),
@@ -103,14 +103,14 @@ INSERT INTO `temi` (`a`,`b`,`c`)
   VALUES ('green', 'amber', 'purple');
 
 INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
-('Alex', 'Sordo', 'prof@gmail.com', 'qwerty', 'professore'),
-('Luca', 'Rippa', 'studente@gmail.com', 'qwerty', 'studente'),
-('Christian', 'Gabban', 'admin@gmail.com', 'qwertyu', 'admin'),
-('Nicolo\'', 'Pflanzer', 'test@gmail.com', 'qwerty', 'studente'),
-('Mario', 'Rossi', 'mario@gmail.com', 'qwerty', 'professore'),
-('Giovanni', 'Storti', 'giovanni@gmail.com', 'qwerty', 'studente'),
-('Giocamo', 'Poretti', 'giacomo@gmail.com', 'qwerty', 'professore'),
-('Aldo', 'Baglio', 'aldo@gmail.com', 'qwerty', 'studente');
+('Alex', 'Sordo', 'prof@gmail.com', SHA('qwerty'), 'professore'),
+('Luca', 'Rippa', 'studente@gmail.com', SHA('qwerty'), 'studente'),
+('Christian', 'Gabban', 'admin@gmail.com', SHA('qwerty'), 'admin'),
+('Nicolo\'', 'Pflanzer', 'test@gmail.com', SHA('qwerty'), 'studente'),
+('Mario', 'Rossi', 'mario@gmail.com', SHA('qwerty'), 'professore'),
+('Giovanni', 'Storti', 'giovanni@gmail.com', SHA('qwerty'), 'studente'),
+('Giocamo', 'Poretti', 'giacomo@gmail.com', SHA('qwerty'), 'professore'),
+('Aldo', 'Baglio', 'aldo@gmail.com', SHA('qwerty'), 'studente');
 
 
 INSERT INTO `istitutidiutenti` (`idUtente`, `idIstituto`)
