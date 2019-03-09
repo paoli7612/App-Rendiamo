@@ -2,12 +2,14 @@
 
   class Materia {
     public $row;
+    public $id;
 
     public $lezioni;
     public $utenti;
 
     public function __construct($row){
       $this->row = $row;
+      $this->id = $row['id'];
     }
 
     public function loadUtenti(){
