@@ -1,9 +1,8 @@
 <?php
   session_start();
-
-  if ($_SESSION['login']){
+  if ($_SESSION['is_login']) {
     header('Location: home/');
   } else {
-    header('Location: login/');
+    header('Location: accedi/');
   }
 ?>
