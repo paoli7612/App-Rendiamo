@@ -1,4 +1,8 @@
 
 <?php echo $_UTENTE->row['nome'] . " " . $_UTENTE->row['cognome'] ?>
 
-<a href="../accedi/">Disconnetti</a>
+<div>
+  <a href="../accedi/">Disconnetti</a>
+  <br>
+  <a href="../cambiaPassword/">Cambia Password</a>
+</div>
