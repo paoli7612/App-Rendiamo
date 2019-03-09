@@ -2,7 +2,7 @@
 <html>
   <head>
     <?php include '../_head/link.php'; ?>
-    <title></title>
+    <title>Nuova Lezione</title>
   </head>
   <body>
     <?php include '../_database/connection.php' ?>

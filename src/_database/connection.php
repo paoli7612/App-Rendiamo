@@ -34,6 +34,7 @@
 
   include 'select.php';
   include 'insert.php';
+  include 'update.php';
 
 
 ?>

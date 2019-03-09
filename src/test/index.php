@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <?php include "../head.html"; ?>
-    <title> Test </title>
+    <?php include '../_head/link.php'; ?>
+    <title>Test</title>
   </head>
   <body>
-    <?php include "../header.php"; ?>
-    <?php permitAdmin($utente); ?>
+    <?php include '../_database/connection.php' ?>
+    <?php include '../_session/start.php' ?>
+    <?php include '../_head/bar.php' ?>
+  </body>
+</html>
+
 
     <form method="post">
       <div class="w3-panel w3-half">

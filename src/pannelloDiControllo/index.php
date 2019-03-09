@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <?php include "../head.html"; ?>
-    <title> Pannello Di Controllo </title>
+    <?php include '../_head/link.php'; ?>
+    <title>Nuova Lezione</title>
   </head>
   <body>
-    <?php include "../header.php"; ?>
-    <?php permitAdmin($utente); ?>
-    <?php include "tools.php" ?>
+    <?php include '../_database/connection.php' ?>
+    <?php include '../_session/start.php' ?>
+    <?php include '../_head/bar.php' ?>
+
+    <?php include 'tools.php' ?>
 
   </body>
 </html>
