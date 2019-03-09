@@ -1,3 +1,4 @@
+
 <p> Cera lezione per <?php echo $materia->row['titolo']; ?></p>
 <input type="text" id="search" onkeyup="update()">
 <input type="hidden" id="materia" value="<?php echo $materia->row['id']; ?>">

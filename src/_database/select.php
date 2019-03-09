@@ -73,4 +73,12 @@
       AND materiedilezioni.idLezione=lezioni.id;";
     return query($sql, 'lezione');
   }
+
+  function getLezioneTitoloUtente($titolo, $idUtente){
+    $sql = "SELECT *
+    FROM lezioni
+    WHERE lezioni.idUtente='$idUtente'
+      AND lezioni.titolo='$titolo';";
+    return query($sql, 'lezione');
+  }
 ?>

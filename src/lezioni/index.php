@@ -9,7 +9,9 @@
     <?php include '../_session/start.php' ?>
     <?php include '../_head/bar.php' ?>
 
+    <a href="../nuovaLezione/">crea nuova lezione</a>
     <?php
+
       if (isset($_GET['materia'])){
         $materia = getMateriaId($_GET['materia'])[0];
         include 'tabella.php';
