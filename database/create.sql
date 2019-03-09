@@ -79,6 +79,7 @@ CREATE TABLE `materiali` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `indirizzo` varchar(300) NOT NULL,
   `titolo` varchar(100) NOT NULL,
+  `tipo` varchar(10) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE (`titolo`),
   UNIQUE KEY (`indirizzo`)
@@ -116,6 +117,10 @@ INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
 INSERT INTO `istitutidiutenti` (`idUtente`, `idIstituto`)
   VALUES (1, 1);
 
+INSERT INTO `materiali` (`indirizzo`, `titolo`, `tipo`)
+  VALUES ("asdgewr","asf","video"), ("asdgewrgg","dgdfg",NULL), ("asdgewjhgr","ahthjtsf","pdf");
+
+
 INSERT INTO `lezioni` (`idUtente`,`titolo`,`data`,`note`) VALUES
 (1, 'Romanticismo', CURRENT_TIMESTAMP, NULL),
 (2, 'Prima Guerra Mondiale', CURRENT_TIMESTAMP, NULL),
@@ -123,6 +128,9 @@ INSERT INTO `lezioni` (`idUtente`,`titolo`,`data`,`note`) VALUES
 (2, 'Cisco Packet Tracer', CURRENT_TIMESTAMP, NULL),
 (3, 'Cisco Packet Tracer', CURRENT_TIMESTAMP, NULL),
 (1, 'Newton', CURRENT_TIMESTAMP, 'In questa lezione parliamo di Newton e le sue scoperte nel ambito della fisica');
+
+INSERT INTO `materialidilezioni` (`idLezione`, `idMateriale`)
+VALUES (1,1), (1,2), (2,3);
 
 INSERT INTO `materie` (`id`,`titolo`) VALUES
 (1,'Italiano'),

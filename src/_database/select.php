@@ -81,4 +81,14 @@
       AND lezioni.titolo='$titolo';";
     return query($sql, 'lezione');
   }
+
+  // MATERIALE
+
+  function getMaterialiIdLezione($idLezione){
+    $sql = "SELECT materiali.*
+    FROM materiali,materialidilezioni as r
+    WHERE materiali.id=r.idMateriale
+      AND r.idLezione=$idLezione;";
+    return query($sql, 'materiale');
+  }
 ?>
