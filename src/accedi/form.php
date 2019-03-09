@@ -2,7 +2,7 @@
     <label for="email">
         Email
     </label>
-    <input id="email" name="email">
+    <input id="email" name="email" value="<?php echo (isset($_GET['email'])) ? $_GET['email'] : "" ; ?>">
     <label for="password">
         Password
     </label>

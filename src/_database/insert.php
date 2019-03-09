@@ -16,4 +16,12 @@
     return query($sql, 'vuoto');
   }
 
+  // UTENTE
+
+  function newUtente($email, $password, $nome, $cognome, $domandaSicurezza, $rispostaSicurezza){
+    $sql = "INSERT INTO utenti (`email`, `password`, `nome`, `cognome`, `domandaSicurezza`, `rispostaSicurezza`)
+      VALUES ('$email', SHA('$password'), '$nome', '$cognome', '$domandaSicurezza', '$rispostaSicurezza')";
+    return query($sql, 'vuoto');
+  }
+
 ?>
