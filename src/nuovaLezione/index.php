@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <?php include "../head.html"; ?>
-    <title> Nuova Lezione </title>
+    <?php include '../_head/link.php'; ?>
+    <title></title>
   </head>
   <body>
-    <?php include "../header.php"; ?>
-    <?php permitProfessore($utente); ?>
-    <?php $materie = getMaterie(); ?>
-    <?php include "form.php"; ?>
-    <?php include "script.php"; ?>
+    <?php include '../_head/bar.php' ?>
 
   </body>
 </html>

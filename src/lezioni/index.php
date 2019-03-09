@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <?php include "../head.html"; ?>
-    <title> Lezioni </title>
+    <?php include '../_head/link.php'; ?>
+    <title>Lezioni</title>
   </head>
   <body>
-    <?php include "../header.php"; ?>
-    <div class="w3-panel">
-      <?php
-        if (isset($_GET['id'])){
-          include 'dettagli.php';
-        } else {
-          echo '<h1 class="w3-left">Lezioni</h1>';
-          include 'filter.php';
-          if ($utente->tipo != 'studente'){
-            include 'nuova.php';
-          }
-          include 'tabella.php';
-        }
-      ?>
-    </div>
+    <?php include '../_database/connection.php' ?>
+    <?php include '../_session/start.php' ?>
+    <?php include '../_head/bar.php' ?>
 
+    <?php
+      if (isset($_GET['materia'])){
+        $materia = getMateriaId($_GET['materia'])[0];
+        include 'tabella.php';
+      } else {
+        include 'selezionaMateria.php';
+      }
+    ?>
   </body>
 </html>
