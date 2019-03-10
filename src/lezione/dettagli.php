@@ -1,6 +1,6 @@
 <?php echo $lezione->row['titolo'] ?>
 <?php if ($lezione->id == $_UTENTE->id): ?>
-  <a href="../modificaLezione/">Modifica lezione</a>
+  <a href="../modificaLezione/?id=<?php echo $lezione->id ?>">Modifica lezione</a>
 <?php endif; ?>
 
 <?php $lezione->loadMateriali(); ?>
@@ -15,5 +15,16 @@
     <?php else: ?>
       <span style="color: grey">formato invalido</span>
     <?php endif; ?>
+  </div>
+<?php endforeach; ?>
+
+
+<?php $lezione->loadEtichette(); ?>
+
+<?php foreach ($lezione->etichette as $etichetta): ?>
+  <div>
+    <a href="../lezioni/?etichetta=<?php echo $etichetta->id ?>">
+      <?php echo $etichetta->row['nome'] ?>
+    </a>
   </div>
 <?php endforeach; ?>

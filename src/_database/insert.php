@@ -24,4 +24,18 @@
     return query($sql, 'vuoto');
   }
 
+  // ETICHETTA
+
+  function newEtichetta($nome){
+    $sql = "INSERT INTO etichette (`nome`)
+      VALUES ('$nome');";
+    return query($sql, 'vuoto');
+  }
+
+  function newEtichettaDiLezione($idLezione, $idEtichetta){
+    $sql = "INSERT INTO etichettedilezioni (`idLezione`,`idEtichetta`)
+      VALUES ($idLezione, $idEtichetta);";
+    return query($sql, 'vuoto');
+  }
+
 ?>

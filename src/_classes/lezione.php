@@ -6,6 +6,7 @@
 
     public $utente;
     public $materiali;
+    public $etichette;
 
     public function __construct($row){
       $this->row = $row;
@@ -19,6 +20,11 @@
     public function loadMateriali(){
       $this->materiali = getMaterialiIdLezione($this->id);
     }
+
+    public function loadEtichette(){
+      $this->etichette = getEtichetteIdLezione($this->id);
+    }
+
   }
 
 ?>

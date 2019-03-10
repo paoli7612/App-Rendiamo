@@ -4,6 +4,7 @@
   include '../_classes/tema.php';
   include '../_classes/utente.php';
   include '../_classes/materia.php';
+  include '../_classes/etichetta.php';
 
   function query($sql, $className){
     $conn = new mysqli("localhost", "root", "", "lele");
@@ -26,6 +27,7 @@
       elseif ($className == "tema") $oggetto = new Tema($row);
       elseif ($className == "materiale") $oggetto = new Materiale($row);
       elseif ($className == "materia") $oggetto = new Materia($row);
+      elseif ($className == "etichetta") $oggetto = new Etichetta($row);
       array_push($tabella, $oggetto);
     }
     $conn->close();

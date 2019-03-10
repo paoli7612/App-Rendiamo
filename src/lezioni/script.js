@@ -1,10 +1,11 @@
 var input = document.getElementById('search');
-var materia = document.getElementById('materia').value;
+var filtro = document.getElementById('filtro').value;
 var table = document.getElementById('result');
-var xhr = new XMLHttpRequest();
 
 var update = function(json) {
-  $json = $.getJSON('../_queries/lezioni.php?search='+input.value+'&materia='+materia)
+  console.log('../_queries/lezioni.php?search='+input.value+'&filtro='+filtro);
+  $json = $.getJSON('../_queries/lezioni.php?search='+input.value+'&filtro='+filtro);
+  console.log($json);
   $json.done(function($data){
     cleanSearch();
     for (var i=0; i<$data.length; i++){
@@ -14,9 +15,9 @@ var update = function(json) {
 }
 
 var cleanSearch = function(text){
-  $('tr').remove();
+  $('tr.card').remove();
 }
 
 var addSearch = function(text){
-  console.log($('table#result').after('<tr><td>'+text+'</td></tr>'));
+  console.log($('table#result').after('<tr class="card"><td>'+text+'</td></tr>'));
 }

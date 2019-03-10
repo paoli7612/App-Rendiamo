@@ -3,14 +3,23 @@
     $titolo = $_POST['titolo'];
     $data = $_POST['data'];
     $note = $_POST['note'];
+    $etichette = $_POST['etichette'];
     unset($_POST['titolo']);
     unset($_POST['data']);
     unset($_POST['note']);
+    unset($_POST['etichette']);
     $errors = newLezione($_UTENTE->id, addslashes($titolo), $data, addslashes($note));
     if ($_POST){
       $lezione = getLezioneTitoloUtente(addslashes($titolo), $_UTENTE->id)[0];
       $_SESSION['create_lezione'] = true;
-      print_r($lezione->id);
+
+      foreach (explode(" ", $etichette) as $nome) {
+        newEtichetta($nome);
+        $etichetta = getEtichettaNome($nome)[0];
+        newEtichettaDiLezione($lezione->id, $etichetta->id);
+      }
+
+
       foreach ($_POST as $idMateria => $value) {
         newMateriaDiLezione($idMateria, $lezione->id);
       }

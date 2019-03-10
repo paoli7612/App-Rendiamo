@@ -2,7 +2,8 @@
     include '../_database/connection.php';
 
     $search = $_GET['search'];
-    $materia = $_GET['materia'];
-    $materie = getLezioniSearchMateria($search,$materia);
-    echo json_encode($materie);
+    $lezioni = getLezioniSearchMateria($search,$_GET['materia']);
+    echo json_encode($lezioni);
+    $lezioni = getLezioniSearchEtichetta($search, $_GET['etichetta']);
+    echo json_encode($lezioni);
 ?>

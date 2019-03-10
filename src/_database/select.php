@@ -57,7 +57,7 @@
     return query($sql, 'lezione');
   }
 
-  function getLezioniMateria($idMateria){
+  function getLezioniIdMateria($idMateria){
     $sql = "SELECT lezioni.*
     FROM lezioni, materiedilezioni
     WHERE materiedilezioni.idMateria=$idMateria
@@ -65,12 +65,29 @@
     return query($sql, 'lezione');
   }
 
+  function getLezioniIdEtichetta($idEtichetta){
+    $sql = "SELECT lezioni.*
+    FROM lezioni, etichettedilezioni as r
+    WHERE r.idEtichetta=$idEtichetta
+      AND r.idLezione=lezioni.id;";
+    return query($sql, 'lezione');
+  }
+
   function getLezioniSearchMateria($search,$idMateria){
-    $sql = "SELECT DISTINCT lezioni.titolo
+    $sql = "SELECT DISTINCT lezioni.*
     FROM lezioni, materiedilezioni
     WHERE titolo LIKE '%$search%'
       AND materiedilezioni.idMateria=$idMateria
       AND materiedilezioni.idLezione=lezioni.id;";
+    return query($sql, 'lezione');
+  }
+
+  function getLezioniSearchEtichetta($search,$idEtichetta){
+    $sql = "SELECT DISTINCT lezioni.*
+    FROM lezioni, etichettedilezioni as r
+    WHERE titolo LIKE '%$search%'
+      AND r.idEtichetta=$idEtichetta
+      AND r.idLezione=lezioni.id;";
     return query($sql, 'lezione');
   }
 
@@ -90,5 +107,29 @@
     WHERE materiali.id=r.idMateriale
       AND r.idLezione=$idLezione;";
     return query($sql, 'materiale');
+  }
+
+  // ETICHETTA
+
+  function getEtichettaId($id){
+    $sql = "SELECT *
+    FROM etichette
+    WHERE etichette.id=$id;";
+    return query($sql, 'etichetta');
+  }
+
+  function getEtichettaNome($nome){
+    $sql = "SELECT *
+    FROM etichette
+    WHERE etichette.nome='$nome';";
+    return query($sql, 'etichetta');
+  }
+
+  function getEtichetteIdLezione($idLezione){
+    $sql = "SELECT etichette.*
+    FROM etichette,etichettedilezioni as r
+    WHERE etichette.id=r.idEtichetta
+      AND r.idLezione=$idLezione;";
+    return query($sql, 'etichetta');
   }
 ?>

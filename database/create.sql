@@ -17,6 +17,13 @@ CREATE TABLE `temi` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
+CREATE TABLE `etichette` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE (`nome`)
+) ENGINE=InnoDB;
+
 CREATE TABLE `utenti` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `email` varchar(20) NOT NULL,
@@ -97,6 +104,18 @@ CREATE TABLE `materialiDiLezioni` (
     REFERENCES `materiali` (`id`)
 ) ENGINE=InnoDB;
 
+CREATE TABLE `etichettedilezioni` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `idLezione`  int(15),
+  `idEtichetta`  int(15),
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`idLezione`)
+    REFERENCES `lezioni` (`id`)
+    ON DELETE CASCADE,
+  FOREIGN KEY (`idEtichetta`)
+    REFERENCES `etichette` (`id`)
+) ENGINE=InnoDB;
+
 INSERT INTO `istituti` (`nome`)
   VALUES ('Marie Curie Pergine Valsugana');
 
@@ -120,6 +139,8 @@ INSERT INTO `istitutidiutenti` (`idUtente`, `idIstituto`)
 INSERT INTO `materiali` (`indirizzo`, `titolo`, `tipo`)
   VALUES ("asdgewr","asf","video"), ("asdgewrgg","dgdfg",NULL), ("asdgewjhgr","ahthjtsf","pdf");
 
+INSERT INTO `etichette` (`nome`)
+  VALUES ('dante'),('naturalismo'),('coseno'),('seno');
 
 INSERT INTO `lezioni` (`idUtente`,`titolo`,`data`,`note`) VALUES
 (1, 'Romanticismo', CURRENT_TIMESTAMP, NULL),
@@ -150,3 +171,8 @@ INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`) VALUES
 (4,4),
 (5,4),
 (6,8);
+
+INSERT INTO `etichettedilezioni` (`idLezione`, `idEtichetta`) VALUES
+(1,1),(1,2),
+(2,2),
+(3,2),(3,3);
