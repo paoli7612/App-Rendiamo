@@ -25,9 +25,16 @@
       return $ipaddress;
   }
 
+function logQuery($sql, $ip){
+  $log = fopen("../_database/log.txt", "a");
+  $sql = preg_replace('/\s+/', ' ', $sql);
+  fwrite($log, $ip.") ". $sql."\n");
+  fclose($log);
+}
+
   function query($sql, $className){
     $conn = new mysqli("localhost", "root", "", "lele");
-    print_r(get_client_ip());
+    logQuery($sql, get_client_ip());
     //print_r($conn);
     $tabella = array();
     $result = $conn->query($sql);

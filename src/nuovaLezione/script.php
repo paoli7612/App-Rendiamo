@@ -26,7 +26,7 @@
       if ($errors){
         echo 'esiste gia una lezione con questo titolo da te creata';
       } else {
-        //header('Location: /App-Rendiamo/src/lezioni/?id='.$lezione->id);
+        header('Location: /App-Rendiamo/src/lezioni/?id='.$lezione->id);
       }
     } else {
       echo 'nessuna materia selezionata';

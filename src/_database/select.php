@@ -2,6 +2,12 @@
 
   // UTENTE
 
+  function getUtenti(){
+    $sql = "SELECT *
+    FROM utenti;";
+    return query($sql, 'utente');
+  }
+
   function getUtenteEmail($email){
     $sql = "SELECT *
     FROM utenti

@@ -15,7 +15,7 @@
       if (isset($_GET['materia'])){
         $materia = getMateriaId($_GET['materia'])[0];
         $lezioni = getLezioniIdMateria($materia->row['id']);
-        include 'tabella.php';
+        include 'selezionaLezione.php';
       } else {
         include 'selezionaMateria.php';
       }
