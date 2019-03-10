@@ -15,7 +15,7 @@
       </tr>
     <?php endforeach; ?>
   </table>
-  <input type="submit" value="Conferma">
+  <button type="submit" >Crea lezione</button>
 </form>
 
 <script src="script.js">

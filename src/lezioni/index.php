@@ -16,11 +16,6 @@
         $materia = getMateriaId($_GET['materia'])[0];
         $lezioni = getLezioniIdMateria($materia->row['id']);
         include 'tabella.php';
-      } elseif (isset($_GET['etichetta'])) {
-        $etichetta = getEtichettaId($_GET['etichetta'])[0];
-        $lezioni = getLezioniIdEtichetta($etichetta->row['id']);
-
-        include 'tabella.php';
       } else {
         include 'selezionaMateria.php';
       }
