@@ -123,14 +123,25 @@ INSERT INTO `temi` (`a`,`b`,`c`)
   VALUES ('green', 'amber', 'purple');
 
 INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
-('Alex', 'Sordo', 'prof@gmail.com', SHA('qwerty'), 'professore'),
-('Luca', 'Rippa', 'studente@gmail.com', SHA('qwerty'), 'studente'),
-('Christian', 'Gabban', 'admin@gmail.com', SHA('qwerty'), 'admin'),
-('Nicolo\'', 'Pflanzer', 'test@gmail.com', SHA('qwerty'), 'studente'),
-('Mario', 'Rossi', 'mario@gmail.com', SHA('qwerty'), 'professore'),
-('Giovanni', 'Storti', 'giovanni@gmail.com', SHA('qwerty'), 'studente'),
+
+('Alex', 'Sordo', 'prof@gmail.com', SHA('qwerty60'), 'admin'),
+('Luca', 'Rippa', 'studente@gmail.com', SHA('qwerty71'), 'adimn'),
+('Christian', 'Gabban', 'admin@gmail.com', SHA('qwerty66'), 'admin'),
+('Nicolo\'', 'Pflanzer', 'test01@gmail.com', SHA('qwerty27'), 'admin'),
+('Tommaso', 'Paoli', 'test02@gmail.com', SHA('qwerty81'), 'admin'),
+('Simone', 'Paoli', 'mario@gmail.com', SHA('qwerty93'), 'admin'),
+('Grassi', 'Manuel', 'giovanni@gmail.com', SHA('qwerty33'), 'admin'),
+
 ('Giocamo', 'Poretti', 'giacomo@gmail.com', SHA('qwerty'), 'professore'),
 ('Aldo', 'Baglio', 'aldo@gmail.com', SHA('qwerty'), 'studente');
+('Lorenzo', 'Stoi', 'lorenzo@gmail.com', SHA('qwerty'), 'professore'),
+('Gino', 'Porro', 'gino@gmail.com', SHA('qwerty'), 'professore'),
+('Giocamo', 'Leonardi', 'giacomo@gmail.com', SHA('qwerty'), 'professore'),
+('Gino', 'Baglio', 'aldo@gmail.com', SHA('qwerty'), 'studente');
+('Simona', 'Dalla', 'lorenzo@gmail.com', SHA('qwerty'), 'professore'),
+('Beppe', 'Grillo', 'gino@gmail.com', SHA('qwerty'), 'professore'),
+('Pippa', 'Nera', 'pippo@gmail.com', SHA('qwerty'), 'studente'),
+('Pippo', 'Freso', 'pippo@gmail.com', SHA('qwerty'), 'studente');
 
 
 INSERT INTO `istitutidiutenti` (`idUtente`, `idIstituto`)
@@ -143,15 +154,27 @@ INSERT INTO `etichette` (`nome`)
   VALUES ('dante'),('naturalismo'),('coseno'),('seno');
 
 INSERT INTO `lezioni` (`idUtente`,`titolo`,`data`,`note`) VALUES
-(1, 'Romanticismo', CURRENT_TIMESTAMP, NULL),
-(2, 'Prima Guerra Mondiale', CURRENT_TIMESTAMP, NULL),
-(4, 'Trigonometria', CURRENT_TIMESTAMP, 'seno coseno tangente...'),
-(2, 'Cisco Packet Tracer', CURRENT_TIMESTAMP, NULL),
-(3, 'Cisco Packet Tracer', CURRENT_TIMESTAMP, NULL),
-(1, 'Newton', CURRENT_TIMESTAMP, 'In questa lezione parliamo di Newton e le sue scoperte nel ambito della fisica');
+(8, 'Romanticismo', CURRENT_TIMESTAMP, NULL),
+(8, 'Prima Guerra Mondiale', CURRENT_TIMESTAMP, NULL),
+(10, 'Trigonometria', CURRENT_TIMESTAMP, 'seno coseno tangente...'),
+(12, 'Cisco Packet Tracer', CURRENT_TIMESTAMP, NULL),
+(14, 'Cisco Packet Tracer', CURRENT_TIMESTAMP, NULL),
+(11, 'Newton', CURRENT_TIMESTAMP, 'In questa lezione parliamo di Newton e le sue scoperte nel ambito della fisica');
+(11, 'Dante', CURRENT_TIMESTAMP, 'Dante come pochi sapeva che...'),
+(15, 'Dante', CURRENT_TIMESTAMP, NULL),
+(12, 'Tempi verbali', CURRENT_TIMESTAMP, 'Grammatica inglese e italiana')
 
 INSERT INTO `materialidilezioni` (`idLezione`, `idMateriale`)
-VALUES (1,1), (1,2), (2,3);
+VALUES 
+(1,1), (1,2), 
+(2,2),
+(3,3),
+(4,4),
+(5,4), 
+(6,3), (6,8),
+(7,1), 
+(8,1), 
+(9,1), (9,5);
 
 INSERT INTO `materie` (`id`,`titolo`) VALUES
 (1,'Italiano'),
@@ -165,10 +188,11 @@ INSERT INTO `materie` (`id`,`titolo`) VALUES
 (9,'Chimica');
 
 INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`) VALUES
-(1,1),(1,2),
+(1,1), (1,2), 
 (2,2),
-(3,8),(3,3),
+(3,3),
 (4,4),
+<<<<<<< HEAD
 (5,4),
 (6,8);
 
@@ -176,3 +200,10 @@ INSERT INTO `etichettedilezioni` (`idLezione`, `idEtichetta`) VALUES
 (1,1),(1,2),
 (2,2),
 (3,2),(3,3);
+=======
+(5,4), 
+(6,3), (6,8),
+(7,1), 
+(8,1), 
+(9,1), (9,5);
+>>>>>>> lucarippa-patch-1
