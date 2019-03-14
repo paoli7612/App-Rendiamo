@@ -130,10 +130,9 @@ INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
 ('Luca', 'Rippa', 'studente@gmail.com', SHA('qwerty71'), 'admin'),
 ('Christian', 'Gabban', 'admin@gmail.com', SHA('qwerty66'), 'admin'),
 ('Nicolo\'', 'Pflanzer', 'test01@gmail.com', SHA('qwerty27'), 'admin'),
-('Tommaso', 'Paoli', 'test02@gmail.com', SHA('qwerty81'), 'admin'),
+('Tommaso', 'Paoli', 'root', SHA('qwerty'), 'admin'),
 ('Simone', 'Paoli', 'mario@gmail.com', SHA('qwerty93'), 'admin'),
 ('Grassi', 'Manuel', 'giovanni@gmail.com', SHA('qwerty33'), 'admin'),
-
 ('Giocamo', 'Poretti', 'giacomo@gmail.com', SHA('qwerty'), 'professore'),
 ('Aldo', 'Baglio', 'aldo1@gmail.com', SHA('qwerty'), 'studente'),
 ('Lorenzo', 'Stoi', 'lorenzo@gmail.com', SHA('qwerty'), 'professore'),
