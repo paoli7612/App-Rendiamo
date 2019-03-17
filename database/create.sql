@@ -130,7 +130,7 @@ INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
 ('Luca', 'Rippa', 'studente@gmail.com', SHA('qwerty71'), 'admin'),
 ('Christian', 'Gabban', 'admin@gmail.com', SHA('qwerty66'), 'admin'),
 ('Nicolo\'', 'Pflanzer', 'test01@gmail.com', SHA('qwerty27'), 'admin'),
-('Tommaso', 'Paoli', 'root', SHA('qwerty'), 'admin'),
+('Tommaso', 'Paoli', 'admin@root', SHA('qwerty'), 'admin'),
 ('Simone', 'Paoli', 'mario@gmail.com', SHA('qwerty93'), 'admin'),
 ('Grassi', 'Manuel', 'giovanni@gmail.com', SHA('qwerty33'), 'admin'),
 ('Giocamo', 'Poretti', 'giacomo@gmail.com', SHA('qwerty'), 'professore'),
@@ -148,9 +148,9 @@ INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
 INSERT INTO `istitutidiutenti` (`idUtente`, `idIstituto`)
   VALUES (1, 1);
 
-INSERT INTO `materiali` (`id`, `indirizzo`, `titolo`, `tipo`) VALUES 
-  (1, "asdgewr","Italiano","video"), 
-  (2, "asdgewrgg","Storia",NULL), 
+INSERT INTO `materiali` (`id`, `indirizzo`, `titolo`, `tipo`) VALUES
+  (1, "asdgewr","Italiano","video"),
+  (2, "asdgewrgg","Storia",NULL),
   (3, "asdgewjhgr","Matematica","pdf"),
   (4, "asdgewjh3gr","Informatica","pdf"),
   (5, "asdgewj4hgr","Inglese","pdf"),
@@ -182,15 +182,15 @@ INSERT INTO `materie` (`id`,`titolo`) VALUES
 (9,'Chimica');
 
 INSERT INTO `materialidilezioni` (`idLezione`, `idMateriale`)
-VALUES 
-(1,1), (1,2), 
+VALUES
+(1,1), (1,2),
 (2,2),
 (3,3),
 (4,4),
-(5,4), 
+(5,4),
 (6,3), (6,8),
-(7,1), 
-(8,1), 
+(7,1),
+(8,1),
 (9,1), (9,5);
 
 INSERT INTO `etichette` (`id`, `nome`) VALUES
@@ -214,7 +214,7 @@ INSERT INTO `etichette` (`id`, `nome`) VALUES
 (18, 'romantico');
 
 INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`) VALUES
-(1,1), (1,2), 
+(1,1), (1,2),
 (2,2),
 (3,3),
 (4,4),
@@ -225,10 +225,6 @@ INSERT INTO `etichettedilezioni` (`idLezione`, `idEtichetta`) VALUES
 (1,18),
 (2,6), (2,7), (2,8), (2,9), (2,10),
 (3,1),(3,2), (3,3), (3,4), (3,5),
-(7,14), (7,15), (7,16), 
-(8,1), 
+(7,14), (7,15), (7,16),
+(8,1),
 (9,1), (9,5);
-
-
-
-
