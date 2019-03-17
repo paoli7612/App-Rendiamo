@@ -9,7 +9,4 @@ A partire dal 5/02/2019 il sito verrà hostato al indirizzo 93.49.97.47
  - importare in phpmyadmin il file **database/create.sql**
  - visualizzare la pagina web **localhost/App-Rendiamo/**
 
-
-
-
-
+<img src="doc/img/007.png"/>
