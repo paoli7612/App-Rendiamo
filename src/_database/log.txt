@@ -99,3 +99,8 @@
 127.0.0.1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
 127.0.0.1) SELECT * FROM materie WHERE id=3;
 127.0.0.1) SELECT lezioni.* FROM lezioni, materiedilezioni WHERE materiedilezioni.idMateria=3 AND materiedilezioni.idLezione=lezioni.id;
+127.0.0.1) SELECT * FROM utenti WHERE email='admin@root';
+127.0.0.1) SELECT * FROM utenti WHERE email='admin@root' AND password=SHA('qwertsdfds');
+127.0.0.1) SELECT * FROM utenti WHERE email='admin@gmaias';
+127.0.0.1) SELECT * FROM utenti WHERE email='admin@root';
+127.0.0.1) SELECT * FROM utenti WHERE email='admin@root' AND password=SHA('qwerty');

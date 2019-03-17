@@ -8,6 +8,5 @@
     <?php include '../_database/connection.php'; ?>
     <?php include 'post.php'; ?>
     <?php include 'form.php'; ?>
-    <?php print_r($_SESSION) ?>
   </body>
 </html>
