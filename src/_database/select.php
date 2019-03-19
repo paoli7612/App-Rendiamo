@@ -23,6 +23,14 @@
     return query($sql, 'utente');
   }
 
+  function getUtentiCountLezioni(){
+    $sql = "SELECT utenti.*, COUNT(lezioni.id) as countLezioni
+    FROM utenti, lezioni
+    WHERE utenti.id = lezioni.idUtente
+    GROUP BY utenti.id;";
+    return query($sql, 'materia');
+  }
+
   // MATERIA
 
   function getMaterie(){
@@ -48,6 +56,13 @@
   }
 
   // LEZIONE
+
+  function getLezioniLimit($limit){
+    $sql = "SELECT *
+    FROM lezioni
+    LIMIT $limit";
+    return query($sql, 'lezione');
+  }
 
   function getLezioniSearch($search){
     $sql = "SELECT DISTINCT titolo
@@ -104,6 +119,24 @@
       AND lezioni.titolo='$titolo';";
     return query($sql, 'lezione');
   }
+
+  function getLezioniIdUtente($idUtente){
+    $sql = "SELECT *
+    FROM lezioni
+    WHERE lezioni.idUtente=$idUtente;";
+    return query($sql, 'lezione');
+  }
+
+  function getLezioniIdUtenteIdMateria($idMateria,$idUtente){
+    $sql = "SELECT lezioni.*
+    FROM lezioni, materiedilezioni
+    WHERE lezioni.idUtente=$idUtente
+      AND materiedilezioni.idMateria=$idMateria
+      AND materiedilezioni.idLezione=lezioni.id;";
+    return query($sql, 'lezione');
+  }
+
+
 
   // MATERIALE
 

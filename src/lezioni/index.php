@@ -9,16 +9,27 @@
     <?php include '../_session/start.php' ?>
     <?php include '../_head/bar.php' ?>
 
+
     <a href="../nuovaLezione/">crea nuova lezione</a>
     <?php
+      include 'search.php';
+      include 'selezionaMateria.php';
+      include 'selezionaUtente.php';
 
-      if (isset($_GET['materia'])){
-        $materia = getMateriaId($_GET['materia'])[0];
-        $lezioni = getLezioniIdMateria($materia->row['id']);
-        include 'selezionaLezione.php';
+      $m = isset($_GET['materia']);
+      $u = isset($_GET['utente']);
+
+      if ($m && $u){
+        $lezioni = getLezioniIdUtenteIdMateria($_GET['materia'], $_GET['utente']);
+      } elseif($m){
+        $lezioni = getLezioniIdMateria($_GET['materia']);
+      } elseif($u){
+        $lezioni = getLezioniIdUtente($_GET['utente']);
       } else {
-        include 'selezionaMateria.php';
+        $lezioni = getLezioniLimit(100);
       }
+
+      include 'tabella.php';
     ?>
   </body>
 </html>
