@@ -1,30 +1,20 @@
-<?php echo $lezione->row['titolo'] ?>
-<?php if ($lezione->id == $_UTENTE->id): ?>
-  <a href="../modificaLezione/?id=<?php echo $lezione->id ?>">Modifica lezione</a>
-<?php endif; ?>
 
-<?php $lezione->loadMateriali(); ?>
-
-<?php foreach ($lezione->materiali as $materiale): ?>
-  <div>
-    <?php echo $materiale->row['titolo'] ?>
-    <?php if ($materiale->row['tipo'] == 'video'): ?>
-      <a href="#">Guarda Video</a>
-    <?php elseif ($materiale->row['tipo'] == 'pdf'): ?>
-      <a href="#">Download pdf</a>
-    <?php else: ?>
-      <span style="color: grey">formato invalido</span>
+<div class="w3-panel">
+  <div class="w3-panel w3-card-4 w3-blue">
+    <h1 class="w3-left"><?php echo $lezione->row['titolo'] ?></h1>
+    <?php if ($lezione->row['idUtente'] == $_UTENTE->id): ?>
+      <h2 class="w3-right">
+        &nbsp;&nbsp;
+      <a href="../modificaLezione/?id=<?php echo $lezione->id ?>">
+        <button class="w3-btn">
+          <i class="fas fa-edit"></i>
+        </button>
+      </a>
+    </h2>
     <?php endif; ?>
   </div>
-<?php endforeach; ?>
+</div>
 
+<?php include 'materiali.php' ?>
 
-<?php $lezione->loadEtichette(); ?>
-
-<?php foreach ($lezione->etichette as $etichetta): ?>
-  <div>
-    <a href="../lezioni/?etichetta=<?php echo $etichetta->id ?>">
-      <?php echo $etichetta->row['nome'] ?>
-    </a>
-  </div>
-<?php endforeach; ?>
+<?php include 'etichette.php' ?>

@@ -14,7 +14,7 @@
     }
 
     public function loadUtente(){
-      $this->utente = getUtenteId($this->row["idUtente"]);
+      $this->utente = getUtenteId($this->row["idUtente"])[0];
     }
 
     public function loadMateriali(){

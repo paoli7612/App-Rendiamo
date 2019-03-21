@@ -8,6 +8,13 @@
     return query($sql, 'utente');
   }
 
+  function getUtenteId($id){
+    $sql = "SELECT *
+    FROM utenti
+    WHERE id=$id;";
+    return query($sql, 'utente');
+  }
+
   function getUtenteEmail($email){
     $sql = "SELECT *
     FROM utenti
@@ -58,6 +65,36 @@
 
   // LEZIONE
 
+  function getLezioniIdMateriaRicerca($idMateria, $ricerca){
+    $sql = "SELECT DISTINCT lezioni.*
+    FROM lezioni, materiedilezioni, etichettedilezioni, etichette
+    WHERE materiedilezioni.idLezione=lezioni.id
+      AND materiedilezioni.idMateria=$idMateria
+      AND etichettedilezioni.idLezione=lezioni.id
+      AND etichettedilezioni.idEtichetta=etichette.id
+      AND (etichette.nome LIKE '%$ricerca%' OR lezioni.titolo LIKE '%$ricerca%');";
+    return query($sql, 'lezione');
+  }
+
+  function getLezioniIdUtenteRicerca($idUtente, $ricerca){
+    $sql = "SELECT DISTINCT lezioni.*
+    FROM lezioni, etichettedilezioni, etichette
+    WHERE lezioni.idUtente=$idUtente
+      AND etichettedilezioni.idLezione=lezioni.id
+      AND etichettedilezioni.idEtichetta=etichette.id
+      AND (etichette.nome LIKE '%$ricerca%' OR lezioni.titolo LIKE '%$ricerca%');";
+    return query($sql, 'lezione');
+  }
+
+  function getLezioniRicerca($ricerca){
+    $sql = "SELECT DISTINCT lezioni.*
+    FROM lezioni, etichettedilezioni, etichette
+    WHERE etichettedilezioni.idLezione=lezioni.id
+      AND etichettedilezioni.idEtichetta=etichette.id
+      AND (etichette.nome LIKE '%$ricerca%' OR lezioni.titolo LIKE '%$ricerca%');";
+    return query($sql, 'lezione');
+  }
+
   function getLezioniLimit($limit){
     $sql = "SELECT *
     FROM lezioni
@@ -66,7 +103,7 @@
   }
 
   function getLezioniSearch($search){
-    $sql = "SELECT DISTINCT titolo
+    $sql = "SELECT DISTINCT id, titolo
     FROM lezioni
     WHERE titolo LIKE '%$search%';";
     return query($sql, 'lezione');

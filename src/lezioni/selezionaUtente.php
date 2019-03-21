@@ -1,17 +1,21 @@
 <?php $utenti = getUtentiCountLezioni(); ?>
 
-<h4>Seleziona il docente che ha creato la lezione che stai cercando</h4>
-
-<?php foreach ($utenti as $utente): ?>
-
-  <button onclick="window.location='../lezioni/?utente=<?php echo $utente->id; ?><?php if (isset($_GET['materia'])){ echo '&materia='.$_GET['materia'];} ?>'"
-    <?php if (isset($_GET['utente']) && $_GET['utente'] == $utente->id): ?>
-      class="btn btn-primary"
-    <?php else: ?>
-      class="btn btn-secondary"
-    <?php endif; ?>>
-    <?php echo $utente->row['nome']; ?>
-    <?php echo $utente->row['countLezioni'] ?>
-  </button>
-<?php endforeach; ?>
-<?php print_r($_GET); ?>
+<div class="w3-right">
+  <div class="w3-panel">
+    <button type="button" class="w3-button w3-round-xlarge w3-blue w3-card-4 w3-right <?php if ($u): ?> radius-right w3-quarter <?php endif; ?>" onclick="toggle(2)" id="button_2">
+      <i class="fas fa-users"></i>
+    </button>
+    <div <?php if (!$u): ?> class="w3-hide" <?php endif; ?> id="toggle_2">
+      <select class="w3-input w3-round-xlarge radius-left w3-left w3-threequarter" id="utente" onchange="filter_utente()">
+        <?php if ($u): ?>
+          <option value="<?php $utente = getUtenteId($_GET['utente'])[0]; echo $utente->id ?>"><?php echo $utente->row['cognome']." ".$utente->row['nome']; ?></option>
+        <?php else: ?>
+          <option></option>
+        <?php endif; ?>
+        <?php foreach ($utenti as $utente): ?>
+          <option value="<?php echo $utente->id ?>"><?php echo $utente->row['cognome']." ".$utente->row['nome'] ?></option>
+        <?php endforeach; ?>
+      </select>
+    </div>
+  </div>
+</div>

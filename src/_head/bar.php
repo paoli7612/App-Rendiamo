@@ -8,7 +8,7 @@ function endsWith($string, $endString)
 }
 
 ?>
-<div class="w3-bar w3-blue w3-xlarge">
+<div class="w3-bar w3-blue w3-xlarge w3-card-4">
   <a class="navbar-brand" href="../home/">
     <button
       <?php if (endsWith($_SERVER['REQUEST_URI'], '/home/' )): ?>

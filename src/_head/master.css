@@ -5,3 +5,8 @@
 .radius-right{
   border-radius: 0px 16px 16px 0px;
 }
+
+body {
+   background-image: url("../__img/sfondo.png");
+   background-color: #d1d1d1;
+}

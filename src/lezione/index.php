@@ -14,7 +14,7 @@
       $lezione = getLezioneId($_GET['id'])[0];
       include 'dettagli.php';
     } else {
-      header('Location: ../home');
+      header('Location: ../lezioni/');
     }
 
     ?>
