@@ -17,7 +17,7 @@ function endsWith($string, $endString)
         class="w3-button w3-bar-item"
       <?php endif; ?>>
       <i class="fas fa-home fa fa-fw"></i>
-      Home
+      <span class="w3-hide-small">Home</span>
     </button>
   </a>
   <a class="navbar-brand" href="../lezioni/">
@@ -28,7 +28,7 @@ function endsWith($string, $endString)
         class="w3-button w3-bar-item"
       <?php endif; ?>>
       <i class="fas fa-book fa fa-fw"></i>
-      Lezioni
+      <span class="w3-hide-small">Lezioni</span>
     </button>
   </a>
   <a class="navbar-brand" href="../account/">
@@ -39,7 +39,7 @@ function endsWith($string, $endString)
         class="w3-button w3-bar-item"
       <?php endif; ?>>
       <i class="fas fa-user fa fa-fw"></i>
-      Account
+      <span class="w3-hide-small">Account</span>
     </button>
   </a>
   <?php if ($_UTENTE->row['tipo'] == 'admin'): ?>
@@ -51,7 +51,7 @@ function endsWith($string, $endString)
         class="w3-button w3-bar-item w3-right"
       <?php endif; ?>>
       <i class="fas fa-toolbox fa fa-fw"></i>
-      Pannello di controllo
+		<span class="w3-hide-small">Admin</span>
       </button>
     </a>
   <?php endif; ?>

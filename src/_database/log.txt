@@ -468,3 +468,289 @@
 127.0.0.1) SELECT * FROM materie ORDER BY titolo;
 127.0.0.1) SELECT * FROM materie ORDER BY titolo;
 127.0.0.1) SELECT * FROM materie ORDER BY titolo;
+::1) SELECT * FROM utenti WHERE email='admin@root';
+::1) SELECT * FROM utenti WHERE email='admin@root' AND password=SHA('qwerty');
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT * FROM materie ORDER BY titolo;
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT * FROM utenti WHERE email='admin@root';
+::1) SELECT * FROM utenti WHERE email='admin@root' AND password=SHA('qwerty');
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT * FROM materie ORDER BY titolo;
+::1) SELECT * FROM materie ORDER BY titolo;
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT * FROM materie ORDER BY titolo;
+::1) SELECT * FROM materie ORDER BY titolo;
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT * FROM materie ORDER BY titolo;
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100
+::1) SELECT materie.*, COUNT(lezioni.id) as countLezioni FROM materie, materiedilezioni, lezioni WHERE materie.id = materiedilezioni.idMateria AND lezioni.id = materiedilezioni.idLezione GROUP BY materie.id;
+::1) SELECT utenti.*, COUNT(lezioni.id) as countLezioni FROM utenti, lezioni WHERE utenti.id = lezioni.idUtente GROUP BY utenti.id;
+::1) SELECT * FROM lezioni LIMIT 100

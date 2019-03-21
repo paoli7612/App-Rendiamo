@@ -9,10 +9,25 @@
     <?php include '../_session/start.php' ?>
     <?php include '../_head/bar.php' ?>
 
-
-    <a href="../nuovaLezione/">crea nuova lezione</a>
+	<div class="w3-right">
+		<div class="w3-panel">
+			<button class="w3-button w3-blue w3-card-4 w3-round-xlarge" onclick="window.location='../nuovaLezione/'">
+				Nuova Lezione
+			</button>
+		</div>
+	</div>
+	<div class="w3-right">
+		<div class="w3-panel">
+			<div class="w3-row">
+				<input type="text" class="w3-col radius-left w3-threequarter w3-input">
+				<button class="w3-col radius-right w3-blue w3-button w3-quarter">
+					<i class="fas fa-search"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+	
     <?php
-      include 'search.php';
       include 'selezionaMateria.php';
       include 'selezionaUtente.php';
 
