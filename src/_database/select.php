@@ -35,7 +35,8 @@
 
   function getMaterie(){
     $sql = "SELECT *
-    FROM materie;";
+    FROM materie
+    ORDER BY titolo;";
     return query($sql, 'materia');
   }
 
