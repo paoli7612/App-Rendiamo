@@ -27,7 +27,6 @@
   }
 
   function utentiDiLezioni($utenti, $lezioni){
-    $flag = 0;
     if ($utente->row['tipo']!='admin'||$lezioni->row['idUtente']!=$utente->row['id']){
         header('location: ../home');
     }
