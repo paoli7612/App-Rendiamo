@@ -148,17 +148,6 @@ INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
 INSERT INTO `istitutidiutenti` (`idUtente`, `idIstituto`)
   VALUES (1, 1);
 
-INSERT INTO `materiali` (`id`, `indirizzo`, `titolo`, `tipo`) VALUES
-  (1, "asdgewr","Italiano","video"),
-  (2, "asdgewrgg","Storia",NULL),
-  (3, "asdgewjhgr","Matematica","pdf"),
-  (4, "asdgewjh3gr","Informatica","pdf"),
-  (5, "asdgewj4hgr","Inglese","pdf"),
-  (6, "asdgewjh6gr","Tedesco","pdf"),
-  (7, "asdgewjhg7r","Francese","pdf"),
-  (8, "asdgewjhg9r","Fisica","pdf"),
-  (9, "asdgewjhgr8","Chimica","pdf");
-
 INSERT INTO `lezioni` (`id`,`idUtente`,`titolo`,`data`,`note`) VALUES
 (1, 8, 'Romanticismo', CURRENT_TIMESTAMP, NULL),
 (2, 8, 'Prima Guerra Mondiale', CURRENT_TIMESTAMP, NULL),
@@ -180,18 +169,6 @@ INSERT INTO `materie` (`id`,`titolo`) VALUES
 (7,'Francese'),
 (8,'Fisica'),
 (9,'Chimica');
-
-INSERT INTO `materialidilezioni` (`idLezione`, `idMateriale`)
-VALUES
-(1,1), (1,2),
-(2,2),
-(3,3),
-(4,4),
-(5,4),
-(6,3), (6,8),
-(7,1),
-(8,1),
-(9,1), (9,5);
 
 INSERT INTO `etichette` (`id`, `nome`) VALUES
 (1, 'sin' ),

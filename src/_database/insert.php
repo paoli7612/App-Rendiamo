@@ -8,7 +8,7 @@
     return query($sql, 'vuoto');
   }
 
-  // MATERIADILEZIONE
+  // MATERIA
 
   function newMateriaDiLezione($idLezione, $idMateria){
     $sql = "INSERT INTO materiedilezioni (`idLezione`, `idMateria`)
@@ -35,6 +35,20 @@
   function newEtichettaDiLezione($idLezione, $idEtichetta){
     $sql = "INSERT INTO etichettedilezioni (`idLezione`,`idEtichetta`)
       VALUES ($idLezione, $idEtichetta);";
+    return query($sql, 'vuoto');
+  }
+
+  // MATERIALE
+
+  function newMateriale($indirizzo, $titolo, $tipo){
+    $sql = "INSERT INTO materiali (`indirizzo`,`titolo`,`tipo`)
+      VALUES ('$indirizzo', '$titolo', '$tipo');";
+    return query($sql, 'vuoto');
+  }
+
+  function newMaterialeDiLezione($idLezione, $idMateriale){
+    $sql = "INSERT INTO materialidilezioni (`idLezione`, `idMateriale`)
+      VALUES ($idLezione, $idMateriale)";
     return query($sql, 'vuoto');
   }
 

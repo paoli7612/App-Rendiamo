@@ -54,6 +54,13 @@
     return query($sql, 'materia');
   }
 
+  function getMaterialeIndirizzo($indirizzo){
+    $sql = "SELECT *
+    FROM materiali
+    WHERE indirizzo='$indirizzo';";
+    return query($sql, 'materiale');
+  }
+
   function getMaterieCountLezioni(){
     $sql = "SELECT materie.*, COUNT(lezioni.id) as countLezioni
     FROM materie, materiedilezioni, lezioni

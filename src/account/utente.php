@@ -10,8 +10,8 @@
         <?php echo $_UTENTE->row['nome'] . " " . $_UTENTE->row['cognome'] ?>
       </h1>
 	  <div class="w3-panel">
-		<button class="w3-button w3-white" onclick="window.location='../disconnetti/'">Disconnetti</button>
-		<button class="w3-button w3-white" disabled="disabled">Modifica</button>
+		<button class="w3-white" onclick="window.location='../disconnetti/'">Disconnetti</button>
+		<button class="w3-white" disabled="disabled">Modifica</button>
 	  </div>
     </div>
   </div>

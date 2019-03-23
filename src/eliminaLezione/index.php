@@ -18,8 +18,8 @@
         <div class="w3-panel w3-card-4 w3-blue">
           <h1>Eliminare La lezione?</h1>
           <div class="w3-panel">
-            <button class="w3-button w3-green w3-card-4" onclick="window.location='../eliminaLezione/?id=<?php echo $lezione->id ?>&conferma=1'"> Conferma </button>
-            <button class="w3-button w3-red w3-card-4" onclick="window.location='../modificaLezione/?id=<?php echo $lezione->id ?>'"> Annulla </button>
+            <button class="w3-green w3-card-4" onclick="window.location='../eliminaLezione/?id=<?php echo $lezione->id ?>&conferma=1'"> Conferma </button>
+            <button class="w3-red w3-card-4" onclick="window.location='../modificaLezione/?id=<?php echo $lezione->id ?>'"> Annulla </button>
           </div>
         </div>
       </div>

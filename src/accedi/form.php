@@ -28,7 +28,7 @@
           </a>
         </div>
         <div class=" w3-right">
-          <button type="submit" class="w3-button w3-white"> Accedi </button>
+          <button type="submit" class="w3-white"> Accedi </button>
         </div>
       </div>
     </div>

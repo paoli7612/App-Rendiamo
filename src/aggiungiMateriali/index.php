@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <?php include "../head.html"; ?>
-    <title> Aggiungi Materiali </title>
+    <?php include '../_head/link.php'; ?>
+    <title>Modifica lezione</title>
   </head>
   <body>
-    <?php
-      include "../header.php";
-      $lezione = getLezioneId($_GET['id']);
-      permitProfessore($utente);
-      permitLezione($utente, $lezione);
-      include "form.html";
-      include "script.php";
-    ?>
+    <?php include '../_database/connection.php' ?>
+    <?php include '../_session/start.php' ?>
+    <?php include '../_head/bar.php' ?>
 
+    <?php $lezione = getLezioneId($_GET['id'])[0]; ?>
+    <?php include 'form.php' ?>
+    <div class="w3-white">
 
+    <?php include 'script.php' ?>
+  </div>
 
   </body>
 </html>
