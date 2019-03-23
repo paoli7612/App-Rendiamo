@@ -10,7 +10,7 @@
     <?php include '../_head/bar.php' ?>
 
     <?php $lezione = getLezioneId($_GET['id'])[0]; ?>
-    <?php print_r($lezione->row) ?>
+    <?php include 'options.php' ?>
 
   </body>
 </html>

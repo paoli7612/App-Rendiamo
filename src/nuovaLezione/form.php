@@ -59,7 +59,8 @@
         </div>
       </div>
       <div class="w3-panel w3-right">
-        <button class="w3-button w3-card-4 w3-white" type="submit" id="submit">Crea lezione</button>
+        <button class="w3-button w3-card-4 w3-red" type="button" onclick="window.location='../lezioni/'">Annulla</button>
+        <button class="w3-button w3-card-4 w3-green" type="submit" id="submit">Crea lezione</button>
       </div>
     </form>
   </div>
