@@ -11,31 +11,25 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="../_head/master.css">
     <script type="text/javascript" src="../_head/master.js"></script>
-  </head>
-
+</head>
 
 <?php
+  function admin($utente){
+    if ($utente->row['tipo']!='admin'){
+      header('location: ../home');
+    }
+  }
 
+  function docenti($utente){
+    if ($utente->row['tipo']!='admin'||'docente'){
+      header('location: ../home');
+    }
+  }
 
-  // viene lanciata nelle pagine permesse solo agli admin
-  // quindi controllare se l'utente lo è...
-  // in caso contrario riportarlo alla home
-  // function admin($utente)
-
-  // idem per le pagine riservate ai docenti(e agli admin ovviamente)
-  // function docente($utente)
-
-  // idem per i proprietari delle lezioni(che possono tipo modificarle) (anche admin)
-  // function utenteDiLezione($utente, $lezione)
-
-  // se non si hanno i permessi reindirizziamo l'utente alla home
-  // header('location: ../home/')
-
-  // per leggere gli attributi del utente
-  // $utente->row['tipo'] che puo essere 'studente' o 'docente' o 'admin'
-  // per leggere gli attributo della lezione
-  // $lezione->row['titolo']
-
-
-
+  function utentiDiLezioni($utenti, $lezioni){
+    $flag = 0;
+    if ($utente->row['tipo']!='admin'||$lezioni->row['idUtente']!=$utente->row['id']){
+        header('location: ../home');
+    }
+  }
 ?>
