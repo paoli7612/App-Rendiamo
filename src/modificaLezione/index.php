@@ -11,7 +11,7 @@
 
 
     <?php $lezione = getLezioneId($_GET['id'])[0]; ?>
-    <?php utentiDiLezioni($_UTENTE, $lezione) ?>
+    <?php //utentiDiLezioni($_UTENTE, $lezione) ?>
     <?php include 'options.php' ?>
 
   </body>
