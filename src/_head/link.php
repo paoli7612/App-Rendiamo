@@ -21,15 +21,25 @@
   }
 
   function docenti($utente){
-    if ($utente->row['tipo']!='admin'||'docente'){
+    $flag = 0;
+    if ($utente->row['tipo']=='admin'||'docente'){
+      $flag = 1;
+    }
+    if ($flag==0) {
       header('location: ../home');
     }
   }
 
   function utentiDiLezioni($utenti, $lezioni){
     $flag = 0;
-    if ($utente->row['tipo']!='admin'||$lezioni->row['idUtente']!=$utente->row['id']){
-        header('location: ../home');
+    if ($utente->row['tipo']=='admin'){
+      $flag = 2;
+    } elseif ($lezioni->row['idUtente']==$utente->row['id']){
+      $flag = 1;
+    } else {
+      header('location: ../home');
     }
+    // Fatta cosi in caso servisse sapere se sei admin o
+    // il docente che ha creato la lezione
   }
 ?>
