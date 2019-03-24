@@ -2,6 +2,7 @@
 <html>
   <head>
     <?php include '../_head/link.php'; ?>
+    <link rel="stylesheet" href="style.css">
     <title>Accedi</title>
   </head>
   <body>
