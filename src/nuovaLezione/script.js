@@ -27,9 +27,9 @@ var select = function(n){
   var input = $('input#input_'+n)[0];
   console.log(input.checked)
   if (input.checked){
-    $('tr#tr_'+n).removeClass('w3-red')
+    $('tr#tr_'+n).removeClass('w3-green')
   } else {
-    $('tr#tr_'+n).addClass('w3-red')
+    $('tr#tr_'+n).addClass('w3-green')
   }
   input.checked = !input.checked;
 }
