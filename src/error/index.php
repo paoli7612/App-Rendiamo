@@ -2,12 +2,10 @@
 <html>
   <head>
     <?php include '../_head/link.php'; ?>
-    <title>Elimina lezione</title>
+    <title>Error</title>
   </head>
   <body>
     <?php include '../_database/connection.php' ?>
-    <?php include '../_session/start.php' ?>
-    <?php include '../_head/bar.php' ?>
 
     <div class="w3-panel">
       <div class="w3-panel w3-blue w3-card-4">
