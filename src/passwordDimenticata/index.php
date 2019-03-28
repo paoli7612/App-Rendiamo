@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
-    <?php include '../_head/link.php'; ?>
-    <title></title>
+    <?php include '../head.html' ?>
+    <title>Password dimenticata</title>
   </head>
-  <body>
-
+  <body class="bg-dark">
+    <div class="container">
+      <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Password dimenticata?</div>
+        <div class="card-body">
+          Questo si che è un problema
+        </div>
+    </div>
   </body>
 </html>
