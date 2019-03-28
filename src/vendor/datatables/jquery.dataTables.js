@@ -11388,7 +11388,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "<i class=\"fas fa-arrow-right\"></i>",
 
 
 				/**
@@ -11411,7 +11411,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "<i class=\"fas fa-arrow-left\"></i>"
 			},
 
 			/**

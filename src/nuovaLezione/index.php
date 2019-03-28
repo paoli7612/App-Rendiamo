@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
-    <?php include '../_head/link.php'; ?>
-    <title>Nuova Lezione</title>
+    <?php include '../head.html' ?>
+    <title>Lezioni</title>
   </head>
   <body>
-    <?php include '../_database/connection.php' ?>
-    <?php include '../_session/start.php' ?>
-    <?php include '../_head/bar.php' ?>
-
-    <?php include 'form.php' ?>
-    <?php include 'script.php' ?>
+    <?php include '../nav.php' ?>
+    <?php include 'wrapper.php' ?>
 
   </body>
 </html>

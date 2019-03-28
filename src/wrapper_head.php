@@ -11,6 +11,15 @@
       <span>Lezioni</span>
     </a>
   </li>
+  <?php if ($_SESSION['user_type'] == 'studente'): ?>
+  <?php else: ?>
+    <li class="nav-item <?php if ($title=='nuovaLezione') echo 'active'?>">
+      <a class="nav-link" href="../nuovaLezione/">
+        <i class="fas fa-fw fa-plus"></i>
+        <span>Nuova lezione</span>
+      </a>
+    </li>
+  <?php endif; ?>
   <li class="nav-item <?php if ($title=='docenti') echo 'active'?>">
     <a class="nav-link" href="../docenti" id="pagesDropdown">
       <i class="fas fa-fw fa-users"></i>
@@ -18,3 +27,5 @@
     </a>
   </li>
 </ul>
+
+<script src="../wrapper_header.js"></script>

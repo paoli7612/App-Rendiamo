@@ -1,4 +1,5 @@
   <div class="container">
+    <?php include 'errori.php' ?>
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Accedi</div>
       <div class="card-body">

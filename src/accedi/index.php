@@ -5,7 +5,7 @@
     <title>Home</title>
   </head>
   <body class="bg-dark">
-    <?php include 'form.php' ?>
     <?php include 'post.php' ?>
+    <?php include 'form.php' ?>
   </body>
 </html>
