@@ -1,5 +1,5 @@
 $(function() {
-  $('button').addClass('w3-button');
+  $('button').addClass('w3-button w3-hover-white');
 });
 
 

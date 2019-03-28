@@ -25,6 +25,10 @@
       $this->etichette = getEtichetteIdLezione($this->id);
     }
 
+    public function isPreferito($utente){
+      
+    }
+
   }
 
 ?>

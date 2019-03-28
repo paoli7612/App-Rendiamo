@@ -5,12 +5,14 @@
     <?php if ($lezione->row['idUtente'] == $_UTENTE->id || $_UTENTE->row['tipo'] == 'admin'): ?>
       <h2 class="w3-right">
         &nbsp;&nbsp;
-      <a href="../modificaLezione/?id=<?php echo $lezione->id ?>">
-        <button class="w3-btn">
-          <i class="fas fa-edit"></i>
-        </button>
-      </a>
-    </h2>
+        <a href="../modificaLezione/?id=<?php echo $lezione->id ?>">
+          <button>
+            <i class="fas fa-edit"></i>
+          </button>
+        </a>
+      </h2>
+    <?php elseif ($_UTENTE->row['tipo'] == 'studente'): ?>
+      <?php include 'preferiti.php' ?>
     <?php endif; ?>
   </div>
 </div>
