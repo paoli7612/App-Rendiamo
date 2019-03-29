@@ -1,23 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
-    <?php include '../_head/link.php'; ?>
-    <title></title>
+    <?php include '../head.html' ?>
+    <title>Lezione</title>
   </head>
   <body>
-    <?php include '../_database/connection.php' ?>
-    <?php include '../_session/start.php' ?>
-    <?php include '../_head/bar.php' ?>
-
-    <?php
-    if (isset($_GET['id'])) {
-      $lezione = getLezioneId($_GET['id'])[0];
-      include 'dettagli.php';
-    } else {
-      header('Location: ../lezioni/');
-    }
-
-    ?>
+    <?php include '../nav.php' ?>
+    <?php include 'wrapper.php' ?>
 
   </body>
 </html>

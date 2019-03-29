@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
-    <?php include '../_head/link.php'; ?>
+    <?php include '../head.html' ?>
     <title>Home</title>
   </head>
   <body>
-    <?php include '../_database/connection.php' ?>
-    <?php include '../_session/start.php' ?>
-    <?php include '../_head/bar.php' ?>
+    <?php include '../nav.php' ?>
+    <?php include 'wrapper.php' ?>
+
+    <?php include '../scripts.php' ?>
   </body>
 </html>

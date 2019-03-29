@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
-    <?php include '../_head/link.php'; ?>
-    <title>Registrati</title>
+    <?php include '../head.html' ?>
+    <title>Home</title>
   </head>
-  <body>
-    <a href="../accedi/">Hai gia un account? accedi</a>
-    <?php session_start(); ?>
-    <?php include '../_database/connection.php'; ?>
-    <?php include 'form.php'; ?>
-    <?php include 'post.php'; ?>
+  <body class="bg-dark">
+    <?php include 'form.php' ?>
+    <?php include 'post.php' ?>
   </body>
 </html>

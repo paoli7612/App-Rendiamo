@@ -1,13 +1,27 @@
-<?php include 'errori.php' ?>
-<div class="loginBox">
-  <img src="../__img/mc.png" class="logo">
-  <h2>Log In Here </h2>
-  <form method="post">
-    <p>Email</p>
-    <input type="text" name="email" placeholder="Enter Email"
-      value="<?php if(isset($_GET['email'])) echo $_GET['email'] ?>">
-    <p>Password</p>
-    <input type="password" name="password" placeholder="********">
-    <input type="submit" name="" value="Sign In">
-    <a href="../passwordDimenticata/">Forget Password ?</a>
-</div>
+  <div class="container">
+    <?php include 'errori.php' ?>
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Accedi</div>
+      <div class="card-body">
+        <form method="post">
+          <div class="form-group">
+            <div class="form-label-group">
+              <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required="required" autofocus="autofocus">
+              <label for="inputEmail">Email</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+              <label for="inputPassword">Password</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Accedi</button>
+        </form>
+        <div class="text-center">
+          <a class="d-block small mt-3" href="../registrati">Primo accesso? Registrati</a>
+          <a class="d-block small" href="../passwordDimenticata">Password dipenticata?</a>
+        </div>
+      </div>
+    </div>
+  </div>
