@@ -8,6 +8,6 @@
     <?php include '../nav.php' ?>
     <?php include 'wrapper.php' ?>
 
-    <?php include '../scripts.html' ?>
+    <?php include '../scripts.php' ?>
   </body>
 </html>

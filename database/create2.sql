@@ -7,7 +7,7 @@ CREATE TABLE `istituti` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB; 
+) ENGINE=InnoDB;
 
 CREATE TABLE `etichette` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
@@ -76,7 +76,8 @@ CREATE TABLE `materiali` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `indirizzo` varchar(150) NOT NULL,
   `titolo` varchar(100) NOT NULL,
-  `tipo` varchar(10) NOT NULL,
+  `esetensione` varchar(10) NOT NULL,
+  `tipo` varchar(30) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE (`titolo`),
   UNIQUE KEY (`indirizzo`)
@@ -148,8 +149,8 @@ INSERT INTO `istitutidiutenti` (`idUtente`, `idIstituto`)
   VALUES (1, 1);
 
 INSERT INTO `materiali` (`id`, `indirizzo`, `titolo`, `tipo`) VALUES
-  (1, "asdgewr","Italiano","video"), 
-  (2, "asdgewrgg","Storia",NULL), 
+  (1, "asdgewr","Italiano","video"),
+  (2, "asdgewrgg","Storia",NULL),
   (3, "asdgewjhgr","Matematica","pdf"),
   (4, "asdgewjh3gr","Informatica","pdf"),
   (5, "asdgewj4hgr","Inglese","pdf"),
@@ -198,18 +199,18 @@ INSERT INTO `materie` (`id`,`titolo`) VALUES
 
 INSERT INTO `materialidilezioni` (`idLezione`, `idMateriale`)
 VALUES
-(1,1), (1,2), 
+(1,1), (1,2),
 (2,2),
 (3,3),
 (4,4),
-(5,4), 
+(5,4),
 (6,3), (6,8), (6,9), (6,11),
-(7,1), 
-(8,1), 
+(7,1),
+(8,1),
 (9,1), (9,5),
-(10,6), (10,7), (10,12), 
-(11,1), 
-(12,3), 
+(10,6), (10,7), (10,12),
+(11,1),
+(12,3),
 (13,13), (13,14),
 (14,13), (14,14),
 (15,4),
@@ -253,17 +254,17 @@ INSERT INTO `etichette` (`id`, `nome`) VALUES
 (34, 'database');
 
 INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`) VALUES
-(1,1), (1,2), 
+(1,1), (1,2),
 (2,2),
 (3,3),
-(4,4), (4,12), 
-(5,4), (5,12), 
-(6,8), (6,9), 
+(4,4), (4,12),
+(5,4), (5,12),
+(6,8), (6,9),
 (7,1),
 (8,1),
-(9,5), (9,1), 
-(10,6), (10,7), 
-(11,1), (11,5), 
+(9,5), (9,1),
+(10,6), (10,7),
+(11,1), (11,5),
 (12,3),
 (13,10),
 (14,10),

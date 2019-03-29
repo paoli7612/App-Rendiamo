@@ -1,28 +1,36 @@
-var container = document.getElementById('files');
-var inputFile = document.getElementById('input');
-var button = document.getElementById('add');
-var submit = document.getElementById('submit');
-var n = 2;
+var file = document.getElementById('in_file');
+var div = document.getElementById('files');
+var n = 0;
 
-var newFile = function(){
-  path = inputFile.value;
-  var element = document.createElement('div');
-  element.setAttribute('class', 'w3-panel w3-animate-left w3-card-4 w3-blue');
-    var div = document.createElement('div');
-    div.setAttribute('class', 'w3-panel');
-      var input = inputFile.cloneNode(true);
-      input.setAttribute('name', 'file'+(n-1));
-      div.appendChild(input);
-      var label = document.createElement('label');
-      label.innerHTML = path.split('\\')[2];
-      div.appendChild(label);
-    element.appendChild(div);
-  container.appendChild(element);
-  submit.disabled = false;
+var inputFile = function(){
+  var newFile = file.cloneNode(true);
+  newFile.name = "file"+n;
   n++;
+
+  var element = "<div class=\"form-group\"><div class=\"form-label-group\"><div class=\"form-group\"><div class=\"form-label-group row\">";
+  element+="<input name=\"titolo_"+n+"\" type=\"text\" id=\"inputTitle_"+n+"\" class=\"form-control col\" placeholder=\"Titolo\" value=\""+newFile.value+"\">";
+  element+="<label for=\"inputTitle_"+n+"\">Titolo</label>";
+  element+="<div class=\"col\"><button id=\"button_"+n+"\" style=\"height: 100%\" type=\"button\" class=\"btn btn-block text-white btn-primary\" onclick=\"cambiaTipo("+n+")\">Documento</button></div>"
+  element+="</div></div></div></div>";
+
+  div.innerHTML+=element;
+
 
 }
 
-var plus = function(){
-  inputFile.click();
+var modal = $('#modalTipo');
+var selected = null;
+
+var cambiaTipo = function(id){
+  console.log(modal);
+  modal.modal('toggle');
+  selected = id;
+}
+
+var impostaTipo = function(tipo, classe){
+  modal.modal('toggle');
+  var button = document.getElementById('button_'+selected);
+  button.innerHTML = tipo;
+  var ultimaClasse = button.classList[3];
+  button.className = button.className.replace(ultimaClasse, classe);
 }
