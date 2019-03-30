@@ -56,6 +56,7 @@
             </button>
           </div>
           <div class="modal-body">
+            <p>Le etichette servono a semplificare la ricerca della lezione utilizzando queste parole chiave. Usa spazio per dividere un etichetta dal altra</p>
             <div class="form-group">
               <div class="form-label-group">
                 <input id="inputEtichetta" type="text" class="form-control" placeholder="Etichette" onkeyup="keyupEtichetta(this)">
@@ -71,8 +72,6 @@
         </div>
       </div>
     </div>
-
-
     <button type="submit" class="btn btn-primary btn-block">Crea nuova lezione</button>
   </form>
 </div>
