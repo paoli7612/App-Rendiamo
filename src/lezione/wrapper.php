@@ -9,7 +9,7 @@
 	if (count($lezioni) == 1){
 		$lezione = $lezioni[0];
 	} else {
-		header('Location: ../errori/');
+		header('Location: ../errori/?k=lezione');
 	}
 
   ?>
