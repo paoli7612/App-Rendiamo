@@ -3,7 +3,16 @@
   <?php $title="lezione" ?>
   <?php include '../wrapper_head.php' ?>
   <?php $id=$_GET['id'] ?>
-  <?php $lezione=query("SELECT lezioni.* FROM lezioni WHERE lezioni.id=$id ")[0] ?>
+  <?php
+	$lezioni = query("SELECT lezioni.* FROM lezioni WHERE lezioni.id=$id ");
+	
+	if (count($lezioni) == 1){
+		$lezione = $lezioni[0];
+	} else {
+		header('Location: ../errori/');
+	}
+
+  ?>
 
   <div id="content-wrapper">
     <div class="container-fluid">
