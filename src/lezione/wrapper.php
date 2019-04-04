@@ -5,11 +5,11 @@
   <?php $id=$_GET['id'] ?>
   <?php
 	$lezioni = query("SELECT lezioni.* FROM lezioni WHERE lezioni.id=$id ");
-	
+
 	if (count($lezioni) == 1){
 		$lezione = $lezioni[0];
 	} else {
-		header('Location: ../errori/?k=lezione');
+		header('Location: ../errori/');
 	}
 
   ?>
@@ -111,7 +111,7 @@
           <div class="card text-white bg-danger o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fas fa-fw fa-life-ring"></i>
+                <i class="fas fa-headphones-alt"></i>
               </div>
               <div class="mr-5">Audio</div>
             </div>
