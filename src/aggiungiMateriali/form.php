@@ -1,5 +1,5 @@
 <div class="container">
-  <form method="post">
+  <form method="post" enctype="multipart/form-data">
     <div class="form-group">
       <div class="form-label-group">
         <button type="button" class="btn btn-secondary btn-block" onclick="document.getElementById('in_file').click()">Aggiungi materiale</button>
@@ -7,7 +7,12 @@
       </div>
     </div>
     <div id="files">
-      
+
+    </div>
+    <div class="form-group">
+      <div class="form-label-group">
+        <button type="submit" class="btn btn-block btn-secondary" disabled id="submit">Carica</button>
+      </div>
     </div>
   </form>
 </div>
@@ -86,13 +91,8 @@
             </div>
           </div>
         </button>
-
       </div>
     </div>
   </div>
 </div>
-
-
-<script type="text/javascript" src="script.js">
-
-</script>
+<script type="text/javascript" src="script.js"></script>
