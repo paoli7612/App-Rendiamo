@@ -10,7 +10,10 @@ var inputFile = function(){
   n++;
   console.log(file.files[0]);
   c = file.cloneNode(true);
-
+  c.name = "file_"+n;
+  c.id = "file_"+n;
+  div.appendChild(c);
+   
   formGroup = document.createElement('div');
   formGroup.className = 'form-group row';
     col1 = document.createElement('div');
@@ -21,7 +24,6 @@ var inputFile = function(){
         formControl.className = "form-control";
         formControl.placeholder = "Titolo";
 		formControl.value = newFile.value;
-		formControl.name = 'file_'+n;
         label = document.createElement('label');
         label.innerHTML = "Titolo";
         formControl.id = 'inputTitolo_'+n;
@@ -34,11 +36,12 @@ var inputFile = function(){
 	  formGroupLabel = document.createElement('div');
 	  formGroupLabel.className = '';
         button = document.createElement('input');
-		button.type = 'button'
+		button.type = 'text'
         button.className = "btn btn-block text-white btn-primary";
 		button.value = 'Documento';
 		button.style['height'] = '50px';
 		button.id = "button_"+n;
+		button.name = "button_"+n
 		button.setAttribute('onclick', 'cambiaTipo("'+n+'")');
 	  formGroupLabel.appendChild(button);
 	col2.appendChild(formGroupLabel);
