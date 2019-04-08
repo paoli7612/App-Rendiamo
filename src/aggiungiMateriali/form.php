@@ -7,7 +7,6 @@
       </div>
     </div>
     <div id="files">
-
     </div>
     <div class="form-group">
       <div class="form-label-group">
