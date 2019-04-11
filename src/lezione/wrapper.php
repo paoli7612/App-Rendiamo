@@ -17,12 +17,32 @@
   <div id="content-wrapper">
     <div class="container-fluid">
 
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="../lezioni/">Lezioni</a>
-        </li>
-        <li class="breadcrumb-item active"><?php echo $lezione['titolo'] ?></li>
-      </ol>
+		<div class="d-flex bd-highlight">
+			<div class="p-2 w-100 bd-highlight">
+				  <ol class="breadcrumb">
+					<li class="breadcrumb-item">
+					  <a href="../lezioni/">Lezioni</a>
+					</li>
+					<li class="breadcrumb-item active"><?php echo $lezione['titolo'] ?></li>		
+				  </ol>
+			</div>
+			<div class="p-2 flex-shrink-1 bd-highlight">		
+				<button type="button" name="button" class="btn btn-block"  onclick="bookmark()" style="height:50px" >
+					<i style="font-size: 170%" id="bookmark-button" class="far fa-bookmark"></i>
+				</button>
+				<script>
+					function bookmark(){
+						var s = document.getElementById('bookmark-button');
+						if (s.className == 'far fa-bookmark'){
+							s.className = 'fas fa-bookmark';	
+						} else{
+							s.className = 'far fa-bookmark';
+						}
+					}
+				</script>
+			</div>
+		</div>
+
       <div class="row">
         <div class="col-xl-12 col-sm-12 mb-3">
           <div class="card text-white bg-dark o-hidden h-100">
