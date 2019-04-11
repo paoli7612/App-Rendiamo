@@ -56,7 +56,7 @@ CREATE TABLE `lezioni` (
 
 CREATE TABLE `materie` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
-  `titolo` varchar(30),
+  `titolo` varchar(50),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
@@ -76,7 +76,7 @@ CREATE TABLE `materiali` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `indirizzo` varchar(150) NOT NULL,
   `titolo` varchar(100) NOT NULL,
-  `esetensione` varchar(10) NOT NULL,
+  `estensione` varchar(10) NOT NULL,
   `tipo` varchar(30) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE (`titolo`),

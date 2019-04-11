@@ -12,3 +12,35 @@ var keyupEtichetta  = function(a){
 var eliminaEtichetta = function(a){
   a.parentElement.parentElement.remove();
 }
+
+var filterMaterie = function(e){
+  var text = e.value;
+  var modal = document.getElementById("Materie");
+  var body = modal.getElementsByClassName("modal-body")[0];
+  var divs = body.getElementsByTagName("div");
+  for (var i=0; i<divs.length; i++){
+    d = divs[i];
+    var t = d.getElementsByTagName("label")[0].innerHTML;
+    if (t.indexOf(text) == -1){
+      d.style['display'] = 'none';
+    } else {
+      d.style['display'] = '';
+    }
+  }
+}
+var error = $('div#error');
+error.hide();
+
+var controlTitolo = function(e){
+  var titolo = e.value;
+  var utente = document.getElementById('idUtente').value;
+  $.getJSON('../queries/titoloLezione.php?idUtente='+utente+'&titolo='+titolo).done(function(e){
+    if (e['lezione']){
+      error.show();
+      $(':input[type="submit"]').prop('disabled', true);
+    } else {
+      error.hide();
+      $(':input[type="submit"]').prop('disabled', false);
+    }
+  });
+}

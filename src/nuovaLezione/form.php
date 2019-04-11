@@ -1,9 +1,16 @@
+<input type="hidden" id="idUtente" value="<?php echo $_SESSION['user_row']['id'] ?>">
+
 <div class="container">
   <form method="post">
     <div class="form-group">
       <div class="form-label-group">
-        <input id="inputTitolo" name="titolo" type="text" class="form-control" placeholder="Titolo" required="required" autofocus="autofocus">
+        <input id="inputTitolo" onchange="controlTitolo(this)" name="titolo" type="text" class="form-control" placeholder="Titolo" required="required" autofocus="autofocus">
         <label for="inputTitolo">Titolo</label>
+      </div>
+    </div>
+    <div id="error">
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Attenzione!</strong> Titolo gia utilizzato per un'altra lezione da te creata.
       </div>
     </div>
     <div class="form-group">
@@ -31,11 +38,17 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          <div class="modal-header">
+            <div class="form-label-group">
+              <input id="inputRicercaMaterie" type="text" class="form-control" placeholder="Ricerca" onkeyup="filterMaterie(this)">
+              <label for="inputRicercaMaterie">Ricerca</label>
+            </div>
+          </div>
           <div class="modal-body">
             <?php  $materie=query("SELECT * FROM materie") ?>
             <?php foreach ($materie as $materia): ?>
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" name="<?php echo $materia['id'] ?>"id="<?php echo $materia['id'] ?>">
+                <input type="checkbox" class="custom-control-input" name="materia_<?php echo $materia['id'] ?>"id="<?php echo $materia['id'] ?>">
                 <label class="custom-control-label" for="<?php echo $materia['id'] ?>"><?php echo $materia['titolo'] ?></label>
               </div>
             <?php endforeach; ?>

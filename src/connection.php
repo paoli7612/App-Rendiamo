@@ -4,13 +4,13 @@
 <?php
 
   function query($sql){
-    $conn = new mysqli("localhost", "root", "", "lele");
+    $conn = new mysqli("localhost", "root", "", "apprendiamo");
     //print_r($conn);
     $tabella = array();
     $result = $conn->query($sql);
     //print_r($sql);
     if ($conn->error){
-      print_r($conn->error);
+      return ($conn->error);
     }
     if (isset($result->num_rows)){
       if ($result->num_rows == 0) {
@@ -24,24 +24,24 @@
       $conn->close();
     }
   }
-	
+
 	function is_admin(){
 		if($_SESSION['user_row']['tipo'] != 'admin'){
 			header('Location: ../home/');
 		}
 	}
-	
+
 	function is_docente(){
 		if($_SESSION['user_row']['tipo'] == 'utente'){
 			header('Location: ../home/');
 		}
 	}
-	
+
 	function lezione_docente($lezione){
 		if($_SESSION['user_row']['id'] != $lezione['idUtente']){
 			header('Location: ../home/');
 		}
 	}
-	
+
 
 ?>
