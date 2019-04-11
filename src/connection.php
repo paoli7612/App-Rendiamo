@@ -1,3 +1,6 @@
+<?php ob_start(); ?>
+
+
 <?php
 
   function query($sql){
@@ -21,6 +24,24 @@
       $conn->close();
     }
   }
-
+	
+	function is_admin(){
+		if($_SESSION['user_row']['tipo'] != 'admin'){
+			header('Location: ../home/');
+		}
+	}
+	
+	function is_docente(){
+		if($_SESSION['user_row']['tipo'] == 'utente'){
+			header('Location: ../home/');
+		}
+	}
+	
+	function lezione_docente($lezione){
+		if($_SESSION['user_row']['id'] != $lezione['idUtente']){
+			header('Location: ../home/');
+		}
+	}
+	
 
 ?>
