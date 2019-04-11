@@ -4,9 +4,16 @@
   <?php include '../wrapper_head.php' ?>
   <?php
     if (isset($_GET['utente'])) {
-      $lezioni = query("SELECT lezioni.id, lezioni.titolo, utenti.nome, utenti.cognome FROM lezioni,utenti WHERE idUtente=".$_GET['utente']. " AND utenti.id=lezioni.idUtente;");
-    } else {
-      $lezioni = query("SELECT lezioni.id, lezioni.titolo, utenti.nome, utenti.cognome FROM lezioni, utenti WHERE lezioni.idUtente=utenti.id");
+      $lezioni = query("SELECT lezioni.id, lezioni.titolo, utenti.nome, utenti.cognome
+		  FROM lezioni,utenti
+		  WHERE idUtente=" . $_GET['utente']. " AND utenti.id=lezioni.idUtente;");
+    } elseif (isset($_GET['materia'])) {
+		$lezioni = query("SELECT lezioni.id, lezioni.titolo
+			FROM lezioni, materiedilezioni
+			WHERE materiedilezioni.idMateria=" . $_GET['materia'] . " AND lezioni.id=materiedilezioni.idLezione;");
+	} else {
+      $lezioni = query("SELECT lezioni.id, lezioni.titolo, utenti.nome, utenti.cognome
+		FROM lezioni, utenti WHERE lezioni.idUtente=utenti.id");
     }
   ?>
 
@@ -34,7 +41,7 @@
                     </a>
                   </td>
                   <td>
-                    <?php echo $lezione['nome']." ".$lezione['cognome'] ?>
+                    <?php //echo $lezione['nome']." ".$lezione['cognome'] ?>
                   </td>
                 </tr>
               <?php endforeach; ?>
