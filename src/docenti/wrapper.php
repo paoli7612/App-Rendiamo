@@ -2,7 +2,8 @@
 
   <?php $title="docenti" ?>
   <?php include '../wrapper_head.php' ?>
-  <?php $docenti = query("SELECT * FROM utenti WHERE tipo='professore'") ?>
+  <?php $docenti = query("SELECT utenti.*, COUNT(lezioni.id) as count FROM utenti, lezioni WHERE (tipo='professore' OR tipo='admin') AND lezioni.idUtente=utenti.id GROUP BY utenti.id") ?>
+
   <div id="content-wrapper">
     <div class="container-fluid">
       <?php foreach ($docenti as $docente): ?>
@@ -12,10 +13,13 @@
           </div>
           <div class="col-md-9">
             <div class="row">
-              <h1><?php echo $docente['nome']. " " .$docente['cognome'] ?></h1>
+              <h1><?php echo $docente['nome']. " " .$docente['cognome']?></h1>
             </div>
             <div class="row">
               <h4><?php echo $docente['tipo']?></h1>
+            </div>
+            <div class="row">
+              <p><?php echo $docente['count'] ?> Lezioni create</p>
             </div>
             <div class="row">
               <a href="../lezioni/?utente=<?php echo $docente['id'] ?>">

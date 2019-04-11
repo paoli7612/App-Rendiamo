@@ -4,15 +4,7 @@
   <?php include '../wrapper_head.php' ?>
   <?php $id=$_GET['id'] ?>
   <?php
-	$lezioni = query("SELECT lezioni.* FROM lezioni WHERE lezioni.id=$id ");
-
-	if (count($lezioni) == 1){
-		$lezione = $lezioni[0];
-	} else {
-		header('Location: ../errori/');
-	}
-
-  ?>
+	$lezione = query("SELECT lezioni.* FROM lezioni WHERE lezioni.id=$id ")[0]?>
 
   <div id="content-wrapper">
     <div class="container-fluid">
@@ -24,7 +16,8 @@
         <li class="breadcrumb-item active"><?php echo $lezione['titolo'] ?></li>
       </ol>
       <div class="row">
-        <div class="col-xl-12 col-sm-12 mb-3">
+        <?php if ($lezione['idUtente'] == $_SESSION['user_row']['id']): ?>
+          <div class="col-xl-12 col-sm-12 mb-3">
           <div class="card text-white bg-dark o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
@@ -35,14 +28,19 @@
                   <i class="fas fa-plus"></i>
                   Aggiungi materiali
                 </button>
-                <button type="button" name="button" class="btn btn-light" disabled="disabled">
+                <button type="button" name="button" class="btn btn-light" onclick="window.location='../modificaLezione/?id=<?php echo $lezione['id']?>'">
                   <i class="fas fa-edit"></i>
                   Modifica lezione
+                </button>
+                <button type="button" name="button" class="btn btn-light" onclick="window.location='../eliminaLezione/?conferma=0&id=<?php echo $lezione['id']?>'">
+                  <i class="fas fa-edit"></i>
+                  Elimina lezione
                 </button>
               </div>
             </div>
           </div>
         </div>
+        <?php endif; ?>
         <div class="col-xl-6 col-sm-6 mb-3">
           <div class="card text-white bg-primary o-hidden h-100">
             <div class="card-body">

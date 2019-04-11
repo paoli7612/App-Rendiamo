@@ -6,9 +6,9 @@
     </a>
   </li>
   <li class="nav-item <?php if ($title=='lezioni' || $title=='lezione' || $title='materie') echo 'active'?>">
-    <a class="nav-link" href="../materie">
+    <a class="nav-link" href="../filtra">
       <i class="fas fa-fw fa-book"></i>
-      <span>Materie e lezioni</span>
+      <span>Lezioni</span>
     </a>
   </li>
   <?php if ($_SESSION['user_type'] == 'studente'): ?>

@@ -5,13 +5,12 @@
   <?php
       $materie = query("SELECT * FROM materie");
   ?>
-  
+
   <div id="content-wrapper">
     <div class="container-fluid">
-
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a>Clicca la materia per visualizzare le lezioni.</a>
+          Clicca la materia per visualizzare le lezioni. <a href="../lezioni/">Visualizza tutte le lezioni</a>
         </li>
       </ol>
       <div class="row">
@@ -40,7 +39,7 @@
 			var leave = function(e){
 				e.className = "card text-white o-hidden h-100 onmouseover bg-secondary";
 			}
-	
+
 		</script>
       </div>
     </div>
