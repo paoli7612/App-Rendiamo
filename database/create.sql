@@ -197,7 +197,7 @@ INSERT INTO `materie` (`id`,`titolo`) VALUES
 (11,'Gestione progetto organizzazione impresa'),
 (12,'geografia'),
 (13,'scienze naturali'),
-(14,'latino')
+(14,'latino'),
 (15,'filosofia'),
 (16,'storia dell arte'),
 (17,'religione'),
