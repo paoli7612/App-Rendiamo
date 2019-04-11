@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS lele;
-CREATE DATABASE lele;
+DROP DATABASE IF EXISTS appRendiamo;
+CREATE DATABASE appRendiamo;
 
-USE lele;
+USE appRendiamo;
 
 CREATE TABLE `istituti` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
@@ -184,7 +184,7 @@ INSERT INTO `lezioni` (`id`,`idUtente`,`titolo`,`data`,`note`) VALUES
 (17, 12, 'Ciclo di vita di un progetto', CURRENT_TIMESTAMP, 'Studio delle fasi del ciclo di vita');
 
 INSERT INTO `materie` (`id`,`titolo`) VALUES
-(1,'Italiano'),
+(1,'Lingua e letteratura italiana'),
 (2,'Storia'),
 (3,'Matematica'),
 (4,'Informatica'),
@@ -193,9 +193,43 @@ INSERT INTO `materie` (`id`,`titolo`) VALUES
 (7,'Francese'),
 (8,'Fisica'),
 (9,'Chimica'),
-(10, 'Diritto ed Economia'),
-(11, 'Gestione progetto organizzazione impresa'),
-(12, 'Sistemi e reti');
+(10,'Diritto ed Economia'),
+(11,'Gestione progetto organizzazione impresa'),
+(12,'geografia'),
+(13,'scienze naturali'),
+(14,'latino')
+(15,'filosofia'),
+(16,'storia dell arte'),
+(17,'religione'),
+(18,'certificazione delle competenze digitali'),
+(19,'scienze umane'),
+(20,'scienze motorie sportive'),
+(21,'russo'),
+(22,'spagnolo'),
+(23,'francese'),
+(24,'scienze integrate'),
+(25,'Diritto e diritto dell informatica'),
+(26,'economia politica'),
+(27,'economia aziendale'),
+(28,'Tecniche di Comunicazione di Impresa'),
+(29,'Web editing'),
+(30,'Web Markenting'),
+(31,'Diritto e legislazione turistica'),
+(32,'Discipline turistiche ed aziendali'),
+(33,'Arte e territorio'),
+(34,'Tecnologiee tecniche di rappresentazione grafiche'),
+(35,'Tecnologie informatiche'),
+(36,'Scienbze e tecnologie applicate'),
+(37,'Gestione del cantiere,sicurezza dell ambiente di lavoro'),
+(38,'Progettazione, costruzioni impianti'),
+(39,'Geopedologia,economia , ed estimo'),
+(40,'Topografia'),
+(41,'Ambiente,energia e territorio'),
+(42,'Laboratorio di robotica'),
+(43,'Tecnologie e progrttazione di sistemi informatici e telecomunicazione'),
+(44,'Telecomunicazioni'),
+(45,'Laboratorio d autonomia'),
+(46,'Sistemi e reti');
 
 INSERT INTO `materialidilezioni` (`idLezione`, `idMateriale`)
 VALUES
