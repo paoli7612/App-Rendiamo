@@ -28,7 +28,7 @@
               <div class="card-body-icon">
                 <i class="fas fa-fw fa-users"></i>
               </div>
-              <div class="mr-5">ricerca per docente</div>
+              <div class="mr-5">Ricerca per docente</div>
             </div>
             <br>
           </div>
@@ -39,7 +39,7 @@
               <div class="card-body-icon">
                 <i class="fas fa-fw fa-search"></i>
               </div>
-              <div class="mr-5">Tutte le lezioni</div>
+              <div class="mr-5">Ricerca testuale</div>
             </div>
             <br>
           </div>
