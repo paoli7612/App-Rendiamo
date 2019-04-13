@@ -1,5 +1,4 @@
 <div id="wrapper">
-
   <?php $title="account" ?>
   <?php include '../wrapper_head.php' ?>
   <?php  $id=$_SESSION['user_row']['id'] ?>
@@ -12,8 +11,11 @@
         </li>
       </ol>
       <div class="row">
-        <div class="col">
-          <div class="card text-white o-hidden h-100 bg-primary">
+        <div class="col-xl-4 col-sm-12 mb-3">
+          <?php include 'aiuto.php' ?>
+        </div>
+        <div class="col-xl-8 col-sm-12">
+          <div class="card text-white o-hidden bg-primary">
             <div class="card-body">
               <div class="card-body-icon">
                 <?php if ($utente['tipo'] == 'admin'): ?>
@@ -37,7 +39,7 @@
                   <i class="fas fa-sign-out-alt"></i> Lezioni create
                 </button>
               <?php else: ?>
-                <button title="impostazioni" class="btn bg-white" onclick="window.location='../docentiSalvati'" disabled="disabled">
+                <button title="impostazioni" class="btn bg-white" onclick="window.location='../docenti/?salvati'">
                   <i class="fas fa-users"></i> Docenti salvati
                 </button>
                 <button title="impostazioni" class="btn bg-white" onclick="window.location='../lezioniSalvate'" disabled="disabled">

@@ -21,7 +21,7 @@ var filterMaterie = function(e){
   for (var i=0; i<divs.length; i++){
     d = divs[i];
     var t = d.getElementsByTagName("label")[0].innerHTML;
-    if (t.indexOf(text) == -1){
+    if (t.toUpperCase().indexOf(text.toUpperCase()) == -1){
       d.style['display'] = 'none';
     } else {
       d.style['display'] = '';

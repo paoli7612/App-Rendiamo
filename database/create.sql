@@ -107,11 +107,11 @@ CREATE TABLE `etichettedilezioni` (
     REFERENCES `etichette` (`id`)
 ) ENGINE=InnoDB;
 
-CREATE TABLE `utentiDilezioni` (
+CREATE TABLE `utentiDiLezioni` (
 	`id` int(15) NOT NULL AUTO_INCREMENT,
 	`idUtente`  int(15),
 	`idLezione`  int(15),
-	`preferiti`  BOOLEAN,
+	`preferito`  BOOLEAN DEFAULT 0,
 	`visualizzato`  BOOLEAN,
 	PRIMARY KEY (`id`),
     FOREIGN KEY (`idLezione`)
@@ -120,6 +120,20 @@ CREATE TABLE `utentiDilezioni` (
     FOREIGN KEY (`idUtente`)
       REFERENCES `utenti` (`id`)
 	  ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE `utentiDiUtenti` (
+	`id` int(15) NOT NULL AUTO_INCREMENT,
+	`idUtente`  int(15),
+	`idStudente`  int(15),
+  `preferito` BOOLEAN DEFAULT 0,
+	PRIMARY KEY (`id`),
+  FOREIGN KEY (`idStudente`)
+    REFERENCES `utenti` (`id`)
+    ON DELETE CASCADE,
+  FOREIGN KEY (`idUtente`)
+    REFERENCES `utenti` (`id`)
+  ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 INSERT INTO `istituti` (`nome`)

@@ -85,14 +85,14 @@
                   </div>
                   <div class="mr-5"><?php echo $lezione['titolo'] ?></div>
                 </div>
-                <a class="card-footer text-white clearfix small z-1" href="../documenti/?id=<?php echo $lezione['id'] ?>">
+                <a class="card-footer text-white clearfix small z-1" href="../lezione/?id=<?php echo $lezione['id'] ?>">
                   <span class="float-left"><?php echo $lezione['nome']." ".$lezione['cognome'] ?></span>
                   <span class="float-right">
                     <i class="fas fa-user"></i>
                   </span>
                 </a>
                 <?php $materie = query("SELECT * FROM materie, materiedilezioni WHERE materiedilezioni.idLezione=".$lezione['id']." AND materie.id=materiedilezioni.idMateria") ?>
-                <a class="card-footer text-white clearfix small z-1" href="../documenti/?id=<?php echo $lezione['id'] ?>">
+                <a class="card-footer text-white clearfix small z-1" href="../lezione/?id=<?php echo $lezione['id'] ?>">
                   <span class="float-left">
                     <?php if ($materie): ?>
                       <?php foreach ($materie as $materia): ?>

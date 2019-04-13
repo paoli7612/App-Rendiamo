@@ -6,6 +6,7 @@
   </head>
   <body>
     <?php include '../nav.php' ?>
+    <?php include 'post.php' ?>
     <?php include 'wrapper.php' ?>
   </body>
 </html>

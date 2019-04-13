@@ -10,26 +10,14 @@
         <li class="breadcrumb-item active">Lezioni</li>
       </ol>
       <div class="row">
-        <div class="col-xl-3 col-sm-12 mb-3">
-          <div class="card">
-            <div class="card-header">
-              Aiuto
-              <a href="#" class="float-right">
-                <i class="fas fa-question-circle"></i>
-              </a>
-            </div>
-            <div class="card-body">
-              Qui hai la possibilià di selezionare il metodo di ricerca della lezione. (Ricorda che spesso è più facile tentare)
-              <ul>
-                <li><b>Ricerca per materia</b>: visualizza tutte le lezioni di una certa materia</li>
-                <li><b>Ricerca per docente</b>: scelto un docente, visualizza tutte le lezioni che esso ha creato</li>
-                <li><b>Ricerca testuale</b>: ricerca una lezione tramite il titolo</li>
-                <li><b>Ricerca avanzata</b>: decidi i parametri di una ricerca mirata ad una o più lezioni</li>
-              </ul>
-            </div>
+        <?php if ($_SESSION['user_type'] == 'studente'): ?>
+          <div class="col-xl-3 col-sm-12 mb-3">
+            <?php include 'aiuto.php' ?>
           </div>
-        </div>
-        <div class="col-xl-9 col-sm-12 ">
+          <div class="col-xl-9 col-sm-12 ">
+          <?php else: ?>
+          <div class="col-xl-12 col-sm-12 ">
+        <?php endif; ?>
           <div class="mb-3" onclick="window.location='../filtraMaterie/'">
             <div class="card text-white bg-primary o-hidden h-100">
               <div class="card-body">
