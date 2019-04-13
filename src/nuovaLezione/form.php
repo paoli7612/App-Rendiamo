@@ -88,7 +88,5 @@
     <button type="submit" class="btn btn-primary btn-block">Crea nuova lezione</button>
   </form>
 </div>
-<script type="text/javascript" src="script.js">
-
-</script>
+<script type="text/javascript" src="script.js"></script>
 <!-- Button trigger modal -->

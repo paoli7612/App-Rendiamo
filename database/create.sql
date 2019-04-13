@@ -18,7 +18,7 @@ CREATE TABLE `etichette` (
 
 CREATE TABLE `utenti` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
-  `email` varchar(20) NOT NULL,
+  `email` varchar(30) NOT NULL,
   `password` varchar(40) NOT NULL,
   `nome` varchar(20) NOT NULL,
   `cognome` varchar(20) NOT NULL,

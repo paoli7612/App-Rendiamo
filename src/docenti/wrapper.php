@@ -10,7 +10,7 @@
                             LEFT JOIN utentidiutenti
                               ON (
                                 utentidiutenti.idUtente=utenti.id AND
-                                utentidiutenti.idStudente=3
+                                utentidiutenti.idStudente=$idUtente
                               )
                             ) as utenti
                           LEFT JOIN lezioni
