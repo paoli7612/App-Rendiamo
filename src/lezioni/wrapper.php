@@ -3,25 +3,31 @@
   <?php $title="lezioni" ?>
   <?php include '../wrapper_head.php' ?>
   <?php
+    $nessunaRicerca = false;
+    $lezioni = array();
     if (isset($_GET['utente'])) {
       $lezioni = query("SELECT lezioni.id, lezioni.titolo, utenti.nome, utenti.cognome
                   		  FROM lezioni,utenti
                   		  WHERE idUtente=" . $_GET['utente'].
                           " AND utenti.id=lezioni.idUtente;");
     } elseif (isset($_GET['materia'])) {
-		$lezioni = query("SELECT lezioni.id, lezioni.titolo
-                			FROM lezioni, materiedilezioni
+	    $lezioni = query("SELECT lezioni.id, lezioni.titolo, utenti.nome, utenti.cognome
+                			FROM lezioni, materiedilezioni, utenti
                 			WHERE materiedilezioni.idMateria=" . $_GET['materia'] .
-                      " AND lezioni.id=materiedilezioni.idLezione;");
+                      " AND lezioni.id=materiedilezioni.idLezione
+                        AND utenti.id=lezioni.idUtente;");
   	} elseif (isset($_GET['filtra'])){
-      $lezioni = query("SELECT lezioni.id, lezioni.titolo, utenti.nome, utenti.cognome
-                      FROM lezioni, utenti
-                      WHERE lezioni.idUtente=utenti.id
-                        AND lezioni.titolo LIKE ('%".$_GET['filtra']."%')");
+      if (strlen($_GET['filtra'])>0){
+        $lezioni = query("SELECT lezioni.id, lezioni.titolo, utenti.nome, utenti.cognome
+          FROM lezioni, utenti
+          WHERE lezioni.idUtente=utenti.id
+          AND lezioni.titolo LIKE ('%".$_GET['filtra']."%')");
+      }
+      else{
+        unset($_GET['filtra']);
+      }
     } else {
-      $lezioni = query("SELECT lezioni.id, lezioni.titolo, utenti.nome, utenti.cognome
-	                    FROM lezioni, utenti
-                      WHERE lezioni.idUtente=utenti.id");
+      $nessunaRicerca = true;
     }
   ?>
 
@@ -29,10 +35,25 @@
     <div class="container-fluid">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="../lezioni/">Lezioni</a>
+          <a href="../filtra/">Lezioni</a>
         </li>
-      </ol>
-      <?php if (!(isset($_GET['utente']) || isset($_GET['materia']))): ?>
+        <?php if (isset($_GET['utente'])): ?>
+          <?php $utente = query("SELECT * FROM utenti WHERE id=".$_GET['utente'])[0] ?>
+          <li class="breadcrumb-item">
+            <a href="../filtraDocenti/">Ricerca per docente</a>
+          </li>
+          <li class="breadcrumb-item"><?php echo $utente['nome']." ".$utente['cognome'] ?></li>
+        </ol>
+        <?php elseif(isset($_GET['materia'])): ?>
+          <?php $utente = query("SELECT * FROM materie WHERE id=".$_GET['materia'])[0] ?>
+          <li class="breadcrumb-item">
+            <a href="../filtraMaterie/">Ricerca per materie</a>
+          </li>
+          <li class="breadcrumb-item"><?php echo $utente['titolo']?></li>
+        </ol>
+        <?php else: ?>
+          <li class="breadcrumb-item">Ricerca testuale</li>
+        </ol>
         <form method="get">
             <div class="row float-center">
             <div class="col-xl-4 sm-0">
@@ -40,8 +61,8 @@
             <div class="col-xl-3 col-sm-8">
               <div class="form-group">
                 <div class="form-label-group">
-                  <input name="filtra" type="text" id="inputFiltra" class="form-control" placeholder="Filtra" required="required" <?php if (isset($_GET['filtra'])){ echo "value=".$_GET['filtra'];} ?>>
-                  <label for="inputFiltra">Filtra</label>
+                  <input name="filtra" type="text" id="inputFiltra" class="form-control" placeholder="Cerca" required="required" <?php if (isset($_GET['filtra'])){ echo "value=".$_GET['filtra'];} ?>>
+                  <label for="inputFiltra">Cerca</label>
                 </div>
               </div>
             </div>
@@ -60,14 +81,29 @@
               <div class="card text-white bg-secondary o-hidden h-100" onmouseover="hover(this)" onmouseleave="leave(this)">
                 <div class="card-body">
                   <div class="card-body-icon">
-                    <i class="fas fa-fw fa-file-pdf"></i>
+                    <i class="fas fa-fw fa-bars"></i>
                   </div>
                   <div class="mr-5"><?php echo $lezione['titolo'] ?></div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="../documenti/?id=<?php echo $lezione['id'] ?>">
                   <span class="float-left"><?php echo $lezione['nome']." ".$lezione['cognome'] ?></span>
                   <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
+                    <i class="fas fa-user"></i>
+                  </span>
+                </a>
+                <?php $materie = query("SELECT * FROM materie, materiedilezioni WHERE materiedilezioni.idLezione=".$lezione['id']." AND materie.id=materiedilezioni.idMateria") ?>
+                <a class="card-footer text-white clearfix small z-1" href="../documenti/?id=<?php echo $lezione['id'] ?>">
+                  <span class="float-left">
+                    <?php if ($materie): ?>
+                      <?php foreach ($materie as $materia): ?>
+                        <?php echo $materia['titolo'] ?>
+                      <?php endforeach; ?>
+                      <?php else: ?>
+                        Nessuna materia
+                    <?php endif; ?>
+                  </span>
+                  <span class="float-right">
+                    <i class="fas fa-book"></i>
                   </span>
                 </a>
               </div>
@@ -75,18 +111,15 @@
           <?php endforeach; ?>
         <?php else: ?>
           <div class="col">
-            <h2>Nessun risultato trovato</h2>
+            <?php if ($nessunaRicerca): ?>
+
+            <?php else: ?>
+              <h2>Nessun risultato trovato</h2>
+            <?php endif; ?>
           </div>
         <?php endif; ?>
       </div>
-      <script>
-        var hover = function(e){
-          e.className = "card text-white bg-primary o-hidden h-100";
-        }
-        var leave = function(e){
-          e.className = "card text-white bg-secondary o-hidden h-100";
-        }
-      </script>
+
     </div>
   </div>
 </div>

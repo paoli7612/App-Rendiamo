@@ -1,21 +1,24 @@
 <div id="wrapper">
 
-  <?php $title ="materie" ?>
+  <?php $title ="lezioni" ?>
   <?php include '../wrapper_head.php' ?>
   <?php
-      $materie = query("SELECT * FROM materie");
+      $materie = query("SELECT materie.*, count(materiedilezioni.id) AS count FROM materie, materiedilezioni WHERE materie.id=materiedilezioni.idMateria GROUP BY materie.id");
   ?>
 
   <div id="content-wrapper">
     <div class="container-fluid">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          Clicca la materia per visualizzare le lezioni. <a href="../lezioni/">Visualizza tutte le lezioni</a>
+          <a href="../filtra/">Lezioni</a>
         </li>
-      </ol>
+        <li class="breadcrumb-item">
+          Ricerca per materie
+        </li>
+        </ol>
       <div class="row">
 		<?php foreach ($materie as $materia): ?>
-			<div class="col-xl-6 col-sm-6 mb-3">
+			<div class="col-xl-6 col-sm-6 mb-3" onclick="window.location='../lezioni/?materia=<?php echo $materia['id'] ?>'">
 			  <div class="card text-white o-hidden h-100 onmouseover bg-secondary" onmouseover="hover(this)" onmouseleave="leave(this)">
 				<div class="card-body">
 				  <div class="card-body-icon">
@@ -23,8 +26,8 @@
 				  </div>
 				  <div class="mr-5"><?php echo $materia['titolo']; ?></div>
 				</div>
-				<a class="card-footer text-white clearfix small z-1" href="../lezioni/?materia=<?php echo $materia['id'] ?>">
-				  <span class="float-left">Visualizza le lezioni</span>
+				<a class="card-footer text-white clearfix small z-1">
+				  <span class="float-left">Visualizza le <?php echo $materia['count'] ?> lezioni</span>
 				  <span class="float-right">
 					<i class="fas fa-angle-right"></i>
 				  </span>
@@ -32,15 +35,7 @@
 			  </div>
 			</div>
 		<?php endforeach; ?>
-		<script>
-			var hover = function(e){
-				e.className = "card text-white o-hidden h-100 onmouseover bg-primary";
-			}
-			var leave = function(e){
-				e.className = "card text-white o-hidden h-100 onmouseover bg-secondary";
-			}
 
-		</script>
       </div>
     </div>
   </div>

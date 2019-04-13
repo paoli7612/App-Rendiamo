@@ -26,7 +26,7 @@ CREATE TABLE `utenti` (
   `rispostaSicurezza` varchar(20),
   `tipo` ENUM('studente', 'professore', 'admin') DEFAULT 'studente',
   `avatar` varchar(100),
-  `idTema` int(15) DEFAULT '1',
+  `aiuti` BOOLEAN DEFAULT 1,
   PRIMARY KEY (`id`),
   UNIQUE KEY (`email`)
 ) ENGINE=InnoDB;
@@ -127,11 +127,14 @@ INSERT INTO `istituti` (`nome`)
 
 INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
 
+('Asdrubale', 'Arelli', 'admin@root', SHA('qwerty'), 'admin'),
+('Diano', 'Dalconte', 'docente@root', SHA('qwerty'), 'docente'),
+('Scanfranco', 'Sitti', 'studente@root', SHA('qwerty'), 'studente'),
+
 ('Alex', 'Sordo', 'prof@gmail.com', SHA('qwerty60'), 'admin'),
 ('Luca', 'Rippa', 'studente@gmail.com', SHA('qwerty71'), 'admin'),
 ('Christian', 'Gabban', 'admin@gmail.com', SHA('qwerty66'), 'admin'),
 ('Nicolo\'', 'Pflanzer', 'test01@gmail.com', SHA('qwerty27'), 'admin'),
-('Tommaso', 'Paoli', 'admin@root', SHA('qwerty'), 'admin'),
 ('Simone', 'Paoli', 'mario@gmail.com', SHA('qwerty93'), 'admin'),
 ('Grassi', 'Manuel', 'giovanni@gmail.com', SHA('qwerty33'), 'admin'),
 ('Giocamo', 'Poretti', 'giacomo@gmail.com', SHA('qwerty'), 'professore'),
@@ -147,22 +150,6 @@ INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
 
 INSERT INTO `istitutidiutenti` (`idUtente`, `idIstituto`)
   VALUES (1, 1);
-
-INSERT INTO `materiali` (`id`, `indirizzo`, `titolo`, `tipo`) VALUES
-  (1, "asdgewr","Italiano","video"),
-  (2, "asdgewrgg","Storia",NULL),
-  (3, "asdgewjhgr","Matematica","pdf"),
-  (4, "asdgewjh3gr","Informatica","pdf"),
-  (5, "asdgewj4hgr","Inglese","pdf"),
-  (6, "asdgewjh6gr","Tedesco","pdf"),
-  (7, "asdgewjhg7r","Francese","pdf"),
-  (8, "asdgewjhg9r","Fisica","pdf"),
-  (9, "asdgewjhgr8","Chimica","pdf"),
-  (10, "awj4hgr","Gestion progetto organizzazione impresa","pdf"),
-  (11, "astfjh6gr","Chimica1","pdf"),
-  (12, "asdg88777r","Francese1","pdf"),
-  (13, "a44444jhg9r","Diritto ed economia","pdf"),
-  (14, "asr8","Diritto ed economia1","pdf");
 
 INSERT INTO `lezioni` (`id`,`idUtente`,`titolo`,`data`,`note`) VALUES
 (1, 8, 'Romanticismo', CURRENT_TIMESTAMP, NULL),
@@ -230,26 +217,6 @@ INSERT INTO `materie` (`id`,`titolo`) VALUES
 (44,'Telecomunicazioni'),
 (45,'Laboratorio d autonomia'),
 (46,'Sistemi e reti');
-
-INSERT INTO `materialidilezioni` (`idLezione`, `idMateriale`)
-VALUES
-(1,1), (1,2),
-(2,2),
-(3,3),
-(4,4),
-(5,4),
-(6,3), (6,8), (6,9), (6,11),
-(7,1),
-(8,1),
-(9,1), (9,5),
-(10,6), (10,7), (10,12),
-(11,1),
-(12,3),
-(13,13), (13,14),
-(14,13), (14,14),
-(15,4),
-(16,4),
-(17,10);
 
 INSERT INTO `etichette` (`id`, `nome`) VALUES
 (1, 'sin' ),

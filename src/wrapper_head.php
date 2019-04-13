@@ -5,11 +5,21 @@
       <span>Home</span>
     </a>
   </li>
-  <li class="nav-item <?php if ($title=='lezioni' || $title=='lezione' || $title='materie') echo 'active'?>">
-    <a class="nav-link" href="../filtra">
+  <li class="nav-item <?php if ($title=='lezioni') echo 'active'?>">
+    <?php if ($title=='lezioni'): ?>
+      <a class="nav-link" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+    <?php else: ?>
+        <a class="nav-link" href="../filtra/">
+    <?php endif; ?>
       <i class="fas fa-fw fa-book"></i>
       <span>Lezioni</span>
     </a>
+    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+      <a class="dropdown-item" href="../filtraDocenti/">Docenti</a>
+      <a class="dropdown-item" href="../filtraMaterie/">Materie</a>
+      <a class="dropdown-item" href="../lezioni/">Testuale</a>
+      <a class="dropdown-item" href="../ricercaAvanzata/">Avanzata</a>
+    </div>
   </li>
   <?php if ($_SESSION['user_type'] == 'studente'): ?>
   <?php else: ?>

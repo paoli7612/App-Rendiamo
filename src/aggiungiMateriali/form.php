@@ -3,7 +3,7 @@
     <div class="form-group">
       <div class="form-label-group">
         <button type="button" class="btn btn-secondary btn-block" onclick="document.getElementById('in_file').click()">Aggiungi materiale</button>
-        <input name="in_file" id="in_file" type="file" style="display: none" onchange="inputFile()">
+        <input id="in_file" type="file" style="display: none" onchange="inputFile()">
       </div>
     </div>
     <div id="files">

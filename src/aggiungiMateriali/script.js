@@ -8,12 +8,11 @@ var inputFile = function(){
   var newFile = file.cloneNode(true);
   newFile.name = "file"+n;
   n++;
-  console.log(file.files[0]);
   c = file.cloneNode(true);
   c.name = "file_"+n;
   c.id = "file_"+n;
   div.appendChild(c);
-   
+
   formGroup = document.createElement('div');
   formGroup.className = 'form-group row';
     col1 = document.createElement('div');
@@ -23,7 +22,8 @@ var inputFile = function(){
         formControl = document.createElement('input');
         formControl.className = "form-control";
         formControl.placeholder = "Titolo";
-		formControl.value = newFile.value;
+	      formControl.value = newFile.files[0].name.split(".")[0];
+        formControl.name = "input_"+n;
         label = document.createElement('label');
         label.innerHTML = "Titolo";
         formControl.id = 'inputTitolo_'+n;
@@ -54,7 +54,6 @@ var modal = $('#modalTipo');
 var selected = null;
 
 var cambiaTipo = function(id){
-  console.log(modal);
   modal.modal('toggle');
   selected = id;
 }
@@ -64,6 +63,5 @@ var impostaTipo = function(tipo, classe){
   var button = document.getElementById('button_'+selected);
   button.value = tipo;
   var ultimaClasse = button.classList[3];
-  console.log(ultimaClasse);
   button.className = button.className.replace(ultimaClasse, classe);
 }

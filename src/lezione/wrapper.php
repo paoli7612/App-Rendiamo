@@ -11,7 +11,7 @@
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="../lezioni/">Lezioni</a>
+          <a href="../filtra/">Lezioni</a>
         </li>
         <li class="breadcrumb-item active"><?php echo $lezione['titolo'] ?></li>
       </ol>

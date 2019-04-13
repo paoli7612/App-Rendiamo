@@ -15,8 +15,12 @@
     }
   </style>
 
-  <script type="text/javascript">
-    $(function(){
-      $('#sidebarToggle').click();
-    });
+  <script>
+    var hover = function(e){
+      e.className = "card text-white o-hidden h-100 onmouseover bg-primary";
+    }
+    var leave = function(e){
+      e.className = "card text-white o-hidden h-100 onmouseover bg-secondary";
+    }
+
   </script>
