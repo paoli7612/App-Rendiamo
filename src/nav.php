@@ -28,13 +28,13 @@
           <span class="badge badge-danger"><?php echo count($notifiche) ?></span>
         <?php endif; ?>
       </a>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificheDropDown" onclick="aggiornaNotifiche()">
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificheDropDown">
         <?php if (count($notifiche)): ?>
           <?php foreach ($notifiche as $notifica): ?>
             <a class="dropdown-item" href="<?php if($notifica['link']) echo $notifica['link'] ?>"><?php echo $notifica['testo'] ?></a>
             <div class="dropdown-divider"></div>
           <?php endforeach; ?>
-          <a class="dropdown-item" href="#">Segna come lette</a>
+          <a class="dropdown-item" href="../cancellaNotifiche/?link=<?php echo $_SERVER["REQUEST_URI"] ?>">Segna come lette</a>
         <?php else: ?>
           <a class="dropdown-item">
             Nessuna nuova notifica

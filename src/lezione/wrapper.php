@@ -14,20 +14,14 @@
 
   <div id="content-wrapper">
     <div class="container-fluid">
-      <div class="row">
 
-        <div class="col-10">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="../filtra/">Lezioni</a>
-            </li>
-            <li class="breadcrumb-item active"><?php echo $lezione['titolo'] ?></li>
-          </ol>
-        </div>
-        <div class="col-2">
-          <button class="btn btn-block bg-dark text-white mb-3" style="height: 80%"><i class="fas fa-save"></i></button>
-        </div>
-      </div>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="../filtra/">Lezioni</a>
+        </li>
+        <li class="breadcrumb-item active"><?php echo $lezione['titolo'] ?></li>
+      </ol>
+
       <div class="row">
         <?php if ($lezione['idUtente'] == $_SESSION['user_row']['id']): ?>
           <div class="col-xl-12 col-sm-12 mb-3">

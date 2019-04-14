@@ -50,6 +50,11 @@
       $idEtichette = query("SELECT id FROM etichette WHERE nome IN $str");
       print_r($idEtichette);
     }
+
+    $notifica = "Nuova lezione creata!";
+    $ink = "../lezione/?id=$idLezione";
+    query("INSERT INTO notifiche (`idUtente`, `testo`, `link`) VALUES ($idUtente, '$notifica', '$link')");
+
     if ($res){
       print_r("ERRORE NELLA CREAZIONE DELLA LEZIONE");
     } else {
