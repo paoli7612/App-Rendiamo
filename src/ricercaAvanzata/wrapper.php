@@ -11,6 +11,7 @@
         </li>
         <li class="breadcrumb-item active">Ricerca avanzata</li>
       </ol>
+      <?php include 'form.php' ?>
     </div>
   </div>
 </div>

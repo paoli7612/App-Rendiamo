@@ -1,7 +1,7 @@
 <div class="featurette">
   <div class="row">
     <div class="col-xl-2 col-md-2 col-sm-12">
-      <button class="btn btn-block" style="height: 100%;" onclick="window.location='../filtra/'">
+      <button class="btn btn-block" style="height: 100%;" onclick="window.location='../nuovaLezione/'">
         <h1>
           <i class="fas fa-book fa-lg"></i>
         </h1>

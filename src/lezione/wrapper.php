@@ -4,7 +4,13 @@
   <?php include '../wrapper_head.php' ?>
   <?php $id=$_GET['id'] ?>
   <?php
-	$lezione = query("SELECT lezioni.* FROM lezioni WHERE lezioni.id=$id ")[0]?>
+	$lezione = query("SELECT lezioni.* FROM lezioni WHERE lezioni.id=$id ")[0];
+  $tipiMateriali = query("SELECT DISTINCT m.tipo from materiali as m, materialidilezioni as d WHERE m.id=d.idMateriale AND d.idLezione=$id");
+  $materiali = array();
+  foreach ($tipiMateriali as $key => $value) {
+    array_push($materiali, $value['tipo']);
+  }
+  ?>
 
   <div id="content-wrapper">
     <div class="container-fluid">
@@ -49,11 +55,16 @@
               </div>
               <div class="mr-5">Documenti</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="../documenti/?id=<?php echo $lezione['id'] ?>">
-              <span class="float-left">Visualizza</span>
-              <span class="float-right">
-                <i class="fas fa-angle-right"></i>
-              </span>
+            <?php if (in_array("Documento", $materiali)): ?>
+              <a class="card-footer text-white clearfix small z-1" href="../documenti/?id=<?php echo $lezione['id'] ?>">
+                <span class="float-left">Visualizza</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+            <?php else: ?>
+              <a class="card-footer text-white clearfix small z-1">
+              <span class="float-left">Nessun documento caricato</span>
+            <?php endif; ?>
             </a>
           </div>
         </div>
@@ -65,11 +76,16 @@
               </div>
               <div class="mr-5">Video</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">Visualizza</span>
-              <span class="float-right">
-                <i class="fas fa-angle-right"></i>
-              </span>
+            <?php if (in_array("Video", $materiali)): ?>
+              <a class="card-footer text-white clearfix small z-1" href="../video/?id=<?php echo $lezione['id'] ?>">
+                <span class="float-left">Visualizza</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+            <?php else: ?>
+              <a class="card-footer text-white clearfix small z-1">
+              <span class="float-left">Nessun video caricato</span>
+            <?php endif; ?>
             </a>
           </div>
         </div>
@@ -81,11 +97,16 @@
               </div>
               <div class="mr-5">Esercitazioni</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">Visualizza</span>
-              <span class="float-right">
-                <i class="fas fa-angle-right"></i>
-              </span>
+            <?php if (in_array("Esercitazione", $materiali)): ?>
+              <a class="card-footer text-white clearfix small z-1" href="../esercitazioni/?id=<?php echo $lezione['id'] ?>">
+                <span class="float-left">Visualizza</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+            <?php else: ?>
+              <a class="card-footer text-white clearfix small z-1">
+              <span class="float-left">Nessua esercitazione caricata</span>
+            <?php endif; ?>
             </a>
           </div>
         </div>
@@ -97,11 +118,16 @@
               </div>
               <div class="mr-5">Presentazioni</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">Visualizza</span>
-              <span class="float-right">
-                <i class="fas fa-angle-right"></i>
-              </span>
+            <?php if (in_array("Presentazione", $materiali)): ?>
+              <a class="card-footer text-white clearfix small z-1" href="../presentazioni/?id=<?php echo $lezione['id'] ?>">
+                <span class="float-left">Visualizza</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+            <?php else: ?>
+              <a class="card-footer text-white clearfix small z-1">
+              <span class="float-left">Nessuna presentazione caricata</span>
+            <?php endif; ?>
             </a>
           </div>
         </div>
@@ -113,11 +139,16 @@
               </div>
               <div class="mr-5">Audio</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">Visualizza</span>
-              <span class="float-right">
-                <i class="fas fa-angle-right"></i>
-              </span>
+            <?php if (in_array("Presentazione", $materiali)): ?>
+              <a class="card-footer text-white clearfix small z-1" href="../audio/?id=<?php echo $lezione['id'] ?>">
+                <span class="float-left">Visualizza</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+            <?php else: ?>
+              <a class="card-footer text-white clearfix small z-1">
+              <span class="float-left">Nessun autio caricato</span>
+            <?php endif; ?>
             </a>
           </div>
         </div>
@@ -129,11 +160,16 @@
               </div>
               <div class="mr-5">Mappe concettuali</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">Visualizza</span>
-              <span class="float-right">
-                <i class="fas fa-angle-right"></i>
-              </span>
+            <?php if (in_array("MappaConcettuale", $materiali)): ?>
+              <a class="card-footer text-white clearfix small z-1" href="../mappeConcettuali/?id=<?php echo $lezione['id'] ?>">
+                <span class="float-left">Visualizza</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+            <?php else: ?>
+              <a class="card-footer text-white clearfix small z-1">
+              <span class="float-left">Nessuna mappa concettuale caricato</span>
+            <?php endif; ?>
             </a>
           </div>
         </div>
@@ -145,11 +181,16 @@
               </div>
               <div class="mr-5">Altro</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">Visualizza</span>
-              <span class="float-right">
-                <i class="fas fa-angle-right"></i>
-              </span>
+            <?php if (in_array("Altro", $materiali)): ?>
+              <a class="card-footer text-white clearfix small z-1" href="../altro/?id=<?php echo $lezione['id'] ?>">
+                <span class="float-left">Visualizza</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+            <?php else: ?>
+              <a class="card-footer text-white clearfix small z-1">
+              <span class="float-left">Nessuna altro caricato</span>
+            <?php endif; ?>
             </a>
           </div>
         </div>

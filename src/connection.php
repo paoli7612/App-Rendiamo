@@ -44,4 +44,13 @@
 	}
 
 
+  function startsWith($stringa, $chiave){
+     $length = strlen($chiave);
+     return (substr($stringa, 0, $length) === $chiave);
+  }
+
+  function endInt($stringa){
+    return explode("_",$stringa)[1];
+  }
+
 ?>

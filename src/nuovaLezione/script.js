@@ -13,21 +13,6 @@ var eliminaEtichetta = function(a){
   a.parentElement.parentElement.remove();
 }
 
-var filterMaterie = function(e){
-  var text = e.value;
-  var modal = document.getElementById("Materie");
-  var body = modal.getElementsByClassName("modal-body")[0];
-  var divs = body.getElementsByTagName("div");
-  for (var i=0; i<divs.length; i++){
-    d = divs[i];
-    var t = d.getElementsByTagName("label")[0].innerHTML;
-    if (t.toUpperCase().indexOf(text.toUpperCase()) == -1){
-      d.style['display'] = 'none';
-    } else {
-      d.style['display'] = '';
-    }
-  }
-}
 var error = $('div#error');
 error.hide();
 

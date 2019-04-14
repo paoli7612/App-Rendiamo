@@ -61,7 +61,7 @@
 <div class="featurette">
   <div class="row">
     <div class="col-xl-2 col-md-2 col-sm-12">
-      <button class="btn btn-block" style="height: 100%;">
+      <button class="btn btn-block" style="height: 100%;" onclick="window.location='../ricercaAvanzata/'">
         <h1>
           <i class="fas fa-tags fa-lg"></i>
         </h1>
@@ -80,7 +80,7 @@
   <div class="featurette">
     <div class="row">
       <div class="col-xl-2 col-md-2 col-sm-12">
-        <button class="btn btn-block" style="height: 100%;">
+        <button class="btn btn-block" style="height: 100%;" onclick="window.location='../impostazioni/'">
           <h1>
             <i class="fas fa-question-circle fa-lg"></i>
           </h1>

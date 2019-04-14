@@ -40,7 +40,7 @@
             </div>
           </div>
         </button>
-        <button class="btn btn-block" onclick="impostaTipo('Esercitazioni', 'bg-success')">
+        <button class="btn btn-block" onclick="impostaTipo('Esercitazione', 'bg-success')">
           <div class="card text-white bg-success o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
@@ -50,7 +50,7 @@
             </div>
           </div>
         </button>
-        <button class="btn btn-block" onclick="impostaTipo('Presentazioni', 'bg-info')">
+        <button class="btn btn-block" onclick="impostaTipo('Presentazione', 'bg-info')">
           <div class="card text-white bg-info o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
@@ -70,7 +70,7 @@
             </div>
           </div>
         </button>
-        <button class="btn btn-block" onclick="impostaTipo('Mappe concettuali', 'bg-purple')">
+        <button class="btn btn-block" onclick="impostaTipo('MappConcettualei', 'bg-purple')">
           <div class="card text-white bg-purple o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
