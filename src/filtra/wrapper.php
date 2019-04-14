@@ -51,7 +51,7 @@
               <br>
             </div>
           </div>
-          <div class="mb-3" onclick="window.location='../ricercaAvanzata/'">
+          <div class="mb-3" title="disabilitato" onclick="window.location='../ricercaAvanzata/'">
             <div class="card text-white bg-warning o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">

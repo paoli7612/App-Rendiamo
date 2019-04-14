@@ -29,6 +29,12 @@
         <span>Nuova lezione</span>
       </a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../lezioni/?utente=<?php echo $idUtente ?>">
+        <i class="fas fa-fw fa-crown"></i>
+        <span>Lezioni create</span>
+      </a>
+    </li>
   <?php endif; ?>
   <li class="nav-item <?php if ($title=='docenti') echo 'active'?>">
     <a class="nav-link" href="../docenti" id="pagesDropdown">

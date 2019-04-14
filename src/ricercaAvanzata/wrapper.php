@@ -11,7 +11,14 @@
         </li>
         <li class="breadcrumb-item active">Ricerca avanzata</li>
       </ol>
-      <?php include 'form.php' ?>
+      <div class="row">
+        <div class="col-xl-4 col-sm-12 mb-3">
+          <?php include 'aiuto.php' ?>
+        </div>
+        <div class="col">
+          <?php include 'form.php' ?>
+        </div>
+      </div>
     </div>
   </div>
 </div>

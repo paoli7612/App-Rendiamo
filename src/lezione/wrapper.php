@@ -4,8 +4,11 @@
   <?php include '../wrapper_head.php' ?>
   <?php $id=$_GET['id'] ?>
   <?php
-	$lezione = query("SELECT lezioni.*, utenti.* FROM lezioni,utenti WHERE utenti.id=lezioni.idUtente AND lezioni.id=$id ")[0];
+	$lezione = query("SELECT lezioni.*, utenti.id as utenteid, utenti.nome, utenti.cognome FROM lezioni,utenti WHERE utenti.id=lezioni.idUtente AND lezioni.id=$id ")[0];
   $tipiMateriali = query("SELECT DISTINCT m.tipo from materiali as m, materialidilezioni as d WHERE m.id=d.idMateriale AND d.idLezione=$id");
+  include 'post.php';
+  $utentidilezioni = query("SELECT preferito from utentidilezioni WHERE idUtente=$idUtente AND idLezione=$id ");
+  $preferito = count($utentidilezioni);
   $materiali = array();
   foreach ($tipiMateriali as $key => $value) {
     array_push($materiali, $value['tipo']);
@@ -25,28 +28,57 @@
       <div class="row">
         <?php if ($lezione['idUtente'] == $_SESSION['user_row']['id']): ?>
           <div class="col-xl-12 col-sm-12 mb-3">
-          <div class="card text-white bg-dark o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-cogs"></i>
-              </div>
-              <div class="mr-5">
-                <button type="button" name="button" class="btn btn-light" onclick="window.location='../aggiungiMateriali/?id=<?php echo $lezione['id'] ?>'">
-                  <i class="fas fa-plus"></i>
-                  Aggiungi materiali
-                </button>
-                <button type="button" name="button" class="btn btn-light" onclick="window.location='../modificaLezione/?id=<?php echo $lezione['id']?>'">
-                  <i class="fas fa-edit"></i>
-                  Modifica lezione
-                </button>
-                <button type="button" name="button" class="btn btn-light" onclick="window.location='../eliminaLezione/?conferma=0&id=<?php echo $lezione['id']?>'">
-                  <i class="fas fa-edit"></i>
-                  Elimina lezione
-                </button>
+            <div class="card text-white bg-dark o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-cogs"></i>
+                </div>
+                <div class="mr-5">
+                  <button type="button" name="button" class="btn btn-light" onclick="window.location='../aggiungiMateriali/?id=<?php echo $lezione['id'] ?>'">
+                    <i class="fas fa-plus"></i>
+                    Aggiungi materiali
+                  </button>
+                  <button type="button" name="button" class="btn btn-light" onclick="window.location='../modificaLezione/?id=<?php echo $lezione['id']?>'">
+                    <i class="fas fa-edit"></i>
+                    Modifica lezione
+                  </button>
+                  <button type="button" name="button" class="btn btn-light" onclick="window.location='../eliminaLezione/?conferma=0&id=<?php echo $lezione['id']?>'">
+                    <i class="fas fa-edit"></i>
+                    Elimina lezione
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        <?php elseif ($_SESSION['user_type']=='studente'): ?>
+          <div class="col-xl-12 col-sm-12 mb-3">
+            <div class="card text-white bg-dark o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-info-circle"></i>
+                </div>
+                <div class="mr-5">
+                  <form method="post">
+                    <?php if ($preferito): ?>
+                      <button type="submit" name="submit" value="forgot" class="btn btn-light">
+                        <i class="fas fa-bookmark"></i>
+                        Salva
+                      </button>
+                    <?php else: ?>
+                      <button type="submit" name="submit" value="save" class="btn btn-light">
+                        <i class="far fa-bookmark"></i>
+                        Salva
+                      </button>
+                    <?php endif; ?>
+                    <button type="button" class="btn btn-light" onclick="window.location='../lezioni/?utente=<?php echo $lezione['utenteid']?>'">
+                      <i class="fas fa-user-graduate"></i>
+                      <?php echo $lezione['cognome']." ".$lezione['nome'] ?>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         <?php endif; ?>
         <div class="col-xl-6 col-sm-6 mb-3">
           <div class="card text-white bg-primary o-hidden h-100">

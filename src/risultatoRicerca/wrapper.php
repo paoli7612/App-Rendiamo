@@ -31,9 +31,7 @@
       ?>
 
       <?php
-        print_r($idMaterie);
-        print_r($idDocenti);
-        print_r($ricerca);
+        //print_r($idMaterie);        print_r($idDocenti);        print_r($ricerca);
       ?>
 
       <?php
@@ -58,7 +56,54 @@
 
        ?>
 
-       <?php// print_r($lezioni) ?>
+       <?php
+        if ($idDocenti){
+          $queryDocenti = "(";
+          foreach ($idDocenti as $idDocente) {
+            $queryDocenti .= "utenti.id=$idDocente OR ";
+          }
+          $queryDocenti .= "false)";
+          $docenti = query("SELECT * FROM utenti WHERE $queryDocenti");
+        }
+
+        if ($idMaterie){
+          $queryMaterie = "(";
+          foreach ($idMaterie as $idMateria) {
+            $queryMaterie .= "materie.id=$idMateria OR ";
+          }
+          $queryMaterie .= "false)";
+          $materie = query("SELECT * FROM materie WHERE $queryMaterie");
+        }
+
+       ?>
+
+       <br>
+       <?php if (isset($docenti)): ?>
+         <b>Docenti selezionati:</b>
+         <br>
+         <?php foreach ($docenti as $docente): ?>
+           <?php echo $docente['cognome']." ".$docente['nome'] ?>
+           <br>
+         <?php endforeach; ?>
+       <?php endif; ?>
+
+       <br>
+       <?php if (isset($materie)): ?>
+         <b>Materie selezionate:</b>
+         <br>
+         <?php foreach ($materie as $materia): ?>
+           <?php echo $materia['titolo'] ?>
+           <br>
+         <?php endforeach; ?>
+       <?php endif; ?>
+
+
+       <?php if ($ricerca): ?>
+         <br>
+         <b>Testo cercato:</b>
+         <br>
+         <?php echo $ricerca ?>
+       <?php endif; ?>
 
     </div>
   </div>
