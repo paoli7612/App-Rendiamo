@@ -35,6 +35,7 @@ CREATE TABLE `notifiche` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `idUtente` int(15),
   `testo` varchar(150) NOT NULL,
+  `link` varchar(50),
   PRIMARY KEY (`id`),
   FOREIGN KEY (`idUtente`)
   REFERENCES `utenti` (`id`)
@@ -168,12 +169,7 @@ INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
 ('Giocamo', 'Leonardi', 'giacomo1@gmail.com', SHA('qwerty'), 'professore'),
 ('Gino', 'Baglio', 'aldo@gmail.com', SHA('qwerty'), 'professore'),
 ('Simona', 'Dalla', 'lorenzo1@gmail.com', SHA('qwerty'), 'professore'),
-('Beppe', 'Grillo', 'gino@gmail.com', SHA('qwerty'), 'professore'),
-('sfa', 'Nera', 'pippgdsfgo1@gmail.com', SHA('qwerty'), 'studente'),
-('asdf', 'Nera', 'asd@gmail.com', SHA('qwerty'), 'studente'),
-('sad', 'asf', 'sdg@gmail.com', SHA('qwerty'), 'studente'),
-('Pippa', 'asd', 'pipasdsadpo1@gmail.com', SHA('qwerty'), 'studente'),
-('ads', 'Freso', 'asfsa@gmail.com', SHA('qwerty'), 'studente');
+('Beppe', 'Grillo', 'gino@gmail.com', SHA('qwerty'), 'professore');
 
 INSERT INTO `materie` (`id`,`titolo`) VALUES
 (1,'Lingua e letteratura italiana'),
@@ -222,3 +218,41 @@ INSERT INTO `materie` (`id`,`titolo`) VALUES
 (44,'Telecomunicazioni'),
 (45,'Laboratorio d autonomia'),
 (46,'Sistemi e reti');
+
+INSERT INTO `lezioni` (`idUtente`,`titolo`,`data`,`note`) VALUES
+(8, 'Romanticismo', CURRENT_TIMESTAMP, NULL),
+(8, 'Prima Guerra Mondiale', CURRENT_TIMESTAMP, NULL),
+(10, 'Trigonometria', CURRENT_TIMESTAMP, 'seno coseno tangente...'),
+(12, 'Cisco Packet Tracer', CURRENT_TIMESTAMP, NULL),
+(14, 'Cisco Packet Tracer', CURRENT_TIMESTAMP, NULL),
+(11, 'Newton', CURRENT_TIMESTAMP, 'In questa lezione parliamo di Newton e le sue scoperte nel ambito della fisica'),
+(11, 'Dante', CURRENT_TIMESTAMP, 'Dante come pochi sapeva che...'),
+(15, 'Dante', CURRENT_TIMESTAMP, NULL),
+(12, 'Tempi verbali', CURRENT_TIMESTAMP, 'Grammatica inglese e italiana'),
+(12, 'Tempi', CURRENT_TIMESTAMP, 'Grammatica inglese e italiana'),
+(12, 'Analisi logica', CURRENT_TIMESTAMP, 'Grammatica inglese e italiana'),
+(15, 'Equazioni di secondo grado', CURRENT_TIMESTAMP, NULL),
+(14, 'Soggetti di diritto', CURRENT_TIMESTAMP, 'Studio base del Diritto'),
+(12, 'Ordinamento giuridico', CURRENT_TIMESTAMP, 'Ordinamento giuridico e definizioni'),
+(8, 'Progettazione concettuale', CURRENT_TIMESTAMP, 'studio dello schema ER e dello schema relazionale'),
+(10, 'Progettazione fisica', CURRENT_TIMESTAMP, 'Il Database'),
+(12, 'Ciclo di vita di un progetto', CURRENT_TIMESTAMP, 'Studio delle fasi del ciclo di vita');
+
+INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`) VALUES
+(1,1), (1,2),
+(2,2),
+(3,3),
+(4,4), (4,12),
+(5,4), (5,12),
+(6,8), (6,9),
+(7,1),
+(8,1),
+(9,5), (9,1),
+(10,6), (10,7),
+(11,1), (11,5),
+(12,3),
+(13,10),
+(14,10),
+(15,4),
+(16,4),
+(17,11);

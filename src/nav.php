@@ -8,7 +8,7 @@
   }
   $idUtente = $_SESSION['user_row']['id'];
 ?>
-<?php $notifiche = query("SELECT testo FROM notifiche WHERE idUtente=$idUtente") ?>
+<?php $notifiche = query("SELECT testo,link FROM notifiche WHERE idUtente=$idUtente") ?>
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
   <a class="navbar-brand mr-1" href="../index.php">Apprendiamoci</a>
@@ -31,7 +31,7 @@
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificheDropDown" onclick="aggiornaNotifiche()">
         <?php if (count($notifiche)): ?>
           <?php foreach ($notifiche as $notifica): ?>
-            <a class="dropdown-item" href="#"><?php echo $notifica['testo'] ?></a>
+            <a class="dropdown-item" href="<?php if($notifica['link']) echo $notifica['link'] ?>"><?php echo $notifica['testo'] ?></a>
             <div class="dropdown-divider"></div>
           <?php endforeach; ?>
           <a class="dropdown-item" href="#">Segna come lette</a>
