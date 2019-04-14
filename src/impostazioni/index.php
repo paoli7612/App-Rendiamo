@@ -7,7 +7,5 @@
   <body>
     <?php include '../nav.php' ?>
     <?php include 'wrapper.php' ?>
-
-    <?php include '../scripts.php' ?>
   </body>
 </html>

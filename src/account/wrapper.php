@@ -42,7 +42,7 @@
                 <button title="impostazioni" class="btn bg-white" onclick="window.location='../docenti/?salvati'">
                   <i class="fas fa-users"></i> Docenti salvati
                 </button>
-                <button title="impostazioni" class="btn bg-white" onclick="window.location='../lezioniSalvate'" disabled="disabled">
+                <button title="impostazioni" class="btn bg-white" onclick="window.location='../lezioni/?salvate'">
                   <i class="fas fa-tags"></i> Lezioni salvate
                 </button>
               <?php endif; ?>

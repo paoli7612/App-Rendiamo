@@ -27,6 +27,7 @@ CREATE TABLE `utenti` (
   `tipo` ENUM('studente', 'professore', 'admin') DEFAULT 'studente',
   `avatar` varchar(100),
   `aiuti` BOOLEAN DEFAULT 1,
+  `notifiche` BOOLEAN DEFAULT 1,
   PRIMARY KEY (`id`),
   UNIQUE KEY (`email`)
 ) ENGINE=InnoDB;

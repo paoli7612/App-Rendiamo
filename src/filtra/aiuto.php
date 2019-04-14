@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header">
     Aiuto
-    <a href="#" class="float-right">
+    <a class="float-right">
       <i class="fas fa-question-circle"></i>
     </a>
   </div>

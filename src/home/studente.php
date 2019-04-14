@@ -93,4 +93,24 @@
         <p class="lead">Il sito ti aiuterà a muoverti nelle pagine. Se vuoi disabilitare questa funzionalità puoi farlo da qui.</p>
       </div>
     </div>
-</div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="featurette">
+    <div class="row">
+      <div class="col-xl-2 col-md-2 col-sm-12">
+        <button class="btn btn-block" style="height: 100%;" onclick="window.location='../impostazioni/'">
+          <h1>
+            <i class="fas fa-bell fa-lg"></i>
+          </h1>
+        </button>
+      </div>
+      <div class="col">
+        <h3 class="featurette-heading">
+          Notifiche
+        </h3>
+        <p class="lead">Le notifiche ti informano delle lezioni che pubblicano i professori che hai salvato o dei materiali che essi caricano.</p>
+      </div>
+    </div>
+  </div>

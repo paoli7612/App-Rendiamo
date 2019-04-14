@@ -2,6 +2,6 @@
 
   session_start();
   session_destroy();
-  header('Location: ../accedi/');
+  header('Location: ../out/');
 
 ?>

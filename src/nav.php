@@ -4,7 +4,7 @@
   if (isset($_SESSION['is_login'])){
 
   } else {
-    header('Location: ../accedi/');
+    header('Location: ../out/');
   }
   $idUtente = $_SESSION['user_row']['id'];
 ?>
