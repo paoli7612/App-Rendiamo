@@ -51,13 +51,24 @@
               <br>
             </div>
           </div>
-          <div class="mb-3" title="disabilitato" onclick="window.location='../ricercaAvanzata/'">
+          <div class="mb-3" onclick="window.location='../ricercaAvanzata/'">
             <div class="card text-white bg-warning o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-sliders-h"></i>
                 </div>
                 <div class="mr-5">Ricerca avanzata</div>
+              </div>
+              <br>
+            </div>
+          </div>
+          <div class="mb-3" onclick="window.location='../lezioni/?salvate'">
+            <div class="card text-white bg-info o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-bookmark"></i>
+                </div>
+                <div class="mr-5">Lezioni salvate</div>
               </div>
               <br>
             </div>

@@ -5,7 +5,14 @@
   <?php
     $nessunaRicerca = false;
     $lezioni = array();
-    if (isset($_GET['utente'])) {
+    $idUtente = $_SESSION['user_row']['id'];
+    if (isset($_GET['salvate'])) {
+      $lezioni = query("SELECT lezioni.id, lezioni.titolo, utenti.nome, utenti.cognome
+                  		  FROM lezioni, utenti, utentidilezioni
+                  		  WHERE utentidilezioni.idLezione=lezioni.id AND
+                          utentidilezioni.idUtente=$idUtente AND
+                           utenti.id=lezioni.idUtente;");
+    } elseif (isset($_GET['utente'])) {
       $lezioni = query("SELECT lezioni.id, lezioni.titolo, utenti.nome, utenti.cognome
                   		  FROM lezioni,utenti
                   		  WHERE idUtente=" . $_GET['utente'].
@@ -51,6 +58,11 @@
           </li>
           <li class="breadcrumb-item"><?php echo $utente['titolo']?></li>
         </ol>
+      <?php elseif(isset($_GET['salvate'])): ?>
+        <li class="breadcrumb-item">
+          Salvate
+        </li>
+      </ol>
         <?php else: ?>
           <li class="breadcrumb-item">Ricerca testuale</li>
         </ol>
