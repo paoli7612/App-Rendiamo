@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <?php include '../head.html' ?>
-    <title>Documenti</title>
+    <title>Altro</title>
   </head>
   <body>
     <?php include '../nav.php' ?>

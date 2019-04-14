@@ -31,6 +31,16 @@ CREATE TABLE `utenti` (
   UNIQUE KEY (`email`)
 ) ENGINE=InnoDB;
 
+CREATE TABLE `notifiche` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `idUtente` int(15),
+  `testo` varchar(150) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`idUtente`)
+  REFERENCES `utenti` (`id`)
+  ON DELETE CASCADE
+) ENGINE=InnoDB;
+
 CREATE TABLE `istitutiDiUtenti` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `idIstituto` int(15),

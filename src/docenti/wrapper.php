@@ -3,7 +3,7 @@
   <?php $title="docenti" ?>
   <?php include '../wrapper_head.php' ?>
   <?php $idUtente = $_SESSION['user_row']['id'] ?>
-  <?php $docenti = query("SELECT utenti.*, COUNT(lezioni.id) as count, utenti.preferito
+  <?php $docenti = query("SELECT utenti.*, COUNT(lezioni.id) as count
                           FROM (
                             SELECT utenti.*, utentidiutenti.preferito
                             FROM utenti
@@ -17,6 +17,7 @@
                             ON (
                               lezioni.idUtente=utenti.id
                             )
+                            WHERE NOT utenti.tipo = 'studente'
                             GROUP BY utenti.id
                             ORDER BY utenti.cognome, utenti.nome
                           ") ?>

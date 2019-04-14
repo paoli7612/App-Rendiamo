@@ -1,3 +1,4 @@
+<?php include 'connection.php' ?>
 <?php
   session_start();
   if (isset($_SESSION['is_login'])){
@@ -5,8 +6,9 @@
   } else {
     header('Location: ../accedi/');
   }
-
+  $idUtente = $_SESSION['user_row']['id'];
 ?>
+<?php $notifiche = query("SELECT testo FROM notifiche WHERE idUtente=$idUtente") ?>
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
   <a class="navbar-brand mr-1" href="../index.php">Apprendiamoci</a>
@@ -20,12 +22,34 @@
 
   <ul class="navbar-nav ml-auto ml-md-0">
     <li class="nav-item dropdown no-arrow">
+      <a class="nav-link dropdown-toggle" href="#" id="notificheDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-bell fa-fw"></i>
+        <?php if (count($notifiche)): ?>
+          <span class="badge badge-danger"><?php echo count($notifiche) ?></span>
+        <?php endif; ?>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificheDropDown" onclick="aggiornaNotifiche()">
+        <?php if (count($notifiche)): ?>
+          <?php foreach ($notifiche as $notifica): ?>
+            <a class="dropdown-item" href="#"><?php echo $notifica['testo'] ?></a>
+            <div class="dropdown-divider"></div>
+          <?php endforeach; ?>
+          <a class="dropdown-item" href="#">Segna come lette</a>
+        <?php else: ?>
+          <a class="dropdown-item">
+            Nessuna nuova notifica
+          </a>
+        <?php endif; ?>
+      </div>
+    </li>
+    <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-user-circle fa-fw"></i>
-        <?php echo $_SESSION['user_row']['nome']." ".$_SESSION['user_row']['cognome'] ?>
       </a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-        <a class="dropdown-item" href="../account/">Visualizza profilo</a>
+        <a class="dropdown-item" href="../account/">
+          <?php echo $_SESSION['user_row']['nome']." ".$_SESSION['user_row']['cognome'] ?>
+        </a>
         <a class="dropdown-item" href="../impostazioni/">Impostazioni</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Disconnetti</a>
@@ -52,6 +76,3 @@
     </div>
   </div>
 </div>
-
-
-<?php include 'connection.php' ?>

@@ -4,7 +4,7 @@
   <?php include '../wrapper_head.php' ?>
   <?php $id = $_GET['id'] ?>
   <?php $lezione = query("SELECT lezioni.* FROM lezioni WHERE lezioni.id=$id ")[0] ?>
-  <?php $documenti = query("SELECT * FROM materiali, materialidilezioni WHERE materiali.tipo='Documento' AND materiali.id=materialidilezioni.idMateriale AND materialidilezioni.idLezione=".$lezione['id']) ?>
+  <?php $presentazioni = query("SELECT * FROM materiali, materialidilezioni WHERE materiali.tipo='Presentazione' AND materiali.id=materialidilezioni.idMateriale AND materialidilezioni.idLezione=".$lezione['id']) ?>
 
   <div id="content-wrapper">
     <div class="container-fluid">
@@ -20,13 +20,13 @@
 
       <div class="row">
         <div class="col">
-          <?php if ($documenti): ?>
-            <?php foreach ($documenti as $documento): ?>
-              <?php echo $documento['titolo'].".".$documento['estensione'] ?>
+          <?php if ($presentazioni): ?>
+            <?php foreach ($presentazioni as $presentazione): ?>
+              <?php echo $presentazione['titolo'].".".$presentazione['estensione'] ?>
               <br>
             <?php endforeach; ?>
           <?php else: ?>
-            <p>Nessun Documento caricato</p>
+            <p>Nessuna presentazione caricata</p>
           <?php endif; ?>
         </div>
       </div>

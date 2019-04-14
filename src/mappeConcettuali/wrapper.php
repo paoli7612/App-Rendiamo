@@ -4,7 +4,7 @@
   <?php include '../wrapper_head.php' ?>
   <?php $id = $_GET['id'] ?>
   <?php $lezione = query("SELECT lezioni.* FROM lezioni WHERE lezioni.id=$id ")[0] ?>
-  <?php $mappe = query("SELECT * FROM materiali, materialidilezioni WHERE materiali.tipo='Documento' AND materiali.id=materialidilezioni.idMateriale AND materialidilezioni.idLezione=".$lezione['id']) ?>
+  <?php $mappe = query("SELECT * FROM materiali, materialidilezioni WHERE materiali.tipo='MappaConcettuale' AND materiali.id=materialidilezioni.idMateriale AND materialidilezioni.idLezione=".$lezione['id']) ?>
 
   <div id="content-wrapper">
     <div class="container-fluid">
