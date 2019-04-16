@@ -35,9 +35,9 @@
                       <span class="float-right">
                         <i class="fas fa-angle-right"></i>
                       </span>
-                  </a>
+                    </a>
+                  </div>
                 </div>
-              </div>
             <?php endforeach; ?>
           <?php else: ?>
             <p>Nessun Video caricato</p>

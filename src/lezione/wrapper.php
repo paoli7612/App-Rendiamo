@@ -4,10 +4,13 @@
   <?php include '../wrapper_head.php' ?>
   <?php $id=$_GET['id'] ?>
   <?php
-	$lezione = query("SELECT lezioni.*, utenti.id as utenteid, utenti.nome, utenti.cognome
+	$lezioni = query("SELECT lezioni.*, utenti.id as utenteid, utenti.nome, utenti.cognome
     FROM lezioni, utenti
     WHERE utenti.id=lezioni.idUtente
-      AND lezioni.id=$id ")[0];
+      AND lezioni.id=$id ");
+    if($lezioni)$lezione = $lezioni[0];
+    else header('Location: ../home/');
+
   $tipiMateriali = query("SELECT DISTINCT m.tipo from materiali as m, materialiDiLezioni as d WHERE m.id=d.idMateriale AND d.idLezione=$id");
   include 'post.php';
   $utentidilezioni = query("SELECT preferito from utentiDiLezioni WHERE idUtente=$idUtente AND idLezione=$id ");

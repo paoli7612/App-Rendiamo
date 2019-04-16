@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="modal-body">
-        <?php  $materie=query("SELECT * FROM materie") ?>
+        <?php $materie=query("SELECT * FROM materie") ?>
         <?php foreach ($materie as $materia): ?>
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" name="materia_<?php echo $materia['id'] ?>"id="materia_<?php echo $materia['id'] ?>">

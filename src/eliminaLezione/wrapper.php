@@ -8,7 +8,7 @@
     query("DELETE FROM lezioni WHERE id=$id");
     header('../home');
   } ?>
-  <?php $lezione = query("SELECT * FROM lezioni WHERE id='$id'")[0]?>
+  <?php $lezioni = query("SELECT * FROM lezioni WHERE id='$id'")[0]?>
   <?php lezione_docente($lezione)?>
 
   <div id="content-wrapper">
@@ -23,17 +23,30 @@
         </li>
         <li class="breadcrumb-item active">Elimina lezione</li>
       </ol>
+      <div class="container">
 
-      <h1>Eliminare davvero la lezione (<?php echo $lezione['titolo'] ?>) ?</h1>
+        <div class="card mx-auto mt-5">
+          <div class="card-header">
+            Elimina lezione
+            <i class="fas fa-trash float-right"></i>
+          </div>
+          <div class="card-body">
+            <h3>Eliminare davvero la lezione "<?php echo $lezione['titolo'] ?>" ?</h3>
+          </div>
+          <div class="card-footer">
+            <button type="button" name="button" class="btn btn-success" onclick="window.location='../eliminaLezione/?conferma=1&id=<?php echo $lezione['id']?>'">
+              <i class="fas fa-check"></i>
+              Elimina
+            </button>
+            <button type="button" name="button" class="btn btn-danger" onclick="window.location='../lezione/?id=<?php echo $lezione['id']?>'">
+              <i class="fas fa-times"></i>
+              Annulla
+            </button>
 
-      <button type="button" name="button" class="btn btn-success" onclick="window.location='../eliminaLezione/?conferma=1&id=<?php echo $lezione['id']?>'">
-        <i class="fas fa-check"></i>
-        Elimina
-      </button>
-      <button type="button" name="button" class="btn btn-danger" onclick="window.location='../lezione/?id=<?php echo $lezione['id']?>'">
-        <i class="fas fa-times"></i>
-        Annulla
-      </button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

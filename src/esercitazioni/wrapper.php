@@ -22,8 +22,22 @@
         <div class="col">
           <?php if ($esercitazioni): ?>
             <?php foreach ($esercitazioni as $esercitazione): ?>
-              <?php echo $esercitazione['titolo'].".".$esercitazione['estensione'] ?>
-              <br>
+              <div class="col-xl-4 col-sm-12 mb-3">
+                <div class="card text-white bg-success o-hidden h-100">
+                  <div class="card-body">
+                    <div class="card-body-icon">
+                      <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <div class="mr-5"><?php echo $esercitazione['titolo'] ?></div>
+                  </div>
+                    <a class="card-footer text-white clearfix small z-1" href="../../files/<?php echo $esercitazione['indirizzo'] ?>" download>
+                      <span class="float-left">Download</span>
+                      <span class="float-right">
+                        <i class="fas fa-angle-right"></i>
+                      </span>
+                    </a>
+                  </div>
+                </div>
             <?php endforeach; ?>
           <?php else: ?>
             <p>Nessua esercitazione caricato</p>

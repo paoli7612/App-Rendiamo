@@ -34,7 +34,7 @@
   	}
     $n--;
     $notifica = "Caricati $n materiali!";
-    $ink = "../lezione/?id=$idLezione";
+    $link = "../lezione/?id=$idLezione";
     query("INSERT INTO notifiche (`idUtente`, `testo`, `link`) VALUES ($idUtente, '$notifica', '$link')");
 
 
