@@ -204,7 +204,7 @@
                 </span>
             <?php else: ?>
               <a class="card-footer text-white clearfix small z-1">
-              <span class="float-left">Nessuna mappa concettuale caricato</span>
+              <span class="float-left">Nessuna mappa concettuale caricata</span>
             <?php endif; ?>
             </a>
           </div>
