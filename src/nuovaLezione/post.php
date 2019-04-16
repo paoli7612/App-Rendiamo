@@ -31,7 +31,7 @@
         $str .= "(".$i.", ".$idLezione."),";
       }
       $str = substr($str, 0, -1);
-      query("INSERT INTO materiedilezioni (`idMateria`,`idLezione`)
+      query("INSERT INTO materieDiLezioni (`idMateria`,`idLezione`)
       VALUES". $str);
     }
 
