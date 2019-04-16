@@ -22,7 +22,7 @@
 
   <ul class="navbar-nav ml-auto ml-md-0">
     <li class="nav-item dropdown no-arrow">
-      <a class="nav-link dropdown-toggle" href="#" id="notificheDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="notificheDropDown" <?php if (!$_SESSION['user_row']['notifiche']): ?> style="display: none" <?php endif; ?>role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-bell fa-fw"></i>
         <?php if (count($notifiche)): ?>
           <span class="badge badge-danger"><?php echo count($notifiche) ?></span>

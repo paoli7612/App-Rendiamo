@@ -26,7 +26,7 @@
             </div>
             <div class="card-footer">
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="aiuti" checked="checked">
+                <input type="checkbox" class="custom-control-input" id="aiuti" <?php if ($_SESSION['user_row']['aiuti']): ?> checked="checked" <?php endif; ?> onchange="window.location = '../queries/aiuti.php?k='+(+this.checked);">
                 <label class="custom-control-label" for="aiuti" >Mostra aiuti</label>
               </div>
             </div>
@@ -46,8 +46,8 @@
             </div>
             <div class="card-footer">
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="notifiche" checked="checked">
-                <label class="custom-control-label" for="notifiche" >Mostra aiuti</label>
+                <input type="checkbox" class="custom-control-input" id="notifiche" <?php if ($_SESSION['user_row']['notifiche']): ?> checked="checked" <?php endif; ?> onchange="window.location = '../queries/notifiche.php?k='+(+this.checked);">
+                <label class="custom-control-label" for="notifiche" >Mostra notifiche</label>
               </div>
             </div>
           </div>

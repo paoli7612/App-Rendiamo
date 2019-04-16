@@ -12,9 +12,9 @@
         <li class="breadcrumb-item active">Ricerca avanzata</li>
       </ol>
       <div class="row">
-        <div class="col-xl-4 col-sm-12 mb-3">
+        <?php if ($_SESSION['user_type'] == 'studente'): ?>
           <?php include 'aiuto.php' ?>
-        </div>
+        <?php endif; ?>
         <div class="col">
           <?php include 'form.php' ?>
         </div>

@@ -37,15 +37,15 @@
                   <i class="fas fa-fw fa-cogs"></i>
                 </div>
                 <div class="mr-5">
-                  <button type="button" name="button" class="btn btn-light" onclick="window.location='../aggiungiMateriali/?id=<?php echo $lezione['id'] ?>'">
+                  <button type="button" name="button" class="btn btn-light mb-3" onclick="window.location='../aggiungiMateriali/?id=<?php echo $lezione['id'] ?>'">
                     <i class="fas fa-plus"></i>
                     Aggiungi materiali
                   </button>
-                  <button type="button" name="button" class="btn btn-light" onclick="window.location='../modificaLezione/?id=<?php echo $lezione['id']?>'">
+                  <button type="button" name="button" class="btn btn-light mb-3" onclick="window.location='../modificaLezione/?id=<?php echo $lezione['id']?>'">
                     <i class="fas fa-edit"></i>
                     Modifica lezione
                   </button>
-                  <button type="button" name="button" class="btn btn-light" onclick="window.location='../eliminaLezione/?conferma=0&id=<?php echo $lezione['id']?>'">
+                  <button type="button" name="button" class="btn btn-light mb-3" onclick="window.location='../eliminaLezione/?conferma=0&id=<?php echo $lezione['id']?>'">
                     <i class="fas fa-edit"></i>
                     Elimina lezione
                   </button>
@@ -63,17 +63,17 @@
                 <div class="mr-5">
                   <form method="post">
                     <?php if ($preferito): ?>
-                      <button type="submit" name="submit" value="forgot" class="btn btn-light">
+                      <button type="submit" name="submit" value="forgot" class="btn btn-light mb-3">
                         <i class="fas fa-bookmark"></i>
                         Salva
                       </button>
                     <?php else: ?>
-                      <button type="submit" name="submit" value="save" class="btn btn-light">
+                      <button type="submit" name="submit" value="save" class="btn btn-light mb-3">
                         <i class="far fa-bookmark"></i>
                         Salva
                       </button>
                     <?php endif; ?>
-                    <button type="button" class="btn btn-light" onclick="window.location='../lezioni/?utente=<?php echo $lezione['utenteid']?>'">
+                    <button type="button" class="btn btn-light mb-3" onclick="window.location='../lezioni/?utente=<?php echo $lezione['utenteid']?>'">
                       <i class="fas fa-user-graduate"></i>
                       <?php echo $lezione['cognome']." ".$lezione['nome'] ?>
                     </button>

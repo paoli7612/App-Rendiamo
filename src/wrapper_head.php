@@ -19,7 +19,9 @@
       <a class="dropdown-item" href="../filtraMaterie/">Materie</a>
       <a class="dropdown-item" href="../lezioni/">Testuale</a>
       <a class="dropdown-item" href="../ricercaAvanzata/">Ricerca avanzata</a>
-      <a class="dropdown-item" href="../lezioni/?salvate">Salvate</a>
+      <?php if ($_SESSION['user_type'] == 'studente'): ?>
+        <a class="dropdown-item" href="../lezioni/?salvate">Salvate</a>
+      <?php endif; ?>
     </div>
   </li>
   <?php if ($_SESSION['user_type'] == 'studente'): ?>

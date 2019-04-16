@@ -11,13 +11,10 @@
       </ol>
       <div class="row">
         <?php if ($_SESSION['user_type'] == 'studente'): ?>
-          <div class="col-xl-3 col-sm-12 mb-3">
-            <?php include 'aiuto.php' ?>
-          </div>
-          <div class="col-xl-9 col-sm-12 ">
+          <?php include 'aiuto.php' ?>
           <?php else: ?>
-          <div class="col-xl-12 col-sm-12 ">
         <?php endif; ?>
+        <div class="col">
           <div class="mb-3" onclick="window.location='../filtraMaterie/'">
             <div class="card text-white bg-primary o-hidden h-100">
               <div class="card-body">
@@ -62,17 +59,19 @@
               <br>
             </div>
           </div>
-          <div class="mb-3" onclick="window.location='../lezioni/?salvate'">
-            <div class="card text-white bg-info o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-bookmark"></i>
+          <?php if ($_SESSION['user_type'] == 'studente'): ?>
+            <div class="mb-3" onclick="window.location='../lezioni/?salvate'">
+              <div class="card text-white bg-info o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                    <i class="fas fa-fw fa-bookmark"></i>
+                  </div>
+                  <div class="mr-5">Lezioni salvate</div>
                 </div>
-                <div class="mr-5">Lezioni salvate</div>
+                <br>
               </div>
-              <br>
             </div>
-          </div>
+          <?php endif; ?>
         </div>
       </div>
     </div>
