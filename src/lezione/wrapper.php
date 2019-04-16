@@ -183,7 +183,7 @@
                 </span>
             <?php else: ?>
               <a class="card-footer text-white clearfix small z-1">
-              <span class="float-left">Nessun autio caricato</span>
+              <span class="float-left">Nessun audio caricato</span>
             <?php endif; ?>
             </a>
           </div>
