@@ -239,7 +239,7 @@ INSERT INTO `lezioni` (`idUtente`,`titolo`,`data`,`note`) VALUES
 (10, 'Progettazione fisica', CURRENT_TIMESTAMP, 'Il Database'),
 (12, 'Ciclo di vita di un progetto', CURRENT_TIMESTAMP, 'Studio delle fasi del ciclo di vita');
 
-INSERT INTO `materiedilezioni` (`idLezione`, `idMateria`) VALUES
+INSERT INTO `materieDiLezioni` (`idLezione`, `idMateria`) VALUES
 (1,1), (1,2),
 (2,2),
 (3,3),

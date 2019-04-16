@@ -4,10 +4,13 @@
   <?php include '../wrapper_head.php' ?>
   <?php $id=$_GET['id'] ?>
   <?php
-	$lezione = query("SELECT lezioni.*, utenti.id as utenteid, utenti.nome, utenti.cognome FROM lezioni,utenti WHERE utenti.id=lezioni.idUtente AND lezioni.id=$id ")[0];
-  $tipiMateriali = query("SELECT DISTINCT m.tipo from materiali as m, materialidilezioni as d WHERE m.id=d.idMateriale AND d.idLezione=$id");
+	$lezione = query("SELECT lezioni.*, utenti.id as utenteid, utenti.nome, utenti.cognome
+    FROM lezioni, utenti
+    WHERE utenti.id=lezioni.idUtente
+      AND lezioni.id=$id ")[0];
+  $tipiMateriali = query("SELECT DISTINCT m.tipo from materiali as m, materialiDiLezioni as d WHERE m.id=d.idMateriale AND d.idLezione=$id");
   include 'post.php';
-  $utentidilezioni = query("SELECT preferito from utentidilezioni WHERE idUtente=$idUtente AND idLezione=$id ");
+  $utentidilezioni = query("SELECT preferito from utentiDiLezioni WHERE idUtente=$idUtente AND idLezione=$id ");
   $preferito = count($utentidilezioni);
   $materiali = array();
   foreach ($tipiMateriali as $key => $value) {

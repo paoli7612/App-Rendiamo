@@ -3,7 +3,7 @@
   <?php $title ="lezioni" ?>
   <?php include '../wrapper_head.php' ?>
   <?php
-      $materie = query("SELECT materie.*, count(materiedilezioni.id) AS count FROM materie, materiedilezioni WHERE materie.id=materiedilezioni.idMateria GROUP BY materie.id");
+      $materie = query("SELECT materie.*, count(materieDiLezioni.id) AS count FROM materie, materieDiLezioni WHERE materie.id=materieDiLezioni.idMateria GROUP BY materie.id");
   ?>
 
   <div id="content-wrapper">

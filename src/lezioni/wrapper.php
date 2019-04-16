@@ -8,9 +8,9 @@
     $idUtente = $_SESSION['user_row']['id'];
     if (isset($_GET['salvate'])) {
       $lezioni = query("SELECT lezioni.id, lezioni.titolo, utenti.nome, utenti.cognome
-                  		  FROM lezioni, utenti, utentidilezioni
-                  		  WHERE utentidilezioni.idLezione=lezioni.id AND
-                          utentidilezioni.idUtente=$idUtente AND
+                  		  FROM lezioni, utenti, utentiDiLezioni
+                  		  WHERE utentiDiLezioni.idLezione=lezioni.id AND
+                          utentiDiLezioni.idUtente=$idUtente AND
                            utenti.id=lezioni.idUtente;");
     } elseif (isset($_GET['utente'])) {
       $lezioni = query("SELECT lezioni.id, lezioni.titolo, utenti.nome, utenti.cognome
@@ -19,9 +19,9 @@
                           " AND utenti.id=lezioni.idUtente;");
     } elseif (isset($_GET['materia'])) {
 	    $lezioni = query("SELECT lezioni.id, lezioni.titolo, utenti.nome, utenti.cognome
-                			FROM lezioni, materiedilezioni, utenti
-                			WHERE materiedilezioni.idMateria=" . $_GET['materia'] .
-                      " AND lezioni.id=materiedilezioni.idLezione
+                			FROM lezioni, materieDiLezioni, utenti
+                			WHERE materieDiLezioni.idMateria=" . $_GET['materia'] .
+                      " AND lezioni.id=materieDiLezioni.idLezione
                         AND utenti.id=lezioni.idUtente;");
   	} elseif (isset($_GET['filtra'])){
       if (strlen($_GET['filtra'])>0){
@@ -103,7 +103,7 @@
                     <i class="fas fa-user"></i>
                   </span>
                 </a>
-                <?php $materie = query("SELECT * FROM materie, materiedilezioni WHERE materiedilezioni.idLezione=".$lezione['id']." AND materie.id=materiedilezioni.idMateria") ?>
+                <?php $materie = query("SELECT * FROM materie, materieDiLezioni WHERE materieDiLezioni.idLezione=".$lezione['id']." AND materie.id=materieDiLezioni.idMateria") ?>
                 <a class="card-footer text-white clearfix small z-1" href="../lezione/?id=<?php echo $lezione['id'] ?>">
                   <span class="float-left">
                     <?php if ($materie): ?>
