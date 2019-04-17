@@ -6,6 +6,7 @@
   <?php $idLezione=$_GET['lezione'] ?>
   <?php $tipo = query("SELECT * FROM tipiMateriali WHERE titolo='$idTipo'")[0] ?>
   <?php $lezione = query("SELECT * FROM lezioni WHERE id=$idLezione")[0] ?>
+  <?php $utente = query("SELECT * FROM utenti WHERE id=".$lezione['idUtente'])[0] ?>
   <div id="content-wrapper">
     <div class="container-fluid">
 
@@ -13,14 +14,16 @@
         <li class="breadcrumb-item">
           <a href="../filtra/">Lezioni</a>
         </li>
-        <li class="breadcrumb-item active">
-          <a href="../lezione/?id=<?php echo $lezione['id'] ?>"></a>
-          <?php echo $lezione['titolo'] ?>
+        <li class="breadcrumb-item">
+          <a href="../lezione/?id=<?php echo $lezione['id'] ?>">
+            <?php echo $lezione['titolo'] ?>
+          </a>
         </li>
         <li class="breadcrumb-item active">
           <?php echo $tipo['plurale'] ?>
         </li>
       </ol>
+      <div class="row">
 
       <?php $materiali = query("SELECT * FROM materiali, materialiDiLezioni WHERE idTipo=".$tipo['id']." AND materialiDiLezioni.idLezione=".$lezione['id']." AND materialiDiLezioni.idMateriale=materiali.id") ?>
       <?php foreach ($materiali as $materiale): ?>
@@ -32,7 +35,7 @@
               </div>
               <div class="mr-5"><?php echo $materiale['titolo'] ?></div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="../../files/<?php echo $materiale['indirizzo'] ?>" download="download">
+            <a class="card-footer text-white clearfix small z-1" href="../../files/<?php echo $utente['email']."/".$materiale['id'].".".$materiale['estensione'] ?>" download="download">
               <span class="float-left">Scarica</span>
               <span class="float-right">
                 <i class="fas fa-angle-down"></i>
@@ -41,6 +44,7 @@
           </div>
         </div>
       <?php endforeach; ?>
+    </div>
     </div>
   </div>
 </div>

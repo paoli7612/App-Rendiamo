@@ -60,10 +60,18 @@
     $link = "../lezione/?id=$idLezione";
     query("INSERT INTO notifiche (`idUtente`, `testo`, `link`) VALUES ($idUtente, '$notifica', '$link')");
 
+    $studenti = query("SELECT utenti.id FROM utenti, utentiDiUtenti WHERE utenti.id=utentiDiUtenti.idStudente AND utentiDiUtenti.idUtente=$idUtente");
+    foreach ($studenti as $studente) {
+      $id = $studente['id'];
+      $notifica = $_SESSION['user_row']['nome']." ". $_SESSION['user_row']['cognome'] . " ha pubblicato una nuova lezione!";
+      $link = "../lezione/?id=$idLezione";
+      query("INSERT INTO notifiche (`idUtente`, `testo`, `link`) VALUES ($id, '$notifica', '$link')");
+    }
+
     if ($res){
       print_r("ERRORE NELLA CREAZIONE DELLA LEZIONE");
     } else {
-      //header('Location: ../lezione/?id='.$idLezione);
+      header('Location: ../lezione/?id='.$idLezione);
     }
 
   }

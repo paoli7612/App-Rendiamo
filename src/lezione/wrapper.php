@@ -11,7 +11,7 @@
     if($lezioni)$lezione = $lezioni[0];
     else header('Location: ../home/');
 
-  $materiali = query("SELECT tipiMateriali.*, COUNT(materiali.id) FROM tipiMateriali, materiali WHERE materiali.idTipo=tipiMateriali.id GROUP BY tipiMateriali.id");
+  $materiali = query("SELECT tipiMateriali.*, COUNT(materiali.id) FROM tipiMateriali, materiali, materialiDiLezioni WHERE materialiDiLezioni.idLezione=$id AND materiali.idTipo=tipiMateriali.id AND materialiDiLezioni.idMateriale=materiali.id GROUP BY tipiMateriali.id");
   include 'post.php';
   $utentidilezioni = query("SELECT preferito from utentiDiLezioni WHERE idUtente=$idUtente AND idLezione=$id ");
   $preferito = count($utentidilezioni);
@@ -43,6 +43,10 @@
                   <button type="button" name="button" class="btn btn-light mb-3" onclick="window.location='../modificaLezione/?id=<?php echo $lezione['id']?>'">
                     <i class="fas fa-edit"></i>
                     Modifica lezione
+                  </button>
+                  <button type="button" name="button" class="btn btn-light mb-3" onclick="window.location='../modificaMaterie/?id=<?php echo $lezione['id']?>'">
+                    <i class="fas fa-book"></i>
+                    Modifica materie
                   </button>
                   <button type="button" name="button" class="btn btn-light mb-3" onclick="window.location='../eliminaLezione/?conferma=0&id=<?php echo $lezione['id']?>'">
                     <i class="fas fa-edit"></i>

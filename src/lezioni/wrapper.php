@@ -89,7 +89,7 @@
       <div class="row">
         <?php if ($lezioni): ?>
           <?php foreach ($lezioni as $lezione): ?>
-            <div class="col-xl-4 col-sm-4 mb-3" onclick="window.location='../lezione/?id=<?php echo $lezione['id'] ?>'">
+            <div class="col-xl-4 col-sm-6 mb-3" onclick="window.location='../lezione/?id=<?php echo $lezione['id'] ?>'">
               <div class="card text-white bg-secondary o-hidden h-100" onmouseover="hover(this)" onmouseleave="leave(this)">
                 <div class="card-body">
                   <div class="card-body-icon">

@@ -92,13 +92,11 @@ CREATE TABLE `tipiMateriali` (
 
 CREATE TABLE `materiali` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
-  `indirizzo` varchar(150) NOT NULL,
   `titolo` varchar(100) NOT NULL,
   `estensione` varchar(10) NOT NULL,
   `idTipo` int(15) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE (`titolo`),
-  UNIQUE KEY (`indirizzo`),
   FOREIGN KEY (`idTipo`)
     REFERENCES `tipiMateriali` (`id`)
 ) ENGINE=InnoDB;
