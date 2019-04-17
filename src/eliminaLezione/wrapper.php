@@ -8,7 +8,7 @@
     query("DELETE FROM lezioni WHERE id=$id");
     header('../home');
   } ?>
-  <?php $lezioni = query("SELECT * FROM lezioni WHERE id='$id'")[0]?>
+  <?php $lezione = query("SELECT lezioni.* FROM lezioni WHERE lezioni.id=$id")[0]?>
   <?php lezione_docente($lezione)?>
 
   <div id="content-wrapper">

@@ -20,76 +20,19 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <button class="btn btn-block" onclick="impostaTipo('Documento', 'bg-primary')">
-          <div class="card text-white bg-primary o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-file-pdf"></i>
+        <?php $tipiMateriali = query("SELECT * FROM tipiMateriali") ?>
+        <?php foreach ($tipiMateriali as $tipo): ?>
+          <button class="btn btn-block" onclick="impostaTipo('<?php echo $tipo['titolo'] ?>', 'bg-<?php echo $tipo['colore']?>', <?php echo $tipo['id'] ?>)">
+            <div class="card text-white bg-<?php echo $tipo['colore']?> o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fa-fw <?php echo $tipo['icona'] ?>"></i>
+                </div>
+                <div class="mr-5"><?php echo $tipo['titolo'] ?></div>
               </div>
-              <div class="mr-5">Documento</div>
             </div>
-          </div>
-        </button>
-        <button class="btn btn-block" onclick="impostaTipo('Video', 'bg-warning')">
-          <div class="card text-white bg-warning o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-film"></i>
-              </div>
-              <div class="mr-5">Video</div>
-            </div>
-          </div>
-        </button>
-        <button class="btn btn-block" onclick="impostaTipo('Esercitazione', 'bg-success')">
-          <div class="card text-white bg-success o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-dumbbell"></i>
-              </div>
-              <div class="mr-5">Esercitazione</div>
-            </div>
-          </div>
-        </button>
-        <button class="btn btn-block" onclick="impostaTipo('Presentazione', 'bg-info')">
-          <div class="card text-white bg-info o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-project-diagram"></i>
-              </div>
-              <div class="mr-5">Presentazione</div>
-            </div>
-          </div>
-        </button>
-        <button class="btn btn-block" onclick="impostaTipo('Audio', 'bg-danger')">
-          <div class="card text-white bg-danger o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-headphones-alt"></i>
-              </div>
-              <div class="mr-5">Audio</div>
-            </div>
-          </div>
-        </button>
-        <button class="btn btn-block" onclick="impostaTipo('MappConcettualei', 'bg-purple')">
-          <div class="card text-white bg-purple o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-map"></i>
-              </div>
-              <div class="mr-5">Mappe concettuale</div>
-            </div>
-          </div>
-        </button>
-        <button class="btn btn-block" onclick="impostaTipo('Altro', 'bg-dark')">
-          <div class="card text-white bg-dark o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-ellipsis-v"></i>
-              </div>
-              <div class="mr-5">Altro</div>
-            </div>
-          </div>
-        </button>
+          </button>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>

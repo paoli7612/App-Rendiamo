@@ -11,7 +11,13 @@ var inputFile = function(){
   c = file.cloneNode(true);
   c.name = "file_"+n;
   c.id = "file_"+n;
+  t = document.createElement('input');
+  t.name = "tipo_"+n;
+  t.id = "tipo_"+n;
+  t.type = 'hidden';
+  t.value = 1;
   div.appendChild(c);
+  div.appendChild(t);
 
   formGroup = document.createElement('div');
   formGroup.className = 'form-group row';
@@ -36,12 +42,11 @@ var inputFile = function(){
 	  formGroupLabel = document.createElement('div');
 	  formGroupLabel.className = '';
         button = document.createElement('input');
-		button.type = 'text'
+	      button.type = 'button'
         button.className = "btn btn-block text-white btn-primary";
 		button.value = 'Documento';
 		button.style['height'] = '50px';
 		button.id = "button_"+n;
-		button.name = "button_"+n
 		button.setAttribute('onclick', 'cambiaTipo("'+n+'")');
 	  formGroupLabel.appendChild(button);
 	col2.appendChild(formGroupLabel);
@@ -56,12 +61,14 @@ var selected = null;
 var cambiaTipo = function(id){
   modal.modal('toggle');
   selected = id;
+  console.log(selected);
 }
 
-var impostaTipo = function(tipo, classe){
+var impostaTipo = function(nome, classe, id){
   modal.modal('toggle');
+  document.getElementById('tipo_'+selected).value = id;
   var button = document.getElementById('button_'+selected);
-  button.value = tipo;
+  button.value = nome
   var ultimaClasse = button.classList[3];
   button.className = button.className.replace(ultimaClasse, classe);
 }

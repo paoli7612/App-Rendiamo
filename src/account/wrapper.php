@@ -11,9 +11,10 @@
         </li>
       </ol>
       <div class="row">
-        <div class="col-xl-4 col-sm-12 mb-3">
+        <?php if ($_SESSION['user_type']=='studente'): ?>
+
           <?php include 'aiuto.php' ?>
-        </div>
+        <?php endif; ?>
         <div class="col-xl-8 col-sm-12">
           <div class="card text-white o-hidden bg-primary">
             <div class="card-body">
@@ -36,7 +37,7 @@
             <div class="card-footer">
               <?php if ($utente['tipo'] != 'studente'): ?>
                 <button title="impostazioni" class="btn bg-white" onclick="window.location='../lezioni/?utente=<?php echo $utente['id'] ?>'">
-                  <i class="fas fa-sign-out-alt"></i> Lezioni create
+                  <i class="fas fa-crown"></i> Lezioni create
                 </button>
               <?php else: ?>
                 <button title="impostazioni" class="btn bg-white" onclick="window.location='../docenti/?salvati'">

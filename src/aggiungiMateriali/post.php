@@ -1,6 +1,6 @@
 <?php
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-
+    print_r($_POST);
     $idLezione = $_GET['id'];
   	$n = 1;
   	foreach ($_FILES as $file) {
@@ -16,8 +16,8 @@
   		$titolo = $_POST['input_'.$n];
   		$indirizzo = $_SESSION['user_row']['email']."/".$file["name"];
   		$estensione = substr($file['name'], -3);
-  		$tipo = $_POST['button_'.$n];
-  		$a = query("INSERT INTO materiali (`titolo`,`indirizzo`,`estensione`,`tipo`) VALUES
+  		$tipo = $_POST['tipo_'.$n];
+  		$a = query("INSERT INTO materiali (`titolo`,`indirizzo`,`estensione`,`idTipo`) VALUES
   				('$titolo', '$indirizzo', '$estensione', '$tipo');");
       print_r($a);
       $idMateriale = query("SELECT * FROM materiali WHERE titolo='$titolo' AND indirizzo='$indirizzo';");
@@ -38,7 +38,7 @@
     query("INSERT INTO notifiche (`idUtente`, `testo`, `link`) VALUES ($idUtente, '$notifica', '$link')");
 
 
-    header("Location: ../lezione/?id=".$_GET['id']);
+    //header("Location: ../lezione/?id=".$_GET['id']);
   }
 
 ?>

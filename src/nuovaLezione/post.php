@@ -48,7 +48,12 @@
       print_r($str);
 
       $idEtichette = query("SELECT id FROM etichette WHERE nome IN $str");
-      print_r($idEtichette);
+      foreach ($idEtichette as $idEtichetta) {
+        $idEtichetta = $idEtichetta['id'];
+        echo "INSERT INTO etichetteDiLezioni (`idLezione`, `idEtichetta`) VALUES ('$idLezione', '$idEtichetta');";
+        echo query("INSERT INTO etichetteDiLezioni (`idLezione`, `idEtichetta`) VALUES ('$idLezione', '$idEtichetta');");
+        echo "<br>";
+      }
     }
 
     $notifica = "Nuova lezione creata!";
@@ -58,7 +63,7 @@
     if ($res){
       print_r("ERRORE NELLA CREAZIONE DELLA LEZIONE");
     } else {
-      header('Location: ../lezione/?id='.$idLezione);
+      //header('Location: ../lezione/?id='.$idLezione);
     }
 
   }

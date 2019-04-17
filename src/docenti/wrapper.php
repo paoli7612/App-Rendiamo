@@ -61,7 +61,6 @@
                   </script>
                 </div>
               </div>
-              <?php if ($_SESSION['user_type'] == 'studente'): ?>
                 <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="filtraInattivi" onchange="filtraInattivi(this.checked)">
                 <label class="custom-control-label" for="filtraInattivi" >Nascondi docenti che non hanno pubblicato lezioni (grigi)</label>
@@ -75,7 +74,7 @@
                 }
                 </script>
               </div>
-              <?php endif; ?>
+              <?php if ($_SESSION['user_type'] == 'studente'): ?>
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="filtraPreferiti" onchange="filtraPreferiti(this.checked)" <?php if (isset($_GET['salvati']))echo "checked=\"checked\"" ?>>
                 <label class="custom-control-label" for="filtraPreferiti" >Mostra solo i docenti salvati</label>
@@ -90,6 +89,7 @@
 
                 </script>
               </div>
+            <?php endif; ?>
             </div>
           </div>
         </div>

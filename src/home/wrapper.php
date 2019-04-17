@@ -6,7 +6,7 @@
   <div id="content-wrapper">
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h1 class="display-4">Apprendiamoci</h1>
+        <h1 class="display-5">Apprendiamoci</h1>
         <p class="lead">Bentornato <?php echo $_SESSION['user_row']['nome'] ?> su Apprendiamoci</p>
       </div>
     </div>

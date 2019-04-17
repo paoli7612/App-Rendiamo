@@ -11,14 +11,10 @@
     if($lezioni)$lezione = $lezioni[0];
     else header('Location: ../home/');
 
-  $tipiMateriali = query("SELECT DISTINCT m.tipo from materiali as m, materialiDiLezioni as d WHERE m.id=d.idMateriale AND d.idLezione=$id");
+  $materiali = query("SELECT tipiMateriali.*, COUNT(materiali.id) FROM tipiMateriali, materiali WHERE materiali.idTipo=tipiMateriali.id GROUP BY tipiMateriali.id");
   include 'post.php';
   $utentidilezioni = query("SELECT preferito from utentiDiLezioni WHERE idUtente=$idUtente AND idLezione=$id ");
   $preferito = count($utentidilezioni);
-  $materiali = array();
-  foreach ($tipiMateriali as $key => $value) {
-    array_push($materiali, $value['tipo']);
-  }
   ?>
 
   <div id="content-wrapper">
@@ -52,6 +48,10 @@
                     <i class="fas fa-edit"></i>
                     Elimina lezione
                   </button>
+                  <button type="button" name="button" class="btn btn-light mb-3" data-toggle="modal" data-target="#Dettagli">
+                    <i class="fas fa-info"></i>
+                    Dettagli
+                  </button>
                 </div>
               </div>
             </div>
@@ -80,160 +80,85 @@
                       <i class="fas fa-user-graduate"></i>
                       <?php echo $lezione['cognome']." ".$lezione['nome'] ?>
                     </button>
+                    <button type="button" name="button" class="btn btn-light mb-3" data-toggle="modal" data-target="#Dettagli">
+                      <i class="fas fa-info"></i>
+                      Dettagli
+                    </button>
                   </form>
                 </div>
               </div>
             </div>
           </div>
         <?php endif; ?>
+      <?php foreach ($materiali as $materiale): ?>
         <div class="col-xl-6 col-sm-6 mb-3">
-          <div class="card text-white bg-primary o-hidden h-100">
+          <div class="card text-white bg-<?php echo $materiale['colore']?> o-hidden h-100" onmouseover="hover(this, '<?php echo $materiale['colore'] ?>')" onmouseleave="leave(this, '<?php echo $materiale['colore'] ?>')">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fas fa-fw fa-file-pdf"></i>
+                <i class="fa-fw <?php echo $materia['icona'] ?>"></i>
               </div>
-              <div class="mr-5">Documenti</div>
+              <div class="mr-5"><?php echo $materiale['titolo'] ?></div>
             </div>
-            <?php if (in_array("Documento", $materiali)): ?>
-              <a class="card-footer text-white clearfix small z-1" href="../documenti/?id=<?php echo $lezione['id'] ?>">
-                <span class="float-left">Visualizza</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-            <?php else: ?>
-              <a class="card-footer text-white clearfix small z-1">
-              <span class="float-left">Nessun documento caricato</span>
-            <?php endif; ?>
+            <a class="card-footer text-white clearfix small z-1" href="../materiali/?lezione=<?php echo $lezione['id'] ?>&materiale=<?php echo $materiale['titolo'] ?>">
+              <span class="float-left">Visualizza</span>
+              <span class="float-right">
+                <i class="fas fa-angle-right"></i>
+              </span>
             </a>
           </div>
         </div>
-        <div class="col-xl-6 col-sm-6 mb-3">
-          <div class="card text-white bg-warning o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-film"></i>
-              </div>
-              <div class="mr-5">Video</div>
-            </div>
-            <?php if (in_array("Video", $materiali)): ?>
-              <a class="card-footer text-white clearfix small z-1" href="../video/?id=<?php echo $lezione['id'] ?>">
-                <span class="float-left">Visualizza</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-            <?php else: ?>
-              <a class="card-footer text-white clearfix small z-1">
-              <span class="float-left">Nessun video caricato</span>
-            <?php endif; ?>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-6 col-sm-6 mb-3">
-          <div class="card text-white bg-success o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-dumbbell"></i>
-              </div>
-              <div class="mr-5">Esercitazioni</div>
-            </div>
-            <?php if (in_array("Esercitazione", $materiali)): ?>
-              <a class="card-footer text-white clearfix small z-1" href="../esercitazioni/?id=<?php echo $lezione['id'] ?>">
-                <span class="float-left">Visualizza</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-            <?php else: ?>
-              <a class="card-footer text-white clearfix small z-1">
-              <span class="float-left">Nessua esercitazione caricata</span>
-            <?php endif; ?>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-6 col-sm-6 mb-3">
-          <div class="card text-white bg-info o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-project-diagram"></i>
-              </div>
-              <div class="mr-5">Presentazioni</div>
-            </div>
-            <?php if (in_array("Presentazione", $materiali)): ?>
-              <a class="card-footer text-white clearfix small z-1" href="../presentazioni/?id=<?php echo $lezione['id'] ?>">
-                <span class="float-left">Visualizza</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-            <?php else: ?>
-              <a class="card-footer text-white clearfix small z-1">
-              <span class="float-left">Nessuna presentazione caricata</span>
-            <?php endif; ?>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-6 col-sm-6 mb-3">
-          <div class="card text-white bg-danger o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-headphones-alt"></i>
-              </div>
-              <div class="mr-5">Audio</div>
-            </div>
-            <?php if (in_array("Presentazione", $materiali)): ?>
-              <a class="card-footer text-white clearfix small z-1" href="../audio/?id=<?php echo $lezione['id'] ?>">
-                <span class="float-left">Visualizza</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-            <?php else: ?>
-              <a class="card-footer text-white clearfix small z-1">
-              <span class="float-left">Nessun audio caricato</span>
-            <?php endif; ?>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-6 col-sm-6 mb-3">
-          <div class="card text-white o-hidden h-100" style="background-color: #e83e8c">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-map"></i>
-              </div>
-              <div class="mr-5">Mappe concettuali</div>
-            </div>
-            <?php if (in_array("MappaConcettuale", $materiali)): ?>
-              <a class="card-footer text-white clearfix small z-1" href="../mappeConcettuali/?id=<?php echo $lezione['id'] ?>">
-                <span class="float-left">Visualizza</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-            <?php else: ?>
-              <a class="card-footer text-white clearfix small z-1">
-              <span class="float-left">Nessuna mappa concettuale caricata</span>
-            <?php endif; ?>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-6 col-sm-6 mb-3">
-          <div class="card text-white bg-dark o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-ellipsis-v"></i>
-              </div>
-              <div class="mr-5">Altro</div>
-            </div>
-            <?php if (in_array("Altro", $materiali)): ?>
-              <a class="card-footer text-white clearfix small z-1" href="../altro/?id=<?php echo $lezione['id'] ?>">
-                <span class="float-left">Visualizza</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-            <?php else: ?>
-              <a class="card-footer text-white clearfix small z-1">
-              <span class="float-left">Nessuna altro caricato</span>
-            <?php endif; ?>
-            </a>
-          </div>
-        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="Dettagli" tabindex="-1" role="dialog" aria-labelledby="Dettagli" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="Dettagli">Dettagli</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <?php if ($lezione['note']): ?>
+          <h4>Descrizione</h4>
+          <?php echo $lezione['note'] ?>
+          <hr class="featurette-divider">
+        <?php endif; ?>
+        <h4>Materie</h4>
+        <?php $materie=query("SELECT * FROM materie, materieDiLezioni WHERE materie.id=materieDiLezioni.idMateria AND materieDiLezioni.idLezione=$id") ?>
+        <?php if ($materie): ?>
+          <?php foreach ($materie as $materia): ?>
+            <?php echo $materia['titolo'] ?> <br>
+          <?php endforeach; ?>
+        <?php else: ?>
+          Nessuna materia selezionata
+        <?php endif; ?>
+        <?php $etichette=query("SELECT * FROM etichette, etichetteDiLezioni WHERE etichette.id=etichetteDiLezioni.idEtichetta AND etichetteDiLezioni.idLezione=$id") ?>
+        <?php if ($etichette): ?>
+          <hr class="featurette-divider">
+          <h4>Etichette</h4>
+          <?php foreach ($etichette as $etichetta): ?>
+            <?php echo $etichetta['nome'] ?> <br>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Chiudi</button>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+	var hover = function(e, colore){
+    if (e.className.indexOf(' bg-secondary') == -1) {
+      e.className = e.className.replace('bg-'+colore, 'bg-secondary');
+    }
+	}
+
+	var leave = function(e, colore){
+    e.className = e.className.replace('bg-secondary', 'bg-'+colore);
+	}
+</script>

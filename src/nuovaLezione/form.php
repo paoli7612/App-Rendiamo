@@ -21,10 +21,10 @@
     </div>
     <div class="form-group">
       <div class="form-label-group">
-        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Materie">
+        <button type="button" class="btn btn-secondary mb-3" data-toggle="modal" data-target="#Materie">
           Seleziona materie
         </button>
-        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Etichette">
+        <button type="button" class="btn btn-secondary mb-3" data-toggle="modal" data-target="#Etichette">
           Aggiungi etichette
         </button>
       </div>

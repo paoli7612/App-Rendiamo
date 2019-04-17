@@ -22,10 +22,7 @@ CREATE TABLE `utenti` (
   `password` varchar(40) NOT NULL,
   `nome` varchar(20) NOT NULL,
   `cognome` varchar(20) NOT NULL,
-  `domandaSicurezza` varchar(100),
-  `rispostaSicurezza` varchar(20),
   `tipo` ENUM('studente', 'professore', 'admin') DEFAULT 'studente',
-  `avatar` varchar(100),
   `aiuti` BOOLEAN DEFAULT 1,
   `notifiche` BOOLEAN DEFAULT 1,
   PRIMARY KEY (`id`),
@@ -84,16 +81,28 @@ CREATE TABLE `materieDiLezioni` (
     REFERENCES `materie` (`id`)
 ) ENGINE=InnoDB;
 
+CREATE TABLE `tipiMateriali` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `titolo` varchar(50) NOT NULL,
+  `plurale` varchar(50) NOT NULL,
+  `colore` varchar(50) NOT NULL,
+  `icona` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
 CREATE TABLE `materiali` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `indirizzo` varchar(150) NOT NULL,
   `titolo` varchar(100) NOT NULL,
   `estensione` varchar(10) NOT NULL,
-  `tipo` varchar(30) NOT NULL,
+  `idTipo` int(15) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE (`titolo`),
-  UNIQUE KEY (`indirizzo`)
+  UNIQUE KEY (`indirizzo`),
+  FOREIGN KEY (`idTipo`)
+    REFERENCES `tipiMateriali` (`id`)
 ) ENGINE=InnoDB;
+
 
 CREATE TABLE `materialiDiLezioni` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
@@ -124,7 +133,6 @@ CREATE TABLE `utentiDiLezioni` (
 	`idUtente`  int(15),
 	`idLezione`  int(15),
 	`preferito`  BOOLEAN DEFAULT 0,
-	`visualizzato`  BOOLEAN,
 	PRIMARY KEY (`id`),
     FOREIGN KEY (`idLezione`)
       REFERENCES `lezioni` (`id`)
@@ -171,6 +179,14 @@ INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
 ('Gino', 'Baglio', 'aldo@gmail.com', SHA('qwerty'), 'professore'),
 ('Simona', 'Dalla', 'lorenzo1@gmail.com', SHA('qwerty'), 'professore'),
 ('Beppe', 'Grillo', 'gino@gmail.com', SHA('qwerty'), 'professore');
+
+INSERT INTO `tipiMateriali` (`titolo`, `colore`, `icona`, `plurale`) VALUES
+('Documento', 'primary', 'fas fa-file-pdf', 'Documenti'),
+('Video', 'warning', 'fas fa-film', 'Video'),
+('Esercitazione', 'success', 'fas fa-dumbbell', 'Esercitazioni'),
+('Presentazione', 'info', 'fas fa-project-diagram', 'Presentazioni'),
+('Audio', 'danger', 'fas fa-headphones-alt', 'Video'),
+('Altro', 'secondary', 'fas fa-ellipsis-v', 'Altro');
 
 INSERT INTO `materie` (`id`,`titolo`) VALUES
 (1,'Lingua e letteratura italiana'),
