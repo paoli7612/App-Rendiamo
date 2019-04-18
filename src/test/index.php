@@ -18,6 +18,7 @@
       if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         include '../connection.php';
         $r = query($_POST['query']);
+        print_r($r);
           foreach ($r as $row) {
             print_r($row);
             echo "<br>";

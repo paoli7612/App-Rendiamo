@@ -5,12 +5,12 @@
   <?php $idUtente = $_SESSION['user_row']['id'] ?>
   <?php $docenti = query("SELECT utenti.*, COUNT(lezioni.id) as count
                           FROM (
-                            SELECT utenti.*, utentidiutenti.preferito
+                            SELECT utenti.*, utentiDiUtenti.preferito
                             FROM utenti
-                            LEFT JOIN utentidiutenti
+                            LEFT JOIN utentiDiUtenti
                               ON (
-                                utentidiutenti.idUtente=utenti.id AND
-                                utentidiutenti.idStudente=$idUtente
+                                utentiDiUtenti.idUtente=utenti.id AND
+                                utentiDiUtenti.idStudente=$idUtente
                               )
                             ) as utenti
                           LEFT JOIN lezioni

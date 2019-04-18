@@ -72,6 +72,11 @@
           $lezioni = query("SELECT lezioni.*, utenti.nome, utenti.cognome FROM lezioni, utenti
             WHERE utenti.id=lezioni.idUtente AND
             $queryDocenti");
+        } elseif ($ricerca) {
+          $lezioni = query("SELECT lezioni.*, utenti.nome, utenti.cognome FROM lezioni, utenti
+            WHERE utenti.id=lezioni.idUtente AND lezioni.titolo LIKE ('%$ricerca%')");
+        } else {
+          header("Location: ../ricercaAvanzata/");
         }
 
        ?>

@@ -101,7 +101,7 @@
               <div class="card-body-icon">
                 <i class="fa-fw <?php echo $materia['icona'] ?>"></i>
               </div>
-              <div class="mr-5"><?php echo $materiale['titolo'] ?></div>
+              <div class="mr-5"><?php echo $materiale['plurale'] ?></div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="../materiali/?lezione=<?php echo $lezione['id'] ?>&materiale=<?php echo $materiale['titolo'] ?>">
               <span class="float-left">Visualizza</span>
@@ -139,7 +139,7 @@
         <?php else: ?>
           Nessuna materia selezionata
         <?php endif; ?>
-        <?php $etichette=query("SELECT * FROM etichette, etichetteDiLezioni WHERE etichette.id=etichetteDiLezioni.idEtichetta AND etichetteDiLezioni.idLezione=$id") ?>
+        <?php $etichette=query("SELECT etichette.* FROM etichette, etichettedilezioni WHERE etichette.id=etichettedilezioni.idEtichetta AND etichettedilezioni.idLezione=$id") ?>
         <?php if ($etichette): ?>
           <hr class="featurette-divider">
           <h4>Etichette</h4>

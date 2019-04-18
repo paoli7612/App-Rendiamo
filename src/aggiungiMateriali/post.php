@@ -21,7 +21,7 @@
           }
           $target_file = $path."/".$idMateriale.".".$estensione;
           move_uploaded_file($file["tmp_name"], $target_file);
-          query("INSERT INTO materialidilezioni (`idMateriale`,`idLezione`) VALUES ($idMateriale, $idLezione)");
+          query("INSERT INTO materialiDiLezioni (`idMateriale`,`idLezione`) VALUES ($idMateriale, $idLezione)");
         } else {
           echo "ERRORE CON IL FILE $titolo";
         }

@@ -31,7 +31,7 @@
                 <?php echo $docente['nome']. " " .$docente['cognome']?>
               </div>
     				</div>
-    				<a class="card-footer text-white clearfix small z-1" href="../lezioni/?materia=<?php echo $materia['id'] ?>">
+    				<a class="card-footer text-white clearfix small z-1" href="../lezioni/?materia=<?php echo $docente['id'] ?>">
     				  <span class="float-left">
                 <?php echo $docente['count'] ?> Lezioni
               </span>
