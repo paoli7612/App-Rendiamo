@@ -10,7 +10,7 @@ A partire dal 5/02/2019 il sito verrà hostato al indirizzo 93.49.97.47
  - visualizzare la pagina web **localhost/App-Rendiamo/**
 
 
- <img src="doc/img/database.png"/>
+ <img src="doc/img/database.png.jpg"/>
 
 
 ### Account di prova
