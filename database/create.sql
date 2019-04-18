@@ -184,6 +184,7 @@ INSERT INTO `tipiMateriali` (`titolo`, `colore`, `icona`, `plurale`) VALUES
 ('Esercitazione', 'success', 'fas fa-dumbbell', 'Esercitazioni'),
 ('Presentazione', 'info', 'fas fa-project-diagram', 'Presentazioni'),
 ('Audio', 'danger', 'fas fa-headphones-alt', 'Video'),
+('Mappa concettuale', 'light', 'fas fa-project-diagram', 'Mappe concettuali'),
 ('Altro', 'secondary', 'fas fa-ellipsis-v', 'Altro');
 
 INSERT INTO `materie` (`id`,`titolo`) VALUES
@@ -210,7 +211,7 @@ INSERT INTO `materie` (`id`,`titolo`) VALUES
 (21,'Russo'),
 (22,'Spagnolo'),
 (23,'Francese'),
-(24,'Scienze integrate'),
+(24,'Scienze della terra e biologia'),
 (25,'Diritto e diritto dell informatica'),
 (26,'Economia politica'),
 (27,'Economia aziendale'),
