@@ -182,9 +182,11 @@ INSERT INTO `tipiMateriali` (`titolo`, `colore`, `icona`, `plurale`) VALUES
 ('Documento', 'primary', 'fas fa-file-pdf', 'Documenti'),
 ('Video', 'warning', 'fas fa-film', 'Video'),
 ('Esercitazione', 'success', 'fas fa-dumbbell', 'Esercitazioni'),
-('Presentazione', 'info', 'fas fa-project-diagram', 'Presentazioni'),
+('Presentazione', 'info', 'fas fa-file-powerpoint', 'Presentazioni'),
 ('Audio', 'danger', 'fas fa-headphones-alt', 'Video'),
-('Altro', 'secondary', 'fas fa-ellipsis-v', 'Altro');
+('Altro', 'secondary', 'fas fa-ellipsis-v', 'Altro'),
+('Mappa concettuale', 'purple', 'fas fa-project-diagram', 'Mappe concettuali');
+
 
 INSERT INTO `materie` (`id`,`titolo`) VALUES
 (1,'Lingua e letteratura italiana'),
