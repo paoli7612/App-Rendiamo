@@ -21,7 +21,7 @@
         </div>
         <div class="card-footer">
           <?php if ($_SESSION['user_row']['tipo'] != 'studente'): ?>
-            <button title="impostazioni" class="btn bg-white" onclick="window.location='../lezioni/?utente=<?php echo $_SESSION['user_row']['id'] ?>'">
+            <button title="impostazioni" class="btn bg-white" onclick="window.location='../lezioni/?docente=<?php echo $_SESSION['user_row']['id'] ?>'">
               <i class="fas fa-crown"></i> Lezioni create
             </button>
           <?php else: ?>

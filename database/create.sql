@@ -18,7 +18,7 @@ CREATE TABLE `etichette` (
 
 CREATE TABLE `utenti` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
-  `email` varchar(30) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `password` varchar(40) NOT NULL,
   `nome` varchar(20) NOT NULL,
   `cognome` varchar(20) NOT NULL,
@@ -74,6 +74,7 @@ CREATE TABLE `materieDiLezioni` (
   `idLezione` int(15),
   `idMateria` int(15),
   PRIMARY KEY (`id`),
+  UNIQUE KEY (`idLezione`, `idMateria`),
   FOREIGN KEY (`idLezione`)
     REFERENCES `lezioni` (`id`)
     ON DELETE CASCADE,
@@ -130,7 +131,6 @@ CREATE TABLE `utentiDiLezioni` (
 	`id` int(15) NOT NULL AUTO_INCREMENT,
 	`idUtente`  int(15),
 	`idLezione`  int(15),
-	`preferito`  BOOLEAN DEFAULT 0,
 	PRIMARY KEY (`id`),
     FOREIGN KEY (`idLezione`)
       REFERENCES `lezioni` (`id`)

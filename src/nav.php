@@ -13,6 +13,16 @@
   <a class="navbar-brand mr-1" href="../home/">Apprendiamoci</a>
 
   <ul class="navbar-nav ml-auto">
+    <?php if ($_SESSION['user_type'] != 'studente'): ?>
+      <li class="nav-item dropdown no-arrow">
+        <a class="nav-link" href="#" onclick="$('#dropdownNuovo').toggle()">
+          <i class="fas fa-plus fa-fw"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" id="dropdownNuovo">
+          <a class="dropdown-item" href="../nuovaLezione">Nuova lezione</a>
+        </div>
+      </li>
+    <?php endif; ?>
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link" href="#" onclick="$('#dropdownNotifiche').toggle()">
         <i class="fas fa-bell fa-fw"></i>

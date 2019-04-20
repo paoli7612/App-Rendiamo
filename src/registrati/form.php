@@ -22,7 +22,7 @@
         <div class="form-group">
           <div class="form-label-group">
             <label for="inputEmail">Email</label>
-            <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required="required" onchange="controlEmail(this.value)" maxlength="30">
+            <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required="required" onchange="controlEmail(this.value)" maxlength="100">
           </div>
         </div>
         <div id="error">

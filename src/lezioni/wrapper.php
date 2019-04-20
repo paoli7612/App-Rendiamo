@@ -13,17 +13,39 @@
   <?php
     if (isset($_GET['materia'])) {
       $idMateria = $_GET['materia'];
-      $lezioni = query("SELECT lezioni.*, utenti.nome, utenti.cognome
-                        FROM lezioni, materieDiLezioni, utenti
-                        WHERE lezioni.id=materieDiLezioni.idLezione
-                          AND materieDiLezioni.idMateria=$idMateria
-                          AND utenti.id=lezioni.idUtente");
+      $lezioni = query("SELECT lezioni.*, utentidilezioni.idUtente as preferito
+                        FROM (
+                          SELECT lezioni.*, utenti.nome, utenti.cognome
+                          FROM lezioni, utenti, materieDiLezioni
+                          WHERE lezioni.idUtente=utenti.id
+                            AND materieDiLezioni.idLezione=lezioni.id
+                            AND materieDiLezioni.idMateria=$idMateria
+                          ) as lezioni
+                        LEFT JOIN utentidilezioni
+                        ON utentidilezioni.idLezione=lezioni.id
+                          AND utentidilezioni.idUtente=3
+                        ORDER BY lezioni.titolo");
     } elseif (isset($_GET['docente'])) {
       $idDocente = $_GET['docente'];
-      $lezioni = query("SELECT lezioni.*, utenti.nome, utenti.cognome
-                        FROM lezioni, utenti
-                        WHERE lezioni.idUtente=$idDocente
-                          AND utenti.id=$idDocente");
+      $lezioni = query("SELECT lezioni.*, utentidilezioni.idUtente as preferito
+                        FROM (
+                          SELECT lezioni.*, utenti.nome, utenti.cognome
+                          FROM lezioni, utenti
+                          WHERE lezioni.idUtente=utenti.id
+                            AND utenti.id=$idDocente
+                          ) as lezioni
+                        LEFT JOIN utentidilezioni
+                        ON utentidilezioni.idLezione=lezioni.id
+                          AND utentidilezioni.idUtente=3
+                        ORDER BY lezioni.titolo");
+    } elseif (isset($_GET['salvate'])){
+      $idUtente = $_SESSION['user_row']['id'];
+      $lezioni = query("SELECT lezioni.*, utenti.nome, utenti.cognome, utentiDiLezioni.idUtente as preferito
+                        FROM lezioni, utenti, utentidilezioni
+                        WHERE lezioni.idUtente=utenti.id
+                          AND utentidilezioni.idUtente=$idUtente
+                          AND utentidilezioni.idLezione=lezioni.id
+                          ORDER BY lezioni.titolo");
     }
   ?>
 
@@ -61,11 +83,17 @@
               <button class="btn bg-white btn-block" onclick="window.location='../lezione/?id=<?php echo $lezione['id'] ?>'">
                 Visualizza</button>
             </div>
-            <div class="col">
-              <button class="btn bg-white btn-block" disabled="disabled">
-                <i class="far fa-bookmark"></i>
-                Salva</button>
-            </div>
+            <?php if ($_SESSION['user_type'] == 'studente'): ?>
+              <div class="col">
+                <button class="btn bg-white btn-block" onclick="salvaLezione(this,<?php echo $lezione['id'] ?>)">
+                  <?php if ($lezione['preferito']): ?>
+                    <i class="fas fa-bookmark"></i>
+                  <?php else: ?>
+                    <i class="far fa-bookmark"></i>
+                  <?php endif; ?>
+                  Salva</button>
+                </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>
