@@ -10,7 +10,7 @@
         session_start();
         $_SESSION['is_login'] = true;
         $_SESSION['user_row'] = $utente[0];
-        $_SESSION['user_type'] = $utente[0]['tipo'];
+        $_SESSION['user_type'] = $utente['tipo'];
         header('Location: ../home/');
       } else {
         $_SESSION['wrong_password'] = true;

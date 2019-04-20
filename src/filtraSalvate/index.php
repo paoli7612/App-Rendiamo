@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <?php include "../head.html" ?>
-    <title>Lezione</title>
+    <?php include '../head.html' ?>
+    <title>Lezioni salvate</title>
   </head>
   <body>
     <?php include '../nav.php' ?>

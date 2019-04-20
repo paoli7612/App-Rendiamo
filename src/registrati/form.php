@@ -7,22 +7,22 @@
           <div class="form-row">
             <div class="col-md-6">
               <div class="form-label-group">
-                <input name="nome" type="text" id="firstName" class="form-control" placeholder="Nome" required="required" autofocus="autofocus" maxlength="20">
                 <label for="firstName">Nome</label>
+                <input name="nome" type="text" id="firstName" class="form-control" placeholder="Nome" required="required" autofocus="autofocus" maxlength="20">
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-label-group">
-                <input name="cognome" type="text" id="lastName" class="form-control" placeholder="Cognome" required="required" maxlength="20">
                 <label for="lastName">Cognome</label>
+                <input name="cognome" type="text" id="lastName" class="form-control" placeholder="Cognome" required="required" maxlength="20">
               </div>
             </div>
           </div>
         </div>
         <div class="form-group">
           <div class="form-label-group">
-            <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required="required" onchange="controlEmail(this.value)" maxlength="30">
             <label for="inputEmail">Email</label>
+            <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required="required" onchange="controlEmail(this.value)" maxlength="30">
           </div>
         </div>
         <div id="error">
@@ -34,14 +34,14 @@
           <div class="form-row">
             <div class="col-md-6">
               <div class="form-label-group">
-                <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="required" maxlength="40">
                 <label for="inputPassword">Password</label>
+                <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="required" maxlength="40">
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-label-group">
-                <input type="password" id="confirmPassword" class="form-control" placeholder="Password" required="required" maxlength="40">
                 <label for="confirmPassword">Ripeti password</label>
+                <input type="password" id="confirmPassword" class="form-control" placeholder="Password" required="required" maxlength="40">
               </div>
             </div>
           </div>

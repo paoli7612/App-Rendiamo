@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <?php include '../head.html' ?>
+    <?php include "../head.html" ?>
     <title>Lezioni</title>
   </head>
   <body>

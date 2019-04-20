@@ -1,23 +1,36 @@
-<div id="wrapper">
-
-  <?php $title="home" ?>
-  <?php include '../wrapper_head.php' ?>
-
-  <div id="content-wrapper">
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-5">Apprendiamoci</h1>
-        <p class="lead">Bentornato <?php echo $_SESSION['user_row']['nome'] ?> su Apprendiamoci</p>
-      </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-6 col-md-12 col-sm-12 mb-3">
+      <button class="btn btn-block btn-primary text-white w-100 p-5" onclick="window.location='../filtraMaterie'">
+        <h3>
+          <i class="fas fa-book"></i>
+          Ricerca per materia
+        </h3>
+      </button>
     </div>
-    <div class="container-fluid container marketing">
-
-      <?php if ($_SESSION['user_row']['tipo'] == 'studente'): ?>
-        <?php include 'studente.php' ?>
-      <?php else: ?>
-        <?php include 'docente.php' ?>
-      <?php endif; ?>
-
+    <div class="col-xl-6 col-md-12 col-sm-12 mb-3">
+      <button class="btn btn-block btn-danger text-white w-100 p-5" onclick="window.location='../filtraDocenti'">
+        <h3>
+          <i class="fas fa-users"></i>
+          Ricerca per docente
+        </h3>
+      </button>
+    </div>
+    <div class="col-xl-6 col-md-12 col-sm-12 mb-3">
+      <button class="btn btn-block btn-success text-white w-100 p-5">
+        <h3>
+          <i class="fas fa-search"></i>
+          Ricerca per titolo
+        </h3>
+      </button>
+    </div>
+    <div class="col-xl-6 col-md-12 col-sm-12 mb-3">
+      <button class="btn btn-block btn-warning text-white w-100 p-5" onclick="window.location='../filtraSalvate'">
+        <h3>
+          <i class="fas fa-search"></i>
+          Lezioni salvate
+        </h3>
+      </button>
     </div>
   </div>
 </div>
