@@ -2,7 +2,6 @@
 <?php
   session_start();
   if (isset($_SESSION['is_login'])){
-
   } else {
     header('Location: ../out/');
   }
