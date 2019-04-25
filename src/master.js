@@ -9,7 +9,6 @@ var salvaLezione = function(button, id){
   $.getJSON('../queries/salvaLezione.php?id='+id+'&azione='+azione).done(function(e){
     console.log(e);
   });
-
 }
 
 

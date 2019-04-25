@@ -14,7 +14,4 @@
             SET aiuti=1
             WHERE id=$idUtente;");
   }
-  $_SESSION['user_row']['aiuti']=$azione;
-
-  header('Location: ../impostazioni/');
 ?>

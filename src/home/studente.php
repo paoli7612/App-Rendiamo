@@ -59,7 +59,7 @@
 <hr class="featurette-divider">
 
 <div class="col-xl-6 col-md-12 col-sm-12 mb-3">
-  <button class="btn btn-block bg-dark text-white w-100 p-5" onclick="window.location='../filtraMaterie'">
+  <button class="btn btn-block bg-dark text-white w-100 p-5" onclick="window.location='../impostazioni'">
     <div class="row">
       <div class="col-8 float-left">
         <h3 class="row">
