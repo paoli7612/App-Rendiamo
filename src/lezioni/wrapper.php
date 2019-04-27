@@ -49,8 +49,44 @@
     }
   ?>
 
-
   <div class="row">
+    <div class="col-12 mb-3 text-white">
+      <?php if (isset($_GET['materia'])): ?>
+        <?php $materia = query("SELECT * FROM materie WHERE id=".$_GET['materia'])[0] ?>
+        <div class="card bg-primary card-body">
+          <div class="row">
+            <div class="col">
+              <h3>Ricerca per materia</h3>
+              <h5><?php echo $materia['titolo'] ?></h5>
+            </div>
+            <div class="col">
+              <h1 class="float-right">
+                <i class="fas fa-layer-group"></i>
+              </h1>
+            </div>
+          </div>
+        </div>
+      <?php elseif (isset($_GET['docente'])): ?>
+        <?php $docente = query("SELECT * FROM utenti WHERE id=".$_GET['docente'])[0] ?>
+        <div class="card bg-danger card-body">
+          <div class="row">
+            <div class="col">
+              <h3>Ricerca per docente</h3>
+              <h5><?php echo $docente['nome']." ".$docente['cognome'] ?></h5>
+            </div>
+            <div class="col">
+              <h1 class="float-right">
+                <i class="fas fa-user-tie"></i>
+              </h1>
+            </div>
+          </div>
+        </div>
+      <?php elseif (isset($_GET['salvate'])): ?>
+        <div class="card bg-warning card-body">
+          <h3>Lezioni salvate</h3>
+        </div>
+      <?php endif; ?>
+    </div>
     <?php foreach ($lezioni as $lezione): ?>
     <div class="col-xl-6 col-md-6 col-sm-12">
       <div class="card text-white bg-secondary mb-3">

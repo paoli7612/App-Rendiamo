@@ -27,6 +27,7 @@
                             lezioni.idUtente=utenti.id
                           )
                           WHERE NOT utenti.tipo = 'studente'
+                            AND utenti.preferito
                           GROUP BY utenti.id
                           ORDER BY utenti.cognome, utenti.nome
                         ");
@@ -46,7 +47,6 @@
                             lezioni.idUtente=utenti.id
                           )
                           WHERE NOT utenti.tipo = 'studente'
-                            AND utenti.preferito
                           GROUP BY utenti.id
                           ORDER BY utenti.cognome, utenti.nome
                         ");
@@ -84,13 +84,13 @@
             </div>
           </div>
           <?php if (isset($_GET['salvati'])): ?>
-            <button class="btn btn-primary" onclick="window.location='../docenti/'">
+            <button class="btn btn-secondary btn-block" onclick="window.location='../docenti/'">
               <i class="fas fa-users"></i>
-              Tutti</button>
+              Visualizza tutti i docenti</button>
           <?php else: ?>
-            <button class="btn btn-primary" onclick="window.location='../docenti/?salvati'">
+            <button class="btn btn-secondary btn-block" onclick="window.location='../docenti/?salvati'">
               <i class="fas fa-bookmark"></i>
-              Salvati</button>
+              Visualizza solo i docenti salvati</button>
           <?php endif; ?>
         </div>
       </div>

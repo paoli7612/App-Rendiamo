@@ -25,7 +25,6 @@
               <li><b>Ricerca per materia</b>: visualizza tutte le lezioni di una certa materia</li>
               <li><b>Ricerca per docente</b>: scelto un docente, visualizza tutte le lezioni che esso ha creato</li>
               <li><b>Ricerca testuale</b>: ricerca una lezione tramite il titolo</li>
-              <li><b>Ricerca avanzata</b>: decidi i parametri di una ricerca mirata ad una o più lezioni</li>
               <li><b>Lezioni salvate</b>: mostra solo le lezioni gia salvate</li>
             </ul>
           </div>

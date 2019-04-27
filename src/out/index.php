@@ -2,9 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
     <?php include "../head.html" ?>
-    <title></title>
+    <title>Apprendiamoci</title>
+    <style media="screen">
+      body {
+        background-image: none;
+        background-color: none;
+      }
+    </style>
+
   </head>
-  <body>
+  <body class="bg-light">
     <nav class="navbar bg-dark row">
       <div class="col-6">
         <a href="../accedi">
