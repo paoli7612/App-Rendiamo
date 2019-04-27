@@ -22,6 +22,12 @@
     <i class="fas fa-users fa-lg"></i>
   </button>
 
+  <?php if ($_SESSION['user_type'] != 'studente'): ?>
+    <button class="btn text-white ml-3" onclick="window.location='../lezioni/?docente=<?php echo $_SESSION['user_row']['id'] ?>'">
+      <i class="fas fa-crown fa-lg"></i>
+    </button>
+  <?php endif; ?>
+
 
   <ul class="navbar-nav ml-auto">
     <?php if ($_SESSION['user_type'] != 'studente'): ?>

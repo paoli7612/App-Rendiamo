@@ -99,12 +99,12 @@
 
   <div class="row">
     <?php foreach ($docenti as $docente): ?>
-    <div class="col-xl-6 col-md-6 col-sm-12" name="docente" search="<?php echo $docente['cognome']." ".$docente['nome'] ?>">
+    <div class="col-xl-4 col-md-6 col-sm-12" name="docente" search="<?php echo $docente['cognome']." ".$docente['nome'] ?>">
       <div class="card text-white bg-secondary mb-3">
         <div class="card-header">
           <?php echo $docente['cognome']." ".$docente['nome'] ?>
           <a class="float-right">
-            <i class="fas fa-user-tie fa-lg"></i>
+            <i class="fas fa-user-graduate fa-lg"></i>
           </a>
         </div>
         <div class="card-body">
@@ -114,7 +114,7 @@
         <div class="card-footer">
           <div class="row">
             <div class="col">
-              <button class="btn bg-white btn-block" onclick="window.location='../lezioni/?docente=<?php echo $docente['id'] ?>'">
+              <button class="btn bg-white btn-block" onclick="window.location='../lezioni/?docente=<?php echo $docente['id'] ?>'" <?php if ($docente['count'] == 0): ?>disabled="disabled"<?php endif; ?>>
                 Lezioni</button>
             </div>
             <?php if ($_SESSION['user_type'] == 'studente'): ?>
