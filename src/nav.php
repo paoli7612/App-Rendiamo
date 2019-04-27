@@ -9,7 +9,19 @@
 ?>
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top mb-3">
-  <a class="navbar-brand mr-1" href="../home/">Apprendiamoci</a>
+
+  <button class="btn text-white" onclick="window.location='../home/'">
+    <i class="fas fa-home fa-lg"></i>
+  </button>
+
+  <button class="btn text-white ml-3" onclick="window.location='../filtra/'">
+    <i class="fas fa-book fa-lg"></i>
+  </button>
+
+  <button class="btn text-white ml-3" onclick="window.location='../docenti/'">
+    <i class="fas fa-users fa-lg"></i>
+  </button>
+
 
   <ul class="navbar-nav ml-auto">
     <?php if ($_SESSION['user_type'] != 'studente'): ?>

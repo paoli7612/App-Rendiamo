@@ -144,7 +144,6 @@ CREATE TABLE `utentiDiUtenti` (
 	`id` int(15) NOT NULL AUTO_INCREMENT,
 	`idUtente`  int(15),
 	`idStudente`  int(15),
-  `preferito` BOOLEAN DEFAULT 0,
 	PRIMARY KEY (`id`),
   FOREIGN KEY (`idStudente`)
     REFERENCES `utenti` (`id`)

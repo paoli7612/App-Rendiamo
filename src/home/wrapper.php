@@ -5,12 +5,12 @@
   </div>
 </section>
 
-<div class="container-fluid marketing row">
-
-  <?php if ($_SESSION['user_row']['tipo'] == 'studente'): ?>
-    <?php include 'studente.php' ?>
-  <?php else: ?>
-    <?php include 'docente.php' ?>
-  <?php endif; ?>
-
+<div class="container">
+  <div class="row">
+    <?php if ($_SESSION['user_row']['tipo'] == 'studente'): ?>
+      <?php include 'studente.php' ?>
+    <?php else: ?>
+      <?php include 'docente.php' ?>
+    <?php endif; ?>
+  </div>
 </div>
