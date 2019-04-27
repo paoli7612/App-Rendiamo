@@ -53,4 +53,9 @@
     return explode("_",$stringa)[1];
   }
 
+  function endsWith($haystack, $needle){
+    $length = strlen($needle);
+    return (substr($haystack, -$length) === $needle);
+  }
+
 ?>
