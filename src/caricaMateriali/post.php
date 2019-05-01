@@ -5,11 +5,11 @@
   $titolo = $_POST['titolo'];
   $idTipo = $_POST['tipo'];
   $idLezione = $_POST['idLezione'];
-
   $file = $_FILES['in_file'];
+  $dimensione = $file['size'];
 
-  if ($dile['size'] < 500000) {
-    query("INSERT INTO materiali (`titolo`, `idTipo`, `idLezione`) VALUES ('$titolo', $idTipo, $idLezione)");
+  if ($dimensione  < 500000) {
+    query("INSERT INTO materiali (`titolo`, `idTipo`, `idLezione`, `dimensione`, `data`) VALUES ('$titolo', $idTipo, $idLezione, $dimensione, CURRENT_DATE)");
 
     $idMateriale = query("SELECT id from materiali WHERE titolo='$titolo' AND idLezione=$idLezione")[0]['id'];
     echo $idMateriale;

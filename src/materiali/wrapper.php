@@ -15,34 +15,45 @@
                         WHERE idTipo=$idTipo
                           AND idLezione=$idLezione") ?>
 
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="../home/">Home</a>
-        </li>
-        <li class="breadcrumb-item">
-          <a href="../lezione/?id=<?php echo $lezione['id'] ?>"><?php echo $lezione['titolo'] ?></a>
-        </li>
-        <li class="breadcrumb-item">
-          <?php echo $tipo['plurale'] ?>
-        </li>
-      </ol>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="../home/">Home</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="../lezione/?id=<?php echo $lezione['id'] ?>"><?php echo $lezione['titolo'] ?></a>
+    </li>
+    <li class="breadcrumb-item">
+      <?php echo $tipo['plurale'] ?>
+    </li>
+  </ol>
 
 
   <div class="row">
     <?php foreach ($materiali as $materiale): ?>
       <div class="col-xl-4 col-md-6 col-sm-12">
-        <button class="btn btn-block bg-<?php echo $tipo['colore']?> <?php if ($tipo['colore'] != 'light') echo 'text-white' ?> w-100 p-2">
-          <div class="row">
-            <div class="col-8">
-              <h4 class="float-left">
-                <?php echo $materiale['titolo'] ?>
-              </h4>
-            </div>
-            <h1 class="col-4">
-              <i class="fas fa-download float-right"></i>
-            </h1>
+        <div class="card bg-<?php echo $tipo['colore']?> <?php if ($tipo['colore'] != 'light') echo 'text-white' ?>">
+          <div class="card-header">
+            <?php echo $materiale['titolo'] ?>
+            <a class="float-right">
+              <i class="<?php echo $tipo['icona'] ?>"></i>
+            </a>
           </div>
-        </button>
+          <div class="card-body">
+            <h5>
+              <b> Dimensione: </b> <?php echo $materiale['dimensione'] ?>
+            </h5>
+            <h5>
+              <b> Data: </b> <?php echo $materiale['data'] ?>
+            </h5>
+          </div>
+          <div class="card-footer">
+            <a href="../../files/<?php echo $materiale['id'] ?>/<?php echo $materiale['titolo'] ?>" download="download">
+              <button class="btn btn-light">
+                <i class="fas fa-download"></i>
+                Scarica</button>
+            </a>
+          </div>
+        </div>
       </div>
     <?php endforeach; ?>
 

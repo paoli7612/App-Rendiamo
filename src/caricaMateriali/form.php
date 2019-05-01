@@ -32,7 +32,7 @@
         <div class="form-group">
           <div class="form-label-group">
             <?php foreach ($tipi as $tipo): ?>
-              <button type="button" class="tipo tipo-<?php echo $tipo['id'] ?> text-white btn btn-block bg-<?php echo $tipo['colore']?>" onclick="$(#tipo).click()" style="display:none">
+              <button type="button" class="tipo tipo-<?php echo $tipo['id'] ?> <?php if ($tipo['colore'] != 'light') echo 'text-white' ?> btn btn-block bg-<?php echo $tipo['colore']?>" onclick="$(#tipo).click()" style="display:none">
                 <?php echo $tipo['titolo'] ?>
               </button>
             <?php endforeach; ?>
