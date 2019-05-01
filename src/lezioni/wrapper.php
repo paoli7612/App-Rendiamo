@@ -13,48 +13,72 @@
   <?php
     if (isset($_GET['materia'])) {
       $idMateria = $_GET['materia'];
-      $lezioni = query("SELECT lezioni.*, utentiDiLezioni.idUtente as preferito
+      $lezioni = query("SELECT lezioni.*, utentiDiLezioni.idUtente AS preferito
                         FROM (
                           SELECT lezioni.*, utenti.nome, utenti.cognome
-                          FROM lezioni, utenti, materieDiLezioni
+                          FROM (
+                            SELECT lezioni.*, COUNT(materiali.id) as countMateriali
+                            FROM lezioni
+                            LEFT JOIN materiali
+                              ON materiali.idLezione=lezioni.id
+                            GROUP BY lezioni.id
+                          ) AS lezioni, utenti, materieDiLezioni
                           WHERE lezioni.idUtente=utenti.id
                             AND materieDiLezioni.idLezione=lezioni.id
                             AND materieDiLezioni.idMateria=$idMateria
-                          ) as lezioni
+                          ) AS lezioni
                         LEFT JOIN utentiDiLezioni
                         ON utentiDiLezioni.idLezione=lezioni.id
                           AND utentiDiLezioni.idUtente=3
                         ORDER BY lezioni.titolo");
     } elseif (isset($_GET['docente'])) {
         $idDocente = $_GET['docente'];
-        $lezioni = query("SELECT lezioni.*, utentiDiLezioni.idUtente as preferito
+        $lezioni = query("SELECT lezioni.*, utentiDiLezioni.idUtente AS preferito
                           FROM (
                             SELECT lezioni.*, utenti.nome, utenti.cognome
-                            FROM lezioni, utenti
+                            FROM (
+                              SELECT lezioni.*, COUNT(materiali.id) as countMateriali
+                              FROM lezioni
+                              LEFT JOIN materiali
+                                ON materiali.idLezione=lezioni.id
+                              GROUP BY lezioni.id
+                            ) AS lezioni, utenti
                             WHERE lezioni.idUtente=utenti.id
                               AND utenti.id=$idDocente
-                            ) as lezioni
+                            ) AS lezioni
                           LEFT JOIN utentiDiLezioni
                           ON utentiDiLezioni.idLezione=lezioni.id
                             AND utentiDiLezioni.idUtente=3
                           ORDER BY lezioni.titolo");
     } elseif (isset($_GET['salvate'])){
         $idUtente = $_SESSION['user_row']['id'];
-        $lezioni = query("SELECT lezioni.*, utenti.nome, utenti.cognome, utentiDiLezioni.idUtente as preferito
-                          FROM lezioni, utenti, utentiDiLezioni
+        $lezioni = query("SELECT lezioni.*, utenti.nome, utenti.cognome, utentiDiLezioni.idUtente AS preferito
+                          FROM (
+                            SELECT lezioni.*, COUNT(materiali.id) as countMateriali
+                            FROM lezioni
+                            LEFT JOIN materiali
+                              ON materiali.idLezione=lezioni.id
+                            GROUP BY lezioni.id
+                          ) AS lezioni, utenti, utentiDiLezioni
                           WHERE lezioni.idUtente=utenti.id
                             AND utentiDiLezioni.idUtente=$idUtente
                             AND utentiDiLezioni.idLezione=lezioni.id
                             ORDER BY lezioni.titolo");
     } elseif (isset($_GET['ricerca'])){
         $ricerca = $_GET['ricerca'];
-        $lezioni = query("SELECT lezioni.*, utentiDiLezioni.idUtente as preferito
+        $lezioni = query("SELECT lezioni.*, utentiDiLezioni.idUtente AS preferito
                           FROM (
                             SELECT lezioni.*, utenti.nome, utenti.cognome
-                            FROM lezioni, utenti
+                            FROM (
+                              SELECT lezioni.*, COUNT(materiali.id) as countMateriali
+                              FROM lezioni
+                              LEFT JOIN materiali
+                                ON materiali.idLezione=lezioni.id
+                              GROUP BY lezioni.id
+                            ) AS lezioni, utenti
                             WHERE lezioni.idUtente=utenti.id
                               AND lezioni.titolo LIKE '%$ricerca%'
-                            ) as lezioni
+                            ) AS lezioni
                           LEFT JOIN utentiDiLezioni
                           ON utentiDiLezioni.idLezione=lezioni.id
                             AND utentiDiLezioni.idUtente=3
@@ -110,7 +134,16 @@
         </div>
       <?php elseif (isset($_GET['salvate'])): ?>
         <div class="card bg-warning card-body">
-          <h3>Lezioni salvate</h3>
+          <div class="row">
+            <div class="col">
+              <h3>Lezioni salvate</h3>
+            </div>
+            <div class="col">
+              <h1 class="float-right">
+                <i class="fas fa-bookmark"></i>
+              </h1>
+            </div>
+          </div>
         </div>
       <?php endif; ?>
     </div>
@@ -136,7 +169,7 @@
             </div>
             <div class="card-footer">
               <div class="float-right">
-                <i class="fas fa-user"></i>
+                <i class="fas fa-user-tie"></i>
               </div>
               <?php echo $lezione['cognome'] ?>
               <?php echo $lezione['nome'] ?>
@@ -145,7 +178,7 @@
               <div class="float-right">
                 <i class="fas fa-layer-group"></i>
               </div>
-            0
+            <?php echo $lezione['countMateriali'] ?>
             </div>
             <div class="card-footer">
               <div class="row">

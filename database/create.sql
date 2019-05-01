@@ -159,11 +159,11 @@ INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
 ('Nicolo\'', 'Pflanzer', 'test01@gmail.com', SHA('qwerty27'), 'admin'),
 ('Simone', 'Paoli', 'mario@gmail.com', SHA('qwerty93'), 'admin'),
 ('Grassi', 'Manuel', 'giovanni@gmail.com', SHA('qwerty33'), 'admin'),
-('Giocamo', 'Poretti', 'giacomo@gmail.com', SHA('qwerty'), 'professore'),
+('Giacomo', 'Poretti', 'giacomo@gmail.com', SHA('qwerty'), 'professore'),
 ('Aldo', 'Baglio', 'aldo1@gmail.com', SHA('qwerty'), 'professore'),
 ('Lorenzo', 'Stoi', 'lorenzo@gmail.com', SHA('qwerty'), 'professore'),
 ('Gino', 'Porro', 'gino1@gmail.com', SHA('qwerty'), 'professore'),
-('Giocamo', 'Leonardi', 'giacomo1@gmail.com', SHA('qwerty'), 'professore'),
+('Giacomo', 'Leonardi', 'giacomo1@gmail.com', SHA('qwerty'), 'professore'),
 ('Gino', 'Baglio', 'aldo@gmail.com', SHA('qwerty'), 'professore'),
 ('Simona', 'Dalla', 'lorenzo1@gmail.com', SHA('qwerty'), 'professore'),
 ('Beppe', 'Grillo', 'gino@gmail.com', SHA('qwerty'), 'professore');

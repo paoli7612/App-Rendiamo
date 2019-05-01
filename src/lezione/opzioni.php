@@ -13,7 +13,7 @@
         Salva</button>
     <?php endif; ?>
     <button class="btn bg-white mb-3" onclick="window.location='../lezioni/?docente=<?php echo $docente['id'] ?>'">
-      <i class="fas fa-user-graduate"></i>
+      <i class="fas fa-user-tie"></i>
       <?php echo $docente['nome']." ".$docente['cognome'] ?></button>
     <button class="btn bg-white mb-3" onclick="window.location='../dettagli/?id=<?php echo $lezione['id'] ?>'">
       <i class="fas fa-info-circle"></i>

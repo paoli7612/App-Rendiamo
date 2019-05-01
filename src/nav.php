@@ -22,7 +22,12 @@
     <i class="fas fa-users fa-lg"></i>
   </button>
 
-  <?php if ($_SESSION['user_type'] != 'studente'): ?>
+  <?php if ($_SESSION['user_type'] == 'studente'): ?>
+    <button class="btn text-white ml-3" onclick="window.location='../lezioni/?salvate'">
+      <i class="fas fa-bookmark fa-lg"></i>
+    </button>
+
+  <?php else: ?>
     <button class="btn text-white ml-3" onclick="window.location='../lezioni/?docente=<?php echo $_SESSION['user_row']['id'] ?>'">
       <i class="fas fa-crown fa-lg"></i>
     </button>
