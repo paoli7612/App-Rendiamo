@@ -9,7 +9,7 @@
     <form action="post.php" method="post">
       <div class="form-group">
         <label for="inputTitolo">Titolo</label>
-        <input type="text" class="form-control" id="inputTitolo" placeholder="Titolo" name="titolo" required="required" onkeyup="controllaTitolo(this.value)">
+        <input type="text" class="form-control" id="inputTitolo" placeholder="Titolo" name="titolo" required="required" onkeyup="controllaTitoloLezione(this.value)">
       </div>
       <div id="error" style="display: none">
         <div class="alert alert-danger alert-dismissible fade show" role="alert">

@@ -10,7 +10,7 @@
       <input type="hidden" name="idLezione" value="<?php echo $_GET['id'] ?>">
       <div class="form-group">
         <label for="inputTitolo">Titolo</label>
-        <input type="text" class="form-control" id="inputTitolo" placeholder="Titolo" name="titolo" required="required" value="<?php echo $lezione['titolo'] ?>" onkeyup="controllaTitolo(this.value)">
+        <input type="text" class="form-control" id="inputTitolo" placeholder="Titolo" name="titolo" required="required" value="<?php echo $lezione['titolo'] ?>" onkeyup="controllaTitoloLezione(this.value)">
       </div>
       <div id="error" style="display: none">
         <div class="alert alert-danger alert-dismissible fade show" role="alert">

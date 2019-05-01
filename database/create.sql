@@ -93,26 +93,17 @@ CREATE TABLE `tipiMateriali` (
 
 CREATE TABLE `materiali` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
+  `idLezione` int(15) NOT NULL,
   `titolo` varchar(100) NOT NULL,
   `estensione` varchar(10) NOT NULL,
   `idTipo` int(15) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE (`titolo`),
+  UNIQUE (`idLezione`, `titolo`),
   FOREIGN KEY (`idTipo`)
-    REFERENCES `tipiMateriali` (`id`)
-) ENGINE=InnoDB;
-
-
-CREATE TABLE `materialiDiLezioni` (
-  `id` int(15) NOT NULL AUTO_INCREMENT,
-  `idLezione`  int(15),
-  `idMateriale`  int(15),
-  PRIMARY KEY (`id`),
+    REFERENCES `tipiMateriali` (`id`),
   FOREIGN KEY (`idLezione`)
     REFERENCES `lezioni` (`id`)
-    ON DELETE CASCADE,
-  FOREIGN KEY (`idMateriale`)
-    REFERENCES `materiali` (`id`)
+    ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 CREATE TABLE `etichettedilezioni` (

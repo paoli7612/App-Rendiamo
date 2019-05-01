@@ -25,7 +25,7 @@ var salvaDocente = function(button, id){
 }
 
 
-var controllaTitolo = function(titolo){
+var controllaTitoloLezione = function(titolo){
   $.getJSON('../queries/titoloLezione.php?titolo='+titolo).done(function(e){
     if (e['lezione']){
       $('#error').show();

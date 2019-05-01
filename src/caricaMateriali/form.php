@@ -1,5 +1,6 @@
 <div class="container-fluid">
-  <form method="post" enctype="multipart/form-data">
+  <form action="post.php" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="idLezione" value="<?php echo $_GET['id'] ?>">
     <input id="in_file" type="file" style="display: none" onchange="selezionaFile(this)" name="in_file">
 
     <?php $tipi = query("SELECT * FROM tipiMateriali ORDER BY titolo"); ?>
@@ -15,9 +16,14 @@
       <div class="col">
         <div class="form-group">
           <div class="form-label-group">
-            <input name="titolo" type="text" id="titolo" class="form-control" placeholder="Titolo" disabled="disabled" equired="required">
+            <input name="titolo" type="text" id="titolo" class="form-control" placeholder="Titolo" disabled="disabled" equired="required" onchange="controllaTitoloMateriale(this.value, <?php echo $_GET['id'] ?>)">
           </div>
         </div>
+      </div>
+    </div>
+    <div id="error" style="display: none">
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Attenzione!</strong> Hai gia usato questo titolo per un altro materiale di questa lezione.
       </div>
     </div>
 
