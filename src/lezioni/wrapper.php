@@ -87,53 +87,72 @@
         </div>
       <?php endif; ?>
     </div>
-    <?php foreach ($lezioni as $lezione): ?>
-    <div class="col-xl-6 col-md-6 col-sm-12">
-      <div class="card text-white bg-secondary mb-3">
-        <div class="card-body">
-          <?php echo $lezione['titolo'] ?>
-        </div>
-        <div class="card-footer">
-          <div class="float-right">
-            <i class="fas fa-book"></i>
-          </div>
-          <?php $materie = query("SELECT materie.* FROM materie, materieDiLezioni WHERE materie.id=materieDiLezioni.idMateria AND materieDiLezioni.idLezione=".$lezione['id']) ?>
-          <?php if ($materie): ?>
-            <?php foreach ($materie as $materia): ?>
-              <?php echo $materia['titolo'] ?>
-            <?php endforeach; ?>
-          <?php else: ?>
-            Nessuna materia
-          <?php endif; ?>
-        </div>
-        <div class="card-footer">
-          <div class="float-right">
-            <i class="fas fa-user"></i>
-          </div>
-          <?php echo $lezione['cognome'] ?>
-          <?php echo $lezione['nome'] ?>
-        </div>
-        <div class="card-footer">
-          <div class="row">
-            <div class="col">
-              <button class="btn bg-white btn-block" onclick="window.location='../lezione/?id=<?php echo $lezione['id'] ?>'">
-                Visualizza</button>
+    <?php if ($lezioni): ?>
+      <?php foreach ($lezioni as $lezione): ?>
+        <div class="col-xl-6 col-md-6 col-sm-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <?php echo $lezione['titolo'] ?>
             </div>
-            <?php if ($_SESSION['user_type'] == 'studente'): ?>
-              <div class="col">
-                <button class="btn bg-white btn-block" onclick="salvaLezione(this,<?php echo $lezione['id'] ?>)">
-                  <?php if ($lezione['preferito']): ?>
-                    <i class="fas fa-bookmark"></i>
-                  <?php else: ?>
-                    <i class="far fa-bookmark"></i>
-                  <?php endif; ?>
-                  Salva</button>
+            <div class="card-footer">
+              <div class="float-right">
+                <i class="fas fa-layer-group"></i>
+              </div>
+              <?php $materie = query("SELECT materie.* FROM materie, materieDiLezioni WHERE materie.id=materieDiLezioni.idMateria AND materieDiLezioni.idLezione=".$lezione['id']) ?>
+              <?php if ($materie): ?>
+                <?php foreach ($materie as $materia): ?>
+                  <?php echo $materia['titolo'] ?>
+                <?php endforeach; ?>
+              <?php else: ?>
+                Nessuna materia
+              <?php endif; ?>
+            </div>
+            <div class="card-footer">
+              <div class="float-right">
+                <i class="fas fa-user"></i>
+              </div>
+              <?php echo $lezione['cognome'] ?>
+              <?php echo $lezione['nome'] ?>
+            </div>
+            <div class="card-footer">
+              <div class="row">
+                <div class="col">
+                  <button class="btn bg-white btn-block" onclick="window.location='../lezione/?id=<?php echo $lezione['id'] ?>'">
+                    Visualizza</button>
                 </div>
-            <?php endif; ?>
+                <?php if ($_SESSION['user_type'] == 'studente'): ?>
+                  <div class="col">
+                    <button class="btn bg-white btn-block" onclick="salvaLezione(this,<?php echo $lezione['id'] ?>)">
+                      <?php if ($lezione['preferito']): ?>
+                        <i class="fas fa-bookmark"></i>
+                      <?php else: ?>
+                        <i class="far fa-bookmark"></i>
+                      <?php endif; ?>
+                      Salva</button>
+                    </div>
+                <?php endif; ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    <?php else: ?>
+      <div class="container">
+
+      <div class="card bg-light card-body">
+        <div class="row">
+          <div class="col">
+            <h3>Nessun risultato trovato</h3>
+            <p>Nessuna lezione corrisponde ai parametri di ricerca</p>
+          </div>
+          <div class="col">
+            <h1 class="float-right">
+              <i class="fas fa-exclamation-triangle"></i>
+            </h1>
           </div>
         </div>
       </div>
     </div>
-    <?php endforeach; ?>
+    <?php endif; ?>
   </div>
 </div>

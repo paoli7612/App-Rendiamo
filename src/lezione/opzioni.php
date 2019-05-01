@@ -28,6 +28,9 @@
       <button class="btn bg-white mb-3" onclick="window.location='../caricaMateriali/?id=<?php echo $lezione['id'] ?>'">
         <i class="fas fa-upload"></i>
         Carica materiali</button>
+      <button class="btn bg-white mb-3" onclick="window.location='../eliminaLezione/?id=<?php echo $lezione['id'] ?>'">
+        <i class="fas fa-trash"></i>
+        Elimina</button>
     <?php endif; ?>
   </div>
 </div>

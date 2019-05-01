@@ -1,57 +1,71 @@
-<div class="featurette">
-  <div class="row">
-    <div class="col-xl-2 col-md-2 col-sm-12">
-      <button class="btn btn-block" style="height: 100%;" onclick="window.location='../nuovaLezione/'">
-        <h1>
-          <i class="fas fa-book fa-lg"></i>
-        </h1>
-      </button>
+<div class="col-xl-6 col-md-12 col-sm-12 mb-3">
+  <button class="btn btn-block bg-primary text-white w-100 p-5" style="height: 100%" onclick="window.location='../filtra'">
+    <div class="row">
+      <div class="col-8 float-left">
+        <h3 class="row">
+          Lezioni
+        </h3>
+        <p class="row text-left">
+          Visualizza le lezioni messe a disposizione dai professori e i materiali caricati.
+        </p>
+      </div>
+      <h1 class="col-4">
+        <i class="fas fa-book float-right"></i>
+      </h1>
     </div>
-    <div class="col">
-      <h3 class="featurette-heading">
-        Lezioni
-      </h3>
-      <p class="lead">Hai la possibilità di creare delle lezioni per contenere i materiali.</p>
-    </div>
-  </div>
+  </button>
 </div>
 
-<hr class="featurette-divider">
-
-<div class="featurette">
-  <div class="row">
-    <div class="col-xl-2 col-md-2 col-sm-12">
-      <button class="btn btn-block" style="height: 100%;" onclick="window.location='../lezioni/?utente=<?php echo $idUtente ?>'">
-        <h1>
-          <i class="fas fa-layer-group fa-lg"></i>
-        </h1>
-      </button>
+<div class="col-xl-6 col-md-12 col-sm-12 mb-3">
+  <button class="btn btn-block bg-danger text-white w-100 p-5" style="height: 100%" onclick="window.location='../docenti'">
+    <div class="row">
+      <div class="col-8 float-left">
+        <h3 class="row">
+          Docenti
+        </h3>
+        <p class="row text-left">
+          Visualizza gli account dei docenti.
+        </p>
+      </div>
+      <h1 class="col-4 ">
+        <i class="fas fa-users float-right"></i>
+      </h1>
     </div>
-    <div class="col">
-      <h3 class="featurette-heading">
-        Materiali
-      </h3>
-      <p class="lead">Ogni materiale che carichi in una lezione corrisponde ad un file di cui puoi specificare il tipo.</p>
-    </div>
-  </div>
+  </button>
 </div>
 
-<hr class="featurette-divider">
+<div class="col-xl-6 col-md-12 col-sm-12 mb-3">
+  <button class="btn btn-block bg-success text-white w-100 p-5" style="height: 100%" onclick="window.location='../lezioni/?docente=<?php echo $_SESSION['user_row']['id'] ?>'">
+    <div class="row">
+      <div class="col-8 float-left">
+        <h3 class="row">
+          Lezioni create
+        </h3>
+        <p class="row text-left">
+          Visualizza le lezioni che hai creato fin ora.
+        </p>
+      </div>
+      <h1 class="col-4">
+        <i class="fas fa-crown float-right"></i>
+      </h1>
+    </div>
+  </button>
+</div>
 
-<div class="featurette">
-  <div class="row">
-    <div class="col-xl-2 col-md-2 col-sm-12">
-      <button class="btn btn-block" style="height: 100%;" onclick="window.location='../filtra/'">
-        <h1>
-          <i class="fas fa-tags fa-lg"></i>
-        </h1>
-      </button>
+<div class="col-xl-6 col-md-12 col-sm-12 mb-3">
+  <button class="btn btn-block bg-warning text-white w-100 p-5" style="height: 100%" onclick="window.location='../nuovaLezione'">
+    <div class="row">
+      <div class="col-8 float-left">
+        <h3 class="row">
+          Nuova lezione
+        </h3>
+        <p class="row text-left">
+          Crea nuove lezioni che potranno visualizzare i tuoi studenti
+        </p>
+      </div>
+      <h1 class="col-4 ">
+        <i class="fas fa-plus float-right"></i>
+      </h1>
     </div>
-    <div class="col">
-      <h3 class="featurette-heading">
-        Etichette
-      </h3>
-      <p class="lead">Se associ delle parole chiave alle tue lezioni, gli studenti potranno trovarle più comodamente.</p>
-    </div>
-  </div>
+  </button>
 </div>

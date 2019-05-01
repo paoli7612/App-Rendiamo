@@ -26,20 +26,14 @@
     <button class="btn text-white ml-3" onclick="window.location='../lezioni/?docente=<?php echo $_SESSION['user_row']['id'] ?>'">
       <i class="fas fa-crown fa-lg"></i>
     </button>
+
+    <button class="btn text-white ml-3" onclick="window.location='../nuovaLezione/'">
+      <i class="fas fa-plus fa-lg"></i>
+    </button>
   <?php endif; ?>
 
 
   <ul class="navbar-nav ml-auto">
-    <?php if ($_SESSION['user_type'] != 'studente'): ?>
-      <li class="nav-item dropdown no-arrow">
-        <a class="nav-link" href="#" onclick="$('#dropdownNuovo').toggle()">
-          <i class="fas fa-plus fa-fw"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" id="dropdownNuovo">
-          <a class="dropdown-item" href="../nuovaLezione">Nuova lezione</a>
-        </div>
-      </li>
-    <?php endif; ?>
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link" href="#" onclick="$('#dropdownNotifiche').toggle()">
         <i class="fas fa-bell fa-fw"></i>

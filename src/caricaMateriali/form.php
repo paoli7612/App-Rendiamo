@@ -2,6 +2,7 @@
   <form method="post" enctype="multipart/form-data">
     <input id="in_file" type="file" style="display: none" onchange="selezionaFile(this)" name="in_file">
 
+    <?php $tipi = query("SELECT * FROM tipiMateriali ORDER BY titolo"); ?>
 
     <div class="row">
       <div class="col-xl-3 col-md-3 col-sm-6">
@@ -11,18 +12,6 @@
           </div>
         </div>
       </div>
-
-      <?php $tipi = query("SELECT * FROM tipiMateriali"); ?>
-      <?php foreach ($tipi as $tipo): ?>
-        <div class="col-xl-3 col-md-3 col-sm-6 mb-3 tipo" style="display: none">
-          <button style="height: 100%" type="button" class="btn bg-<?php echo $tipo['colore'] ?> btn-block text-white" onclick="selezionaTipo(this, <?php echo $tipo['id'] ?>)">
-            <i class="<?php echo $tipo['icona'] ?> fa-lg"></i>
-          </button>
-        </div>
-      <?php endforeach; ?>
-      <script type="text/javascript">
-        document.getElementsByClassName('tipo')[0].style['display'] = '';
-      </script>
       <div class="col">
         <div class="form-group">
           <div class="form-label-group">
@@ -33,6 +22,27 @@
     </div>
 
     <div class="row">
+      <div class="col-xl-3 col-md-3 col-sm-6">
+        <div class="form-group">
+          <div class="form-label-group">
+            <?php foreach ($tipi as $tipo): ?>
+              <button type="button" class="tipo tipo-<?php echo $tipo['id'] ?> text-white btn btn-block bg-<?php echo $tipo['colore']?>" onclick="$(#tipo).click()" style="display:none">
+                <?php echo $tipo['titolo'] ?>
+              </button>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <select class="form-control" name="tipo" disabled="disabled" id="tipo" onchange="selezionaTipo(this.selectedOptions[0].value)">
+            <option disabled selected>Tipo</option>
+            <?php foreach ($tipi as $tipo): ?>
+              <option value="<?php echo $tipo['id'] ?>"><?php echo $tipo['titolo'] ?></option>
+            <?php endforeach; ?>
+          </select>
+        </div>
+      </div>
     </div>
 
 
