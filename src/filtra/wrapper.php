@@ -39,7 +39,7 @@
               Ricerca per materia
             </h3>
             <h1 class="float-left">
-              <i class="fas fa-book"></i>
+              <i class="fas fa-swatchbook"></i>
             </h1>
           </button>
         </div>
@@ -54,7 +54,7 @@
           </button>
         </div>
         <div class="col-xl-6 col-md-12 col-sm-12 mb-3">
-          <button class="btn btn-block btn-success text-white w-100 p-5">
+          <button class="btn btn-block btn-success text-white w-100 p-5" onclick="window.location='../filtraTitolo'">
             <h3 class="float-right">
               Ricerca testuale
             </h3>

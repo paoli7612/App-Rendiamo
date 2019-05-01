@@ -15,7 +15,7 @@
       <div class="col-xl-4 col-md-6 col-sm-12 mb-3">
         <button class="btn btn-block btn-primary h-100 p-3 mb-3" onclick="window.location='../lezioni/?materia=<?php echo $materia['id'] ?>'">
           <div class="float-right">
-            <i class="fa-lg fas fa-layer-group"></i>
+            <i class="fa-lg fas fa-swatchbook"></i>
           </div>
           <div class="float-left">
             <?php echo $materia['titolo']?>

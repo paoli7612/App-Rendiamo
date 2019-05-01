@@ -172,9 +172,9 @@ INSERT INTO `tipiMateriali` (`titolo`, `colore`, `icona`, `plurale`) VALUES
 ('Documento', 'primary', 'fas fa-file-pdf', 'Documenti'),
 ('Video', 'warning', 'fas fa-film', 'Video'),
 ('Esercitazione', 'success', 'fas fa-dumbbell', 'Esercitazioni'),
-('Presentazione', 'info', 'fas fa-file-powerpoint', 'Presentazioni'),
-('Audio', 'danger', 'fas fa-headphones-alt', 'Video'),
-('Mappa concettuale', 'purple', 'fas fa-project-diagram', 'Mappe concettuali');
+('Presentazione', 'info', 'fas fa-chalkboard-teacher', 'Presentazioni'),
+('Audio', 'danger', 'fas fa-headphones-alt', 'Audio'),
+('Mappa concettuale', 'light', 'fas fa-project-diagram', 'Mappe concettuali');
 
 
 INSERT INTO `materie` (`id`,`titolo`) VALUES
