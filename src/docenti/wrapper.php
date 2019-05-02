@@ -6,6 +6,11 @@
     </li>
     <li class="breadcrumb-item">
       Docenti
+      <?php if (isset($_GET['salvati'])): ?>
+        salvati
+      <?php elseif (isset($_GET['attivi'])): ?>
+        attivi
+      <?php endif; ?>
     </li>
   </ol>
 
@@ -83,15 +88,34 @@
               </script>
             </div>
           </div>
-          <?php if (isset($_GET['salvati'])): ?>
-            <button class="btn btn-secondary btn-block" onclick="window.location='../docenti/'">
-              <i class="fas fa-users"></i>
-              Visualizza tutti i docenti</button>
-          <?php else: ?>
-            <button class="btn btn-secondary btn-block" onclick="window.location='../docenti/?salvati'">
-              <i class="fas fa-bookmark"></i>
-              Visualizza solo i docenti salvati</button>
-          <?php endif; ?>
+          <div class="row">
+            <div class="col">
+              <?php if (isset($_GET['salvati'])): ?>
+                <button class="btn btn-secondary btn-block" onclick="window.location='../docenti/'">
+                  <i class="fas fa-users"></i>
+                  Visualizza tutti i docenti
+                </button>
+              <?php else: ?>
+                <button class="btn btn-secondary btn-block" onclick="window.location='../docenti/?salvati'">
+                  <i class="fas fa-bookmark"></i>
+                  Visualizza solo i docenti salvati
+                </button>
+              <?php endif; ?>
+            </div>
+            <div class="col">
+              <?php if (isset($_GET['attivi'])): ?>
+                <button class="btn btn-secondary btn-block" disabled="disabled" onclick="window.location='../docenti/'">
+                  <i class="fas fa-users"></i>
+                  Visualizza tutti i docenti
+                </button>
+              <?php else: ?>
+                <button class="btn btn-secondary btn-block" disabled="disabled" onclick="window.location='../docenti/?attivi'">
+                  <i class="fas fa-bookmark"></i>
+                  Visualizza solo i docenti attivi
+                </button>
+              <?php endif; ?>
+            </div>
+          </div>
         </div>
       </div>
     </div>

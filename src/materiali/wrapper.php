@@ -30,7 +30,7 @@
 
   <div class="row">
     <?php foreach ($materiali as $materiale): ?>
-      <div class="col-xl-4 col-md-6 col-sm-12">
+      <div class="col-xl-4 col-md-6 col-sm-12 mb-3">
         <div class="card bg-<?php echo $tipo['colore']?> <?php if ($tipo['colore'] != 'light') echo 'text-white' ?>">
           <div class="card-header">
             <?php echo $materiale['titolo'] ?>

@@ -39,7 +39,7 @@
 
 
   <ul class="navbar-nav ml-auto">
-    <li class="nav-item dropdown no-arrow">
+    <li class="nav-item dropdown no-arrow d-none">
       <a class="nav-link" href="#" onclick="$('#dropdownNotifiche').toggle()">
         <i class="fas fa-bell fa-fw"></i>
         <span class="badge badge-danger">1</span>
