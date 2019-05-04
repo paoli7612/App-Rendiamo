@@ -74,6 +74,17 @@
               </h1>
             </button>
           </div>
+        <?php else: ?>
+          <div class="col-xl-6 col-md-12 col-sm-12 mb-3">
+            <button class="btn btn-block btn-warning text-white w-100 p-5" onclick="window.location='../lezioni/?docente=<?php echo $_SESSION['user_row']['id'] ?>'">
+              <h3 class="float-right">
+                Lezioni create
+              </h3>
+              <h1 class="float-left">
+                <i class="fas fa-crown"></i>
+              </h1>
+            </button>
+          </div>
         <?php endif; ?>
       </div>
     </div>

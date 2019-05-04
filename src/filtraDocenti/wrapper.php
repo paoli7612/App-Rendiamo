@@ -44,7 +44,9 @@
           </div>
           <div class="float-left">
             <?php echo $docente['nome']. " " .$docente['cognome']?>
-            (<?php echo $docente['count'] ?>)
+            <span class="badge badge-light">
+              <?php echo $docente['count'] ?>
+            </span>
           </div>
         </button>
   		</div>

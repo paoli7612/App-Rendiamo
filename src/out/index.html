@@ -21,42 +21,46 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <img src="mcspada.png" alt="logo" width="200px">
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav  ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="../accedi">Accedi <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="../registrati">Registrati <span class="sr-only">(current)</span></a>
-            </li>
-
-          </ul>
-
+      <nav class="navbar navbar-expand navbar-dark fixed-top bg-dark">
+        <div style="width: 200px">
+          <img src="mcspada.png" alt="logo" width="100%">
+        </div>
+        <div class="navbar-collapse navbar-nav ">
+          <a class="ml-auto nav-link active" onclick="$('#dropdownEntra').toggle()">
+            <i class="fas fa-user-circle fa-lg"></i>
+          </a>
+        </div>
+        <div class="dropdown-menu dropdown-menu-right" id="dropdownEntra">
+          <a class="dropdown-item" href="../accedi">Accedi</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="../registrati">Registrati</a>
         </div>
       </nav>
     </header>
-<br>
+    <br><br>
     <main role="main">
 
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel slide">
         <div class="carousel-inner">
-          <div class="carousel-item active" >
-            <img class="first-slide" src="background.png" alt="First slide" style="width: 100%; position: absolute">
-            <img class="first-slide" src="logo.png" style=" width: 15%;
-            margin-top: 50%;
- margin-left: 50%;
- transform: translate(-50%,-150%);">
+          <div class="carousel-item active">
+            <img class="first-slide" src="background.2.png" alt="First slide" style="width: 100%">
           </div>
         </div>
       </div>
 
-      <div class="container">
-        <h1>
-          APPRENDIAMOCI
-        </h1>
+      <div style="margin:auto; text-align: center; margin-top: -40px; width: 60%" >
+        <div class="card float-center">
+          <div class="card-body">
+            <h5 class="d-inline d-sm-none">APPRENDIAMOCI</h5>
+            <h4 class="d-none d-sm-inline d-md-none">APPRENDIAMOCI</h4>
+            <h3 class="d-none d-md-inline d-lg-none">APPRENDIAMOCI</h3>
+            <h2 class="d-none d-lg-inline d-xl-none">APPRENDIAMOCI</h2>
+            <h1 class="d-none d-xl-inline">APPRENDIAMOCI</h1>
+          </div>
+        </div>
       </div>
+
+      <br><br>
 
       <div class="container">
 
@@ -73,10 +77,10 @@
               <h3 class="featurette-heading">
                 Cos'è
               </h3>
-              <p class="lead">
+              <p class="lead text-justify">
                   Apprendiamoci è un sito web che permette
-                  ai ragazzi con problemi nell apprendimento di avere
-                  a disposizione documenti, presentazioni, simulazioni di test,
+                  a tutti e in particolare a studenti con problemi di apprendimento
+                  di avere a disposizione documenti, presentazioni, simulazioni di test,
                   video, e molto altro messo a disposizione dai loro professori,
                   per facilitarte il loro apprendimento a casa.
               </p>
@@ -100,10 +104,32 @@
               <h3 class="featurette-heading">
                 Contattaci
               </h3>
-              <p class="lead">
-                  Se hai bisogno di informazioni o vuoi riportare
-                  dei malfunzionamenti del nostro sito contattaci tramite
-                  mail a <a href="mailto:apprendiamoci@gmail.com">apprendiamoci@gmail.com</a>
+              <p class="lead text-justify">
+                Se hai bisogno di informazioni o vuoi segnalare
+                malfunzionamenti scrivi all' email <a href="mailto:curie@pec.provincia.tn.it">curie@pec.provincia.tn.it</a>
+                o chiama il numero <a href="#">0461 511397</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="featurette">
+          <div class="row">
+            <div class="col-xl-2 col-md-2 col-sm-12">
+              <button class="btn btn-block" style="height: 100%;">
+                <h1>
+                  <i class="fas fa-user-tie fa-lg"></i>
+                </h1>
+              </button>
+            </div>
+            <div class="col">
+              <h3 class="featurette-heading">
+                Sei un professore?
+              </h3>
+              <p class="lead text-justify">
+                Effettua la registrazione utilizzando l'email istituzionale <b>nome.cognome@scuole.provincia.tn.it</b>.
               </p>
             </div>
           </div>
@@ -124,39 +150,14 @@
               <h3 class="featurette-heading">
                 Lavora con noi
               </h3>
-              <p class="lead">
-                  Vuoi aiutarci con il nostro lavoro contriuendo con
-                  noi nel nostro lavoro? Puoi trovare la nostra repository
-                  su GitHub.
+              <p class="lead text-justify">
+                Vuoi contribuire al nostro progetto ampliando le funzionalità
+                del sito? Puoi trovare la nostra repository su GitHub.
               </p>
-            </div>
-          </div>
-
-          <hr class="featurette-divider">
-
-          <div class="featurette">
-            <div class="row">
-              <div class="col-xl-2 col-md-2 col-sm-12">
-                <button class="btn btn-block" style="height: 100%;">
-                  <h1>
-                    <i class="fas fa-user-tie fa-lg"></i>
-                  </h1>
-                </button>
-              </div>
-              <div class="col">
-                <h3 class="featurette-heading">
-                  Sei un professore?
-                </h3>
-                <p class="lead">
-                    Puoi effettuare la registrazione utilizzando anche
-                    la tua mail <b>@scuole.provincia.tn.it</b>.
-                </p>
-              </div>
             </div>
           </div>
 
       </div>
     </main>
-
   </body>
 </html>

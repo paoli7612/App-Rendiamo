@@ -77,7 +77,7 @@
                               GROUP BY lezioni.id
                             ) AS lezioni, utenti
                             WHERE lezioni.idUtente=utenti.id
-                              AND lezioni.titolo LIKE '%$ricerca%'
+                              AND (lezioni.titolo LIKE '%$ricerca%' OR lezioni.note LIKE '%$ricerca%')
                             ) AS lezioni
                           LEFT JOIN utentiDiLezioni
                           ON utentiDiLezioni.idLezione=lezioni.id
@@ -204,21 +204,20 @@
       <?php endforeach; ?>
     <?php else: ?>
       <div class="container">
-
-      <div class="card bg-light card-body">
-        <div class="row">
-          <div class="col">
-            <h3>Nessun risultato trovato</h3>
-            <p>Nessuna lezione corrisponde ai parametri di ricerca</p>
-          </div>
-          <div class="col">
-            <h1 class="float-right">
-              <i class="fas fa-exclamation-triangle"></i>
-            </h1>
+        <div class="card bg-light card-body">
+          <div class="row">
+            <div class="col">
+              <h3>Nessun risultato trovato</h3>
+              <p>Nessuna lezione corrisponde ai parametri di ricerca</p>
+            </div>
+            <div class="col">
+              <h1 class="float-right">
+                <i class="fas fa-exclamation-triangle"></i>
+              </h1>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     <?php endif; ?>
   </div>
 </div>

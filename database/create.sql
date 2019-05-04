@@ -3,19 +3,6 @@ CREATE DATABASE appRendiamo;
 
 USE appRendiamo;
 
-CREATE TABLE `istituti` (
-  `id` int(15) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50),
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
-
-CREATE TABLE `etichette` (
-  `id` int(15) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(150) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE (`nome`)
-) ENGINE=InnoDB;
-
 CREATE TABLE `utenti` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,
@@ -32,23 +19,13 @@ CREATE TABLE `utenti` (
 CREATE TABLE `notifiche` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `idUtente` int(15),
+  `data` datetime,
   `testo` varchar(150) NOT NULL,
   `link` varchar(50),
   PRIMARY KEY (`id`),
   FOREIGN KEY (`idUtente`)
-  REFERENCES `utenti` (`id`)
-  ON DELETE CASCADE
-) ENGINE=InnoDB;
-
-CREATE TABLE `istitutiDiUtenti` (
-  `id` int(15) NOT NULL AUTO_INCREMENT,
-  `idIstituto` int(15),
-  `idUtente` int(15),
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`idIstituto`)
-    REFERENCES `istituti` (`id`),
-  FOREIGN KEY (`idUtente`)
     REFERENCES `utenti` (`id`)
+    ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 CREATE TABLE `lezioni` (
@@ -107,18 +84,6 @@ CREATE TABLE `materiali` (
     ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
-CREATE TABLE `etichettedilezioni` (
-  `id` int(15) NOT NULL AUTO_INCREMENT,
-  `idLezione`  int(15),
-  `idEtichetta`  int(15),
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`idLezione`)
-    REFERENCES `lezioni` (`id`)
-    ON DELETE CASCADE,
-  FOREIGN KEY (`idEtichetta`)
-    REFERENCES `etichette` (`id`)
-) ENGINE=InnoDB;
-
 CREATE TABLE `utentiDiLezioni` (
 	`id` int(15) NOT NULL AUTO_INCREMENT,
 	`idUtente`  int(15),
@@ -144,9 +109,6 @@ CREATE TABLE `utentiDiUtenti` (
     REFERENCES `utenti` (`id`)
   ON DELETE CASCADE
 ) ENGINE=InnoDB;
-
-INSERT INTO `istituti` (`nome`)
-  VALUES ('Marie Curie Pergine Valsugana');
 
 INSERT INTO `utenti` (`nome`, `cognome`, `email`, `password`, `tipo`) VALUES
 
