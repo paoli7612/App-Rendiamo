@@ -8,8 +8,7 @@
   </ol>
 
   <div class="row">
-    <?php if ($_SESSION['user_type'] == 'studente'): ?>
-      <div class="col-xl-4 col-md-6 col-sm-12 mb-3">
+    <div class="col-xl-4 col-md-6 col-sm-12 mb-3">
       <div class="card">
         <div class="card-header">
           Aiuti
@@ -28,7 +27,6 @@
         </div>
       </div>
     </div>
-    <?php endif; ?>
     <div class="col-xl-4 col-md-6 col-sm-12 mb-3">
       <div class="card">
         <div class="card-header">

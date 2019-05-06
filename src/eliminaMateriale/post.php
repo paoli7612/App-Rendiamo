@@ -10,9 +10,7 @@
   $idLezione = $materiale['idLezione'];
   $lezione = query("SELECT * FROM lezioni WHERE id=$idLezione")[0]['titolo'];
 
-  $notifica = "<b>$titolo</b> eliminato dalla lezione <b>$lezione</b>!";
   $link = "../lezioni?id=$idLezione";
-  query("INSERT INTO notifiche (`idUtente`, `testo`, `data`, `link`) VALUES ($idUtente, '$notifica', CURRENT_TIMESTAMP, '$link')");
 
   $notifica = $_SESSION['user_row']['nome']." ". $_SESSION['user_row']['cognome'] . " ha eliminato la <b>$titolo</b>dalla lezione <b>$lezione</b>!";
   $studenti = query("SELECT utenti.id
@@ -24,5 +22,5 @@
     query("INSERT INTO notifiche (`idUtente`, `testo`, `data`, `link`) VALUES ($id, '$notifica', CURRENT_TIMESTAMP, '$link')");
   }
 
-  //header("Location: ../home/");
+  header("Location: ../lezione/?id=$idLezione");
  ?>

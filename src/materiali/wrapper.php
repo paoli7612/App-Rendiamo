@@ -47,11 +47,11 @@
             </h5>
           </div>
           <div class="card-footer">
-            <a href="../../files/<?php echo $materiale['id'] ?>/<?php echo $materiale['titolo'] ?>" download="download">
-              <button class="btn btn-light">
-                <i class="fas fa-download"></i>
-                Scarica</button>
+            <a href="../../files/<?php echo $materiale['id'] ?>/<?php echo $materiale['titolo'] ?>" download id="materiale_<?php echo $materiale['id']?>">
             </a>
+            <button class="btn btn-light" onclick="document.getElementById('materiale_<?php echo $materiale['id']?>').click()">
+              <i class="fas fa-download"></i>
+              Scarica</button>
             <?php if ($_SESSION['user_row']['id'] == $lezione['idUtente']): ?>
               <button class="btn btn-light" onclick="window.location='../eliminaMateriale/?id=<?php echo $materiale['id'] ?>'">
                 <i class="fas fa-trash"></i>

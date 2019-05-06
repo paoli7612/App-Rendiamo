@@ -60,7 +60,7 @@
           Aiuti
         </h3>
         <p class="row text-left">
-          Memorizza i professori che ti interessano di più per essere sempre aggiornato sulle lezioni che pubblicano.
+          Il sito ti mostrerà degli aiuti che ti mostreranno l'utilizza delle funzionalià del sito.
         </p>
       </div>
       <h1 class="col-4 ">

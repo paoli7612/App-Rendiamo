@@ -115,12 +115,14 @@
                 Tutti
               </button>
             </div>
-            <div class="col">
-              <button class="btn btn-<?php if(isset($_GET['salvati'])) echo 'primary'; else echo 'secondary' ?> btn-block" onclick="window.location='../docenti/?salvati'">
-                <i class="fas fa-bookmark"></i>
-                Salvati
-              </button>
-            </div>
+            <?php if ($_SESSION['user_type'] == 'studente'): ?>
+              <div class="col">
+                <button class="btn btn-<?php if(isset($_GET['salvati'])) echo 'primary'; else echo 'secondary' ?> btn-block" onclick="window.location='../docenti/?salvati'">
+                  <i class="fas fa-bookmark"></i>
+                  Salvati
+                </button>
+              </div>
+            <?php endif; ?>
             <div class="col">
               <button class="btn btn-<?php if(isset($_GET['attivi'])) echo 'primary'; else echo 'secondary' ?> btn-block" onclick="window.location='../docenti/?attivi'">
                 <i class="fas fa-book"></i>
@@ -134,6 +136,25 @@
   </div>
 
   <div class="row">
+    <?php if ($_SESSION['user_type'] == 'studente' && $_SESSION['user_row']['aiuti']): ?>
+      <div class="col-12 mb-3">
+        <div class="card">
+          <div class="card-header">
+            Aiuto
+            <a class="float-right">
+              <i class="fas fa-question-circle"></i>
+            </a>
+          </div>
+          <div class="card-body">
+            In questa pagina puoi visualizzare tutti i docenti registrati. Puoi filtrare la ricerca tramite i pulsanti nella finestra <b>Opzioni</b>.
+            <ul>
+              <li> I docenti <b>Attivi</b> sono i professori che hanno pubblicato almeno una lezione. </li>
+              <li> I docenti <b>Salvati</b> sono quelli che hai gia salvato tra i preferiti. </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <?php endif; ?>
     <?php if ($docenti): ?>
       <?php foreach ($docenti as $docente): ?>
         <div class="col-xl-4 col-md-6 col-sm-12" name="docente" search="<?php echo $docente['cognome']." ".$docente['nome'] ?>">

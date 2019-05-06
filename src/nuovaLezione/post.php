@@ -11,9 +11,7 @@
   $lezione = query("SELECT * FROM lezioni WHERE idUtente=$idUtente AND titolo='$titolo'")[0];
 
   $idLezione = $lezione['id'];
-  $notifica = "Nuova lezione creata!";
   $link = "../lezione/?id=$idLezione";
-  query("INSERT INTO notifiche (`idUtente`, `testo`, `link`, `data`) VALUES ($idUtente, '$notifica', '$link', CURRENT_TIMESTAMP)");
 
   $notifica = $_SESSION['user_row']['nome']." ". $_SESSION['user_row']['cognome'] . " ha pubblicato una nuova lezione!";
   $link = "../lezione/?id=$idLezione";

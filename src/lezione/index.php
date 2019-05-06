@@ -6,7 +6,24 @@
   </head>
   <body>
     <?php include '../nav.php' ?>
-    <?php include 'wrapper.php' ?>
+    <?php $idLezione = $_GET['id'] ?>
+    <?php $lezioni = query("SELECT lezioni.*, utentidilezioni.idUtente as preferito
+                            FROM (
+                              SELECT *
+                              FROM lezioni
+                              WHERE lezioni.id=$idLezione
+                            ) AS lezioni
+                            LEFT JOIN utentidilezioni
+                              ON (utentidilezioni.idLezione=lezioni.id
+                                  AND utentidilezioni.idUtente=$idUtente)");
+          if (count($lezioni) == 1){
+            $lezione = $lezioni[0];
+            include 'wrapper.php';
+          } else {
+            header('Location: ../lezioneInesistente');
+          }
+
+    ?>
 
   </body>
 </html>

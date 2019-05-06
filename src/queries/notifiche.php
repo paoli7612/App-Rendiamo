@@ -16,6 +16,5 @@
             SET notifiche=1
             WHERE id=$idUtente;");
   }
-  $_SESSION['user_row']['notifiche']=$azione;
-  header('Location: ../impostazioni/');
+  $_SESSION['user_row']['notifiche'] = $azione;
 ?>

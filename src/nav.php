@@ -50,15 +50,16 @@
       <a class="nav-link" href="#" onclick="$('#dropdownProfilo').toggle()">
         <i class="fas fa-user-circle fa-fw"></i>
         <?php if ($c): ?>
-          <span class="badge badge-danger"><?php echo $c ?></span>
+          <span class="badge badge-danger" id="navNotificheN"><?php echo $c ?></span>
         <?php endif; ?>
       </a>
       <div class="dropdown-menu dropdown-menu-right" id="dropdownProfilo">
         <a class="dropdown-item" href="../account/">
           <?php echo $_SESSION['user_row']['nome']." ".$_SESSION['user_row']['cognome'] ?>
         </a>
-        <a class="dropdown-item" href="../impostazioni/">Impostazioni</a>
-        <a class="dropdown-item"
+        <?php if ($_SESSION['user_type'] == 'studente'): ?>
+          <a class="dropdown-item" href="../impostazioni/">Impostazioni</a>
+          <a class="dropdown-item"
           <?php if (!$_SESSION['user_row']['notifiche']): ?>
             style="display: none"
           <?php endif; ?>
@@ -67,6 +68,7 @@
             <span class="badge badge-danger"><?php echo $c ?></span>
           <?php endif; ?>
         </a>
+        <?php endif; ?>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="../disconnetti">Disconnetti</a>
       </div>

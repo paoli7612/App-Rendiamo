@@ -8,9 +8,6 @@
 
   $titolo = $lezione['titolo'];
 
-  $notifica = "Lezione eliminata!";
-  query("INSERT INTO notifiche (`idUtente`, `testo`, `data`) VALUES ($idUtente, '$notifica', CURRENT_TIMESTAMP)");
-
   $notifica = $_SESSION['user_row']['nome']." ". $_SESSION['user_row']['cognome'] . " ha eliminato la lezione <b>$titolo</b>!";
   $studenti = query("SELECT utenti.id
                       FROM utenti, utentiDiUtenti
