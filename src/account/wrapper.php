@@ -7,6 +7,22 @@
   </ol>
 
   <div class="row">
+  <?php if ($_SESSION['user_type'] == 'studente' && $_SESSION['user_row']['aiuti']): ?>
+      <div class="col-xl-4 col-sm-12 mb-3">
+        <div class="card">
+          <div class="card-header">
+            Aiuto
+            <a class="float-right">
+              <i class="fas fa-question-circle"></i>
+            </a>
+          </div>
+          <div class="card-body">
+			Questo è il tuo account. Da qui puoi modificare le impostazioni inerenti alle notifiche e agli aiuti;
+			visualizzare docenti o lezioni salvate, e disconnetterti.
+          </div>
+        </div>
+      </div>
+    <?php endif; ?>
     <div class="col-xl-8 col-sm-12">
       <div class="card text-white o-hidden bg-danger">
         <div class="card-body">
@@ -35,7 +51,7 @@
             <button title="impostazioni" class="btn bg-white" onclick="window.location='../impostazioni'">
               <i class="fas fa-cog"></i> Impostazioni
             </button>
-            <button title="impostazioni" class="btn bg-white" data-toggle="modal" data-target="#logoutModal">
+            <button title="impostazioni" class="btn bg-white" onclick="window.location='../disconnetti/'">
               <i class="fas fa-sign-out-alt"></i> Disconnetti
             </button>
           </div>
