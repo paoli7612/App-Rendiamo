@@ -3,8 +3,8 @@
   session_start();
   $idUtente = $_SESSION['user_row']['id'];
   $idLezione = $_POST['idLezione'];
-  $lezione = query("SELECT * FROM lezioni WHERE id=$idLezione")[0];
-  query("DELETE FROM lezioni WHERE id=$idLezione");
+  $lezione = query("SELECT * FROM lezioni WHERE id=$idLezione AND lezioni.idUtente=$idUtente")[0];
+  query("DELETE FROM lezioni WHERE id=$idLezione AND lezioni.idUtente=$idUtente");
 
   $titolo = $lezione['titolo'];
 

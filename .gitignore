@@ -1,2 +1,2 @@
-files/*
+files/[0-9]*
 *log.txt

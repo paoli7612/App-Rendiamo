@@ -6,6 +6,8 @@
   $idLezione = $_POST['idLezione'];
   $idUtente = $_SESSION['user_row']['id'];
 
+  $lezione = 
+
   query("DELETE FROM materieDiLezioni WHERE materieDiLezioni.idLezione=$idLezione ");
 
   unset($_POST['idLezione']);

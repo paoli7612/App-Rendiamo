@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <?php include "../head.html" ?>
-    <title>Seleziona materie</title>
+    <title>Permesso negato</title>
   </head>
   <body>
     <?php include '../nav.php' ?>

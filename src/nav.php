@@ -2,6 +2,12 @@
 <?php
   session_start();
   if (isset($_SESSION['is_login'])){
+    $utenti = query("SELECT * FROM utenti WHERE id=".$_SESSION['user_row']['id']);
+    if (count($utenti) == 1){
+      $_SESSION['user_row'] = $utenti[0];
+    } else {
+      header('Location: ../disconnetti');
+    }
   } else {
     header('Location: ../out/');
   }

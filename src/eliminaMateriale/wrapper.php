@@ -1,5 +1,3 @@
-<?php $idLezione = $_GET['lezione'] ?>
-<?php $lezione = query("SELECT * FROM lezioni WHERE id=$idLezione")[0] ?>
 <div class="container-fluid">
 
   <ol class="breadcrumb">
@@ -7,8 +5,8 @@
       <a href="../home/">Home</a>
     </li>
     <li class="breadcrumb-item">
-      <a href="../lezione/?id=<?php echo $lezione['id'] ?>">
-        <?php echo $lezione['titolo'] ?>
+      <a href="../lezione/?id=<?php echo $materiale['l_id'] ?>">
+        <?php echo $materiale['l_titolo'] ?>
       </a>
     </li>
     <li class="breadcrumb-item">

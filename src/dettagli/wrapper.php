@@ -1,7 +1,3 @@
-<?php $idLezione = $_GET['id'] ?>
-<?php $lezione = query("SELECT * FROM lezioni WHERE lezioni.id=$idLezione")[0] ?>
-<?php $idDocente = $lezione['idUtente']; ?>
-<?php $docente = query("SELECT * FROM utenti WHERE utenti.id=$idDocente")[0] ?>
 <div class="container-fluid">
 
   <ol class="breadcrumb">
@@ -35,7 +31,7 @@
           <?php endif; ?>
         </div>
         <div class="card-footer">
-          <?php $materie = query("SELECT * FROM materie, materieDiLezioni WHERE materie.id=materieDiLezioni.idMateria AND materieDiLezioni.idLezione=$idLezione") ?>
+          <?php $materie = query("SELECT * FROM materie, materieDiLezioni WHERE materie.id=materieDiLezioni.idMateria AND materieDiLezioni.idLezione=$id") ?>
           <?php if ($materie): ?>
             <?php foreach ($materie as $materia): ?>
               <?php echo $materia['titolo'] ?>
@@ -48,7 +44,7 @@
           </a>
         </div>
         <div class="card-footer">
-          <?php echo $docente['cognome']." ".$docente['nome'] ?>
+          <?php echo $lezione['cognome']." ".$lezione['nome'] ?>
           <a class="float-right" title="docente">
             <i class="fas fa-user-graduate"></i>
           </a>

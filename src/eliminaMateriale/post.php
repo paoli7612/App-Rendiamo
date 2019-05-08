@@ -12,7 +12,7 @@
 
   $link = "../lezioni?id=$idLezione";
 
-  $notifica = $_SESSION['user_row']['nome']." ". $_SESSION['user_row']['cognome'] . " ha eliminato la <b>$titolo</b>dalla lezione <b>$lezione</b>!";
+  $notifica = $_SESSION['user_row']['nome']." ". $_SESSION['user_row']['cognome'] . " ha eliminato <b>$titolo</b> dalla lezione <b>$lezione</b>!";
   $studenti = query("SELECT utenti.id
                       FROM utenti, utentiDiUtenti
                       WHERE utenti.id=utentiDiUtenti.idStudente

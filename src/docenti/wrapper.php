@@ -31,7 +31,7 @@
                           ON (
                             lezioni.idUtente=utenti.id
                           )
-                          WHERE NOT utenti.tipo = 'studente'
+                          WHERE utenti.tipo = 'professore'
                             AND utenti.preferito
                           GROUP BY utenti.id
                           ORDER BY utenti.cognome, utenti.nome
@@ -51,7 +51,7 @@
                           ON (
                             lezioni.idUtente=utenti.id
                           )
-                          WHERE NOT utenti.tipo = 'studente'
+                          WHERE utenti.tipo = 'professore'
                           GROUP BY utenti.id
                           HAVING count>0
                           ORDER BY utenti.cognome, utenti.nome
@@ -71,7 +71,7 @@
                           ON (
                             lezioni.idUtente=utenti.id
                           )
-                          WHERE NOT utenti.tipo = 'studente'
+                          WHERE utenti.tipo = 'professore'
                           GROUP BY utenti.id
                           ORDER BY utenti.cognome, utenti.nome
                         ");
