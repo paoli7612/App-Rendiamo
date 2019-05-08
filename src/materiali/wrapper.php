@@ -53,7 +53,7 @@
               <i class="fas fa-download"></i>
               Scarica</button>
             <?php if ($_SESSION['user_row']['id'] == $lezione['idUtente']): ?>
-              <button class="btn btn-light" onclick="window.location='../eliminaMateriale/?id=<?php echo $materiale['id'] ?>'">
+              <button class="btn btn-light" onclick="window.location='../eliminaMateriale/?lezione=<?php echo $lezione['id']?>&materiale=<?php echo $materiale['id'] ?>'">
                 <i class="fas fa-trash"></i>
                 Elimina</button>
             <?php endif; ?>

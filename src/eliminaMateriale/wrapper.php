@@ -1,4 +1,4 @@
-<?php $idLezione = $_GET['id'] ?>
+<?php $idLezione = $_GET['lezione'] ?>
 <?php $lezione = query("SELECT * FROM lezioni WHERE id=$idLezione")[0] ?>
 <div class="container-fluid">
 
