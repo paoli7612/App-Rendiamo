@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <form action="post.php" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="idLezione" value="<?php echo $_GET['id'] ?>">
+    <input type="hidden" id="idLezione" name="idLezione" value="<?php echo $_GET['id'] ?>">
     <input id="in_file" type="file" style="display: none" onchange="selezionaFile(this)" name="in_file">
 
     <?php $tipi = query("SELECT * FROM tipiMateriali ORDER BY titolo"); ?>
@@ -16,7 +16,7 @@
       <div class="col">
         <div class="form-group">
           <div class="form-label-group">
-            <input name="titolo" type="text" id="titolo" class="form-control" placeholder="Titolo" disabled="disabled" equired="required" onchange="controllaTitoloMateriale(this.value, <?php echo $_GET['id'] ?>)">
+            <input name="titolo" type="text" id="titolo" class="form-control" placeholder="Titolo" disabled="disabled" equired="required" onkeyup="controllaTitoloMateriale(this.value, <?php echo $_GET['id'] ?>)">
           </div>
         </div>
       </div>

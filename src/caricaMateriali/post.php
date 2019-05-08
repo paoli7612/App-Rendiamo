@@ -1,5 +1,5 @@
 <?php
-
+  session_start();
   include '../connection.php';
 
   $titolo = $_POST['titolo'];
@@ -21,6 +21,20 @@
     $indirizzo = $cartella.$titolo;
     move_uploaded_file($file["tmp_name"], $indirizzo);
 
+    $lezione = query("SELECT * from lezioni WHERE id=$idLezione")[0];
+    $titoloLezione = $lezione['titolo'];
+    $notifica = $_SESSION['user_row']['nome']." ". $_SESSION['user_row']['cognome'] . " ha caricato <b>$titolo</b> nella lezione <b>$titoloLezione</b>!";
+    $idUtente = $_SESSION['user_row']['id'];
+
+    $link = "../materiali/?id=$idLezione&tipo=$idTipo";
+    $studenti = query("SELECT utenti.id
+                        FROM utenti, utentiDiLezioni
+                        WHERE utenti.id=utentiDiLezioni.idUtente
+                          AND utentiDiLezioni.idLezione=$idLezione");
+    foreach ($studenti as $studente) {
+      $id = $studente['id'];
+      query("INSERT INTO notifiche (`idUtente`, `testo`, `link`, `data`) VALUES ($id, '$notifica', '$link', CURRENT_TIMESTAMP)");
+    }
   }
 
   header('Location: ../lezione/?id='.$idLezione);

@@ -11,8 +11,8 @@
       $id = $_GET['id'];
       $lezioni = query("SELECT * FROM lezioni WHERE id=$id");
       if (count($lezioni) == 1){
+        $lezione = $lezioni[0];
         if ($lezione['idUtente'] == $_SESSION['user_row']['id']) {
-          $lezione = $lezioni[0];
         } else {
           header('Location: ../permessoNegato');
         }

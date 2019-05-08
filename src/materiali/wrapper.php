@@ -1,19 +1,6 @@
 <div class="container-fluid">
 
 
-  <?php
-    $idTipo = $_GET['tipo'];
-    $idLezione = $_GET['id'];
-    $lezione = query("SELECT *
-                      FROM lezioni
-                      WHERE id=$idLezione")[0];
-    $tipo = query("SELECT *
-                  FROM tipiMateriali
-                  WHERE id=$idTipo")[0];
-    $materiali = query("SELECT *
-                        FROM materiali
-                        WHERE idTipo=$idTipo
-                          AND idLezione=$idLezione") ?>
 
   <ol class="breadcrumb">
     <li class="breadcrumb-item">

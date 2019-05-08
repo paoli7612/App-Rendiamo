@@ -2,8 +2,7 @@ var selezionaFile = function(e){
   $('#titolo').val(e.files[0]['name']);
   $('#titolo').prop( "disabled", false );
   $('#tipo').prop( "disabled", false );
-  $('#tipo').prop
-
+  controllaTitoloMateriale(document.getElementById('titolo').value, document.getElementById('idLezione').value);
 }
 
 var selezionaTipo = function(e){

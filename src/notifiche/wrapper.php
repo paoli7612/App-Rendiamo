@@ -16,15 +16,21 @@
       <?php foreach ($notifiche as $notifica): ?>
         <div class="col-12 mb-3" id="<?php echo $notifica['id'] ?>">
           <div class="card">
-            <div class="card-body row">
-              <div class="col">
-                <?php echo $notifica['testo'] ?> <br>
-                <?php echo $notifica['data'] ?>
-              </div class="col">
+            <div class="card-header">
+              <?php
+                  $phpdate = strtotime( $notifica['data'] );
+                  $notifica['data'] = date('d/m H:i', $phpdate );
+              ?>
+              <?php echo $notifica['data'] ?>
+            </div>
+            <div class="card-body">
+              <?php echo $notifica['testo'] ?>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-secondary" onclick="ignora(<?php echo $notifica['id'] ?>)">Ignora</button>
               <?php if ($notifica['link']): ?>
-                <button class="btn btn-primary float-right ml-3" onclick="window.location='<?php echo $notifica['link'] ?>'">Visualizza</button>
+                <button class="btn btn-primary" onclick="window.location='<?php echo $notifica['link'] ?>'">Visualizza</button>
               <?php endif; ?>
-              <button class="btn btn-secondary float-right" onclick="ignora(<?php echo $notifica['id'] ?>)">Ignora</button>
             </div>
           </div>
         </div>
