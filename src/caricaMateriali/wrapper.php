@@ -11,9 +11,5 @@
     </li>
   </ol>
 
-  <div class="row">
-    <div class="col">
-      <?php include 'form.php' ?>
-    </div>
-  </div>
+  <?php include 'form.php' ?>
 </div>

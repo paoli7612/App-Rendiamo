@@ -6,6 +6,7 @@
   </head>
   <body>
     <?php include '../nav.php' ?>
+    <?php if (!isset($_GET['id']) || !$_GET['id']){header('Location: ../home');} ?>
     <?php $idLezione = $_GET['id'] ?>
     <?php $lezioni = query("SELECT lezioni.*, utentidilezioni.idUtente as preferito
                             FROM (

@@ -1,7 +1,11 @@
-<?php $tipi = query("SELECT DISTINCT tipiMateriali.*
-                    FROM tipiMateriali, materiali
-                    WHERE materiali.idTipo=tipiMateriali.id
-                      AND materiali.idLezione=".$lezione['id']." ORDER BY titolo")?>
+<?php $idLezione = $lezione['id'] ?>
+<?php $tipi = query("SELECT tipiMateriali.*, COUNT(materiali.id) as count
+        FROM tipiMateriali, materiali
+        WHERE materiali.idTipo=tipiMateriali.id
+        AND materiali.idLezione=$idLezione
+        GROUP BY tipiMateriali.id
+        ORDER BY titolo
+") ?>
 
 
 <div class="row mt-3">
@@ -12,7 +16,12 @@
           <div class="row">
             <div class="col-8">
               <h4 class="float-left">
-                <?php echo $tipo['plurale'] ?>
+                <?php echo $tipo['count'] ?>
+                <?php if ($tipo['count'] == 1): ?>
+                  <?php echo $tipo['titolo'] ?>
+                <?php else: ?>
+                  <?php echo $tipo['plurale'] ?>
+                <?php endif; ?>
               </h4>
             </div>
             <h1 class="col-4">

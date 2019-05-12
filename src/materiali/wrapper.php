@@ -30,7 +30,7 @@
               <b> Dimensione: </b> <?php echo $materiale['dimensione'] ?>
             </h5>
             <h5>
-              <b> Data: </b> <?php echo $materiale['data'] ?>
+              <b> Data di caricamento: </b> <?php echo $materiale['data'] ?>
             </h5>
           </div>
           <div class="card-footer">

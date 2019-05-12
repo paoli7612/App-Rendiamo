@@ -26,7 +26,11 @@
         <strong>Attenzione!</strong> Hai gia usato questo titolo per un altro materiale di questa lezione.
       </div>
     </div>
-
+    <div id="size" style="display: none">
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Attenzione!</strong> La dimensione del file supera il limite massimo di 0,5 Megabyte.
+      </div>
+    </div>
     <div class="row">
       <div class="col-xl-3 col-md-3 col-sm-6">
         <div class="form-group">

@@ -121,6 +121,7 @@ INSERT INTO `tipiMateriali` (`titolo`, `colore`, `icona`, `plurale`) VALUES
 ('Esercitazione', 'success', 'fas fa-dumbbell', 'Esercitazioni'),
 ('Presentazione', 'info', 'fas fa-chalkboard-teacher', 'Presentazioni'),
 ('Audio', 'danger', 'fas fa-headphones-alt', 'Audio'),
+('Immagine', 'purple', 'fas fa-images', 'Immagini'),
 ('Mappa concettuale', 'light', 'fas fa-project-diagram', 'Mappe concettuali');
 
 
