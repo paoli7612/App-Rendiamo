@@ -7,8 +7,8 @@
   $idLezione = $_POST['idLezione'];
   $file = $_FILES['in_file'];
   $dimensione = $file['size'];
-
-  if ($dimensione > 5000000000) {
+	echo $dimensione;
+  if ($dimensione > 1000000000) {
     header('Location: ../home?error_size_file');
   }
 

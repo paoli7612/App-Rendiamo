@@ -1,7 +1,8 @@
 var selezionaFile = function(e){
   if (e.files){
     $('#titolo').val(e.files[0]['name']);
-    if (e.files[0]['size'] > 5000000){
+	console.log(e.files[0]['size']);
+    if (e.files[0]['size'] > 1000000000){
       $('#size').show();
     } else {
       $('#size').hide();
