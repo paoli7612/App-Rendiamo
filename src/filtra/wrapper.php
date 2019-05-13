@@ -34,7 +34,7 @@
     <div class="col">
       <div class="row">
         <div class="col-xl-6 col-md-12 col-sm-12 mb-3">
-          <button class="btn btn-block btn-primary text-white w-100 p-5" onclick="window.location='../filtraMaterie'">
+          <button class="btn btn-block btn-primary text-white w-100 p-5" onclick="window.location='../filtraMaterie'" style="height: 100%">
             <h3 class="float-right">
               Ricerca per materia
             </h3>
@@ -44,7 +44,7 @@
           </button>
         </div>
         <div class="col-xl-6 col-md-12 col-sm-12 mb-3">
-          <button class="btn btn-block btn-danger text-white w-100 p-5" onclick="window.location='../filtraDocenti'">
+          <button class="btn btn-block btn-danger text-white w-100 p-5" onclick="window.location='../filtraDocenti'" style="height: 100%">
             <h3 class="float-right">
               Ricerca per docente
             </h3>
@@ -54,7 +54,7 @@
           </button>
         </div>
         <div class="col-xl-6 col-md-12 col-sm-12 mb-3">
-          <button class="btn btn-block btn-success text-white w-100 p-5" onclick="window.location='../filtraTitolo'">
+          <button class="btn btn-block btn-success text-white w-100 p-5" onclick="window.location='../filtraTitolo'" style="height: 100%">
             <h3 class="float-right">
               Ricerca testuale
             </h3>
@@ -65,7 +65,7 @@
         </div>
         <?php if ($_SESSION['user_type'] == 'studente'): ?>
           <div class="col-xl-6 col-md-12 col-sm-12 mb-3">
-            <button class="btn btn-block btn-warning text-white w-100 p-5" onclick="window.location='../lezioni/?salvate'">
+            <button class="btn btn-block btn-warning text-white w-100 p-5" onclick="window.location='../lezioni/?salvate'" style="height: 100%">
               <h3 class="float-right">
                 Lezioni salvate
               </h3>
@@ -76,7 +76,7 @@
           </div>
         <?php else: ?>
           <div class="col-xl-6 col-md-12 col-sm-12 mb-3">
-            <button class="btn btn-block btn-warning text-white w-100 p-5" onclick="window.location='../lezioni/?docente=<?php echo $_SESSION['user_row']['id'] ?>'">
+            <button class="btn btn-block btn-warning text-white w-100 p-5" style="height: 100%" onclick="window.location='../lezioni/?docente=<?php echo $_SESSION['user_row']['id'] ?>'">
               <h3 class="float-right">
                 Lezioni create
               </h3>
