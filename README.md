@@ -31,8 +31,4 @@ upload_max_filesize=1000M
 
 ### Screenshots
 
-<img src="doc/img/login.png"/>
 <img src="doc/img/homepage_studente.png"/>
-<img src="doc/img/filtra_studente.png"/>
-<img src="doc/img/lezione_studente.png"/>
-<img src="doc/img/nuovaLezione_docente.png"/>
