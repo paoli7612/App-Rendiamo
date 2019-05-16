@@ -55,7 +55,6 @@
       </form>
       <div class="text-center">
         <a class="d-block small mt-3" href="../accedi">Hai gia un account? Accedi</a>
-        <a class="d-block small" href="../passwordDimenticata/">Password dimenticata?</a>
       </div>
     </div>
   </div>

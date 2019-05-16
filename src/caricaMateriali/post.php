@@ -8,14 +8,13 @@
   $file = $_FILES['in_file'];
   $dimensione = $file['size'];
 	echo $dimensione;
-  if ($dimensione > 1000000000) {
+  if ($dimensione > 2000000) {
     header('Location: ../home?error_size_file');
   }
 
   query("INSERT INTO materiali (`titolo`, `idTipo`, `idLezione`, `dimensione`, `data`) VALUES ('$titolo', $idTipo, $idLezione, $dimensione, CURRENT_DATE)");
 
   $idMateriale = query("SELECT id from materiali WHERE titolo='$titolo' AND idLezione=$idLezione")[0]['id'];
-  echo $idMateriale;
 
   $cartella = '../../files/'.$idMateriale.'/';
   if (!file_exists($cartella)) {
@@ -43,3 +42,4 @@
 
 
 ?>
+asd

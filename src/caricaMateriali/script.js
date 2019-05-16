@@ -2,7 +2,7 @@ var selezionaFile = function(e){
   if (e.files){
     $('#titolo').val(e.files[0]['name']);
 	console.log(e.files[0]['size']);
-    if (e.files[0]['size'] > 1000000000){
+    if (e.files[0]['size'] > 20000000){
       $('#size').show();
     } else {
       $('#size').hide();

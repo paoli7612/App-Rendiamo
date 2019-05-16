@@ -27,7 +27,7 @@
           </div>
           <div class="card-body">
             <h5>
-              <b> Dimensione: </b> <?php echo $materiale['dimensione'] ?>
+              <b> Dimensione: </b> <?php echo $materiale['dimensione'] ?> Byte
             </h5>
             <h5>
               <b> Data di caricamento: </b> <?php echo $materiale['data'] ?>

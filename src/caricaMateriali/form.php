@@ -28,7 +28,7 @@
     </div>
     <div id="size" style="display: none">
       <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Attenzione!</strong> La dimensione del file supera il limite massimo di 1 Gigabyte.
+        <strong>Attenzione!</strong> La dimensione del file supera il limite massimo di 20 Megabyte.
       </div>
     </div>
     <div class="row">

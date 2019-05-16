@@ -16,7 +16,7 @@
     <form action="post.php" method="post">
       <input type="hidden" name="idLezione" value="<?php echo $_GET['id'] ?>">
       <div class="row ml-3" id="materie">
-        <?php $materie = query("SELECT materie.*, materieDiLezioni.idMateria FROM materie LEFT JOIN materieDiLezioni ON (materieDiLezioni.idMateria=materie.id AND materiedilezioni.idLezione=$idLezione) ORDER BY titolo") ?>
+        <?php $materie = query("SELECT materie.*, materieDiLezioni.idMateria FROM materie LEFT JOIN materieDiLezioni ON (materieDiLezioni.idMateria=materie.id AND materieDiLezioni.idLezione=$id) ORDER BY titolo") ?>
         <?php foreach ($materie as $materia): ?>
           <div class="col-xl-4 col-md-6 col-sm-12 custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" name="materia_<?php echo $materia['id'] ?>"id="materia_<?php echo $materia['id'] ?>" <?php if (isset($materia['idMateria'])): ?> checked="checked" <?php endif; ?>>

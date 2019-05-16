@@ -4,11 +4,12 @@
 <?php
 
   function query($sql){
-    $conn = new mysqli("localhost", "root", "", "appRendiamo");
+    $conn = new mysqli("localhost", "root", "", "my_apprendiamoci");
     //print_r($conn);
     $tabella = array();
     $result = $conn->query($sql);
     //print_r($sql);
+    //print_r($conn->error);
     if ($conn->error){
       return ($conn->error);
     }

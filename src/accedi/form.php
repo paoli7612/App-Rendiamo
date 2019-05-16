@@ -27,7 +27,6 @@
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="../registrati">Primo accesso? Registrati</a>
-          <a class="d-block small" href="../passwordDimenticata">Password dimenticata?</a>
         </div>
       </div>
     </div>

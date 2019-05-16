@@ -19,12 +19,12 @@
     if (isset($_GET['salvati'])) {
       $docenti = query("SELECT utenti.*, COUNT(lezioni.id) as count
                         FROM (
-                          SELECT utenti.*, utentidiutenti.idUtente as preferito
+                          SELECT utenti.*, utentiDiUtenti.idUtente as preferito
                           FROM utenti
-                          LEFT JOIN utentidiutenti
+                          LEFT JOIN utentiDiUtenti
                             ON (
-                              utentidiutenti.idUtente=utenti.id AND
-                              utentidiutenti.idStudente=$idUtente
+                              utentiDiUtenti.idUtente=utenti.id AND
+                              utentiDiUtenti.idStudente=$idUtente
                             )
                           ) as utenti
                         LEFT JOIN lezioni
@@ -39,12 +39,12 @@
     } elseif (isset($_GET['attivi'])) {
       $docenti = query("SELECT utenti.*, COUNT(lezioni.id) as count
                         FROM (
-                          SELECT utenti.*, utentidiutenti.idUtente as preferito
+                          SELECT utenti.*, utentiDiUtenti.idUtente as preferito
                           FROM utenti
-                          LEFT JOIN utentidiutenti
+                          LEFT JOIN utentiDiUtenti
                             ON (
-                              utentidiutenti.idUtente=utenti.id AND
-                              utentidiutenti.idStudente=$idUtente
+                              utentiDiUtenti.idUtente=utenti.id AND
+                              utentiDiUtenti.idStudente=$idUtente
                             )
                           ) as utenti
                         LEFT JOIN lezioni
@@ -59,12 +59,12 @@
     } else {
       $docenti = query("SELECT utenti.*, COUNT(lezioni.id) as count
                         FROM (
-                          SELECT utenti.*, utentidiutenti.idUtente as preferito
+                          SELECT utenti.*, utentiDiUtenti.idUtente as preferito
                           FROM utenti
-                          LEFT JOIN utentidiutenti
+                          LEFT JOIN utentiDiUtenti
                             ON (
-                              utentidiutenti.idUtente=utenti.id AND
-                              utentidiutenti.idStudente=$idUtente
+                              utentiDiUtenti.idUtente=utenti.id AND
+                              utentiDiUtenti.idStudente=$idUtente
                             )
                           ) as utenti
                         LEFT JOIN lezioni
