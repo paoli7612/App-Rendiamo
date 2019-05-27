@@ -1,8 +1,6 @@
 # App-prendiamoci
 
-A partire dal 5/02/2019 il sito verrà hostato al indirizzo 93.49.97.47
-
-<a href="http://93.49.97.47"> 93.49.97.47 </a>
+<a href="http://apprendiamoci.altervista.org"> Host altervista </a>
 
 **Aggiornare le seguenti righe nel file php/php.ini dei file di xampp**
 post_max_size=1000M
