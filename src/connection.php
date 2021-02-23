@@ -4,7 +4,7 @@
 <?php
 
   function query($sql){
-    $conn = new mysqli("localhost", "root", "", "my_apprendiamoci");
+    $conn = new mysqli("localhost", "root", "", "appRendiamo");
     //print_r($conn);
     $tabella = array();
     $result = $conn->query($sql);
