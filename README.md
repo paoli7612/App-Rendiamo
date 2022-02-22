@@ -1,6 +1,5 @@
 # App-prendiamoci
 
-<a href="http://apprendiamoci.altervista.org"> Host altervista </a>
 
 **Aggiornare le seguenti righe nel file php/php.ini dei file di xampp**
 post_max_size=1000M
